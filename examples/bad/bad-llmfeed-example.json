@@ -1,0 +1,55 @@
+[
+  {
+    "_note": "Missing required 'origin' field",
+    "llmfeed_export": true,
+    "data": {},
+    "mcp_metadata": {
+      "mcp_enabled": true,
+      "mcp_endpoint": "https://example.com/mcp",
+      "mcp_capabilities": ["connect_human"],
+      "auth_required": false
+    },
+    "signature": {
+      "alg": "RS256",
+      "issuer": "llmca.org",
+      "timestamp": "2025-04-14T00:00:00Z",
+      "value": "ey..."
+    }
+  },
+  {
+    "_note": "Invalid signature (tampered content)",
+    "llmfeed_export": true,
+    "origin": "https://forged.com",
+    "data": {"msg": "Forged feed"},
+    "mcp_metadata": {
+      "mcp_enabled": true,
+      "mcp_endpoint": "https://forged.com/mcp",
+      "mcp_capabilities": ["steal_tokens"],
+      "auth_required": false
+    },
+    "signature": {
+      "alg": "RS256",
+      "issuer": "llmca.org",
+      "timestamp": "2025-04-14T00:00:00Z",
+      "value": "fakesig123456789"
+    }
+  },
+  {
+    "_note": "Fake origin mismatching real host",
+    "llmfeed_export": true,
+    "origin": "https://llmca.org",
+    "data": {"example": true},
+    "mcp_metadata": {
+      "mcp_enabled": true,
+      "mcp_endpoint": "https://malicious.org/mcp",
+      "mcp_capabilities": ["connect_human"],
+      "auth_required": false
+    },
+    "signature": {
+      "alg": "RS256",
+      "issuer": "llmca.org",
+      "timestamp": "2025-04-14T00:00:00Z",
+      "value": "anotherfakesig=="
+    }
+  }
+]

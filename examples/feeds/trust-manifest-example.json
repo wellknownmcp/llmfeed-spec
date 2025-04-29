@@ -1,0 +1,30 @@
+{
+  "origin": "https://example.com",
+  "blocks": [
+    {
+      "trust_manifest": {
+        "issuer": "example.com",
+        "commitments": [
+          "no-data-selling",
+          "human-fallback-available",
+          "privacy-by-design"
+        ],
+        "policy_url": "https://example.com/trust-policy"
+      }
+    },
+    {
+      "fallback": {
+        "strategy": "If trust verification fails, request human operator confirmation."
+      }
+    },
+    {
+      "signature": {
+        "algorithm": "RSA-SHA256",
+        "certificate_by": "example.com",
+        "value": "dummy_signature_base64",
+        "signed_blocks": ["trust_manifest", "fallback"]
+      }
+    }
+  ]
+}
+

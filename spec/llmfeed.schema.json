@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LLMFeed",
+  "type": "object",
+  "properties": {
+    "llmfeed_export": {
+      "type": "boolean"
+    },
+    "origin": {
+      "type": "string",
+      "format": "uri"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "user": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "authenticated": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "authenticated"
+      ]
+    },
+    "data": {
+      "type": "object"
+    },
+    "mcp_metadata": {
+      "type": "object",
+      "properties": {
+        "mcp_enabled": {
+          "type": "boolean"
+        },
+        "endpoint": {
+          "type": "string",
+          "format": "uri"
+        },
+        "example_feeds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "api_key_required": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "mcp_enabled"
+      ]
+    },
+    "signature": {
+      "type": "object",
+      "properties": {
+        "algorithm": {
+          "type": "string"
+        },
+        "public_key_hint": {
+          "type": "string",
+          "format": "uri"
+        },
+        "value": {
+          "type": "string"
+        },
+        "issued_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "certificate_chain": {
+          "type": "object",
+          "properties": {
+            "certificate_by": {
+              "type": "string",
+              "format": "uri"
+            },
+            "cert_signature": {
+              "type": "string"
+            },
+            "cert_issued_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "certification_level": {
+              "type": "string"
+            },
+            "policy_reference": {
+              "type": "string",
+              "format": "uri"
+            },
+            "audit_reference": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        }
+      },
+      "required": [
+        "algorithm",
+        "public_key_hint",
+        "value",
+        "issued_at"
+      ]
+    },
+    "capabilities": {
+      "type": "string",
+      "format": "uri"
+    },
+    "audience": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "trust_level": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "llmfeed_export",
+    "origin",
+    "data",
+    "mcp_metadata",
+    "signature"
+  ]
+}

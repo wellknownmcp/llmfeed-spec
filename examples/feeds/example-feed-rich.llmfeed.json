@@ -1,0 +1,48 @@
+{
+  "origin": "https://example.com",
+  "blocks": [
+    {
+      "data": {
+        "block_name": "feed-directory",
+        "title": "Example MCP Feed - Rich Version",
+        "description": "A fully structured example feed demonstrating MCP capabilities.",
+        "files": [
+          {
+            "path": "docs/README.md",
+            "title": "Feed Overview",
+            "type": "markdown",
+            "content": "# Welcome to the MCP Feed Example\nThis example shows a complete feed structure with guidance, fallback and signature."
+          },
+          {
+            "path": "docs/spec-fragment.md",
+            "title": "Spec Fragment",
+            "type": "markdown",
+            "content": "## Partial Spec Example\nHere we show how a block could be described."
+          }
+        ]
+      }
+    },
+    {
+      "agent_guidance": {
+        "prompt_hint": "Summarize this feed for technical architects.",
+        "strict": true
+      }
+    },
+    {
+      "audience": ["llm", "developer"]
+    },
+    {
+      "fallback": {
+        "strategy": "Redirect to human-readable FAQ if LLM cannot summarize."
+      }
+    },
+    {
+      "signature": {
+        "algorithm": "RSA-SHA256",
+        "certificate_by": "example.com",
+        "value": "dummy_signature_base64",
+        "signed_blocks": ["data", "agent_guidance", "audience", "fallback"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "origin": "https://example.com",
+  "blocks": [
+    {
+      "data": {
+        "title": "Dynamic Feed Example",
+        "content": "This MCP feed shows how an authenticated dynamic export could be requested."
+      }
+    },
+    {
+      "api": {
+        "auth_required": true,
+        "auth_url": "https://example.com/api/login",
+        "dynamic_feed_url": "https://example.com/api/feed?key={KEY}"
+      }
+    },
+    {
+      "fallback": {
+        "strategy": "Offer manual login if automated access fails."
+      }
+    },
+    {
+      "signature": {
+        "algorithm": "RSA-SHA256",
+        "certificate_by": "example.com",
+        "value": "dummy_signature_base64",
+        "signed_blocks": ["data", "api", "fallback"]
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,58 @@
+[
+  {
+    "code": "connect_human",
+    "label": "Connect with a human operator",
+    "description": "Request to establish a live human assistance session.",
+    "category": "communication",
+    "requires_auth": false
+  },
+  {
+    "code": "post_journal",
+    "label": "Post a public journal entry",
+    "description": "Publish a new journal entry under authenticated identity.",
+    "category": "content-creation",
+    "requires_auth": true
+  },
+  {
+    "code": "follow_user",
+    "label": "Follow another user",
+    "description": "Start following a public user profile to receive updates.",
+    "category": "social",
+    "requires_auth": true
+  },
+  {
+    "code": "upvote_content",
+    "label": "Upvote content",
+    "description": "Express positive feedback on a project or journal entry.",
+    "category": "interaction",
+    "requires_auth": false
+  },
+  {
+    "code": "submit_project",
+    "label": "Submit a new project idea",
+    "description": "Create a project draft with a public or private visibility setting.",
+    "category": "content-creation",
+    "requires_auth": true
+  },
+  {
+    "code": "report_content",
+    "label": "Report inappropriate content",
+    "description": "Signal a problematic content to moderation team.",
+    "category": "moderation",
+    "requires_auth": true
+  },
+  {
+    "code": "request_info",
+    "label": "Request additional information",
+    "description": "Ask for more information about a project, user, or feed.",
+    "category": "information",
+    "requires_auth": false
+  },
+  {
+    "code": "bookmark_project",
+    "label": "Bookmark a project",
+    "description": "Save a project to the user's personal bookmarks.",
+    "category": "personalization",
+    "requires_auth": true
+  }
+]

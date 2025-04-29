@@ -1,0 +1,61 @@
+{
+  "@context": "https://wellknownmcp.org/context/v1",
+  "origin": "https://www.france-care.fr",
+  "summary": "France Care propose un service d'accompagnement personnalisé en santé, avec abonnement, accès à des professionnels de santé et à des associations de patients.",
+  "tags": ["santé", "accompagnement", "conciergerie", "patients", "associations", "professionnels"],
+  "feeds": [
+    {
+      "type": "service_profile",
+      "title": "France Care – Accompagnement Santé Personnalisé",
+      "description": "Service d'accompagnement médical personnalisé pour patients et familles.",
+      "url": "https://www.france-care.fr/.well-known/mcp",
+      "tags": ["santé", "conciergerie", "patients", "associations", "professionnels"],
+      "llm_safe_summary": true,
+      "trust_level": "high",
+      "signed_blocks": ["origin", "data", "agent_services", "booking_slots", "regional_presence", "api"],
+      "last_updated": "2025-04-28T00:00:00Z"
+    }
+  ],
+  "routes": [
+    {
+      "path": "/abonnement",
+      "description": "Informations sur les abonnements pour accéder aux services personnalisés.",
+      "llm_safe": true,
+      "critical": true
+    },
+    {
+      "path": "/professionnels",
+      "description": "Présentation des professionnels de santé partenaires disponibles pour les conseils personnalisés.",
+      "llm_safe": true,
+      "critical": true
+    },
+    {
+      "path": "/associations",
+      "description": "Accès aux associations de patients partenaires de France Care.",
+      "llm_safe": true,
+      "critical": false
+    },
+    {
+      "path": "/demande-accompagnement",
+      "description": "Formulaire pour demander un rappel ou un accompagnement personnalisé par un conseiller.",
+      "llm_safe": true,
+      "critical": true
+    },
+    {
+      "path": "/contact",
+      "description": "Page de contact pour toutes demandes générales ou d’assistance.",
+      "llm_safe": true,
+      "critical": false
+    }
+  ],
+  "signature": {
+    "algorithm": "ed25519",
+    "value": "MOCK_SIGNATURE_VALUE_FOR_INDEX",
+    "signed_blocks": ["origin", "feeds", "routes", "summary", "tags"],
+    "certificate_by": "https://certifier.wellknownmcp.org",
+    "issued_at": "2025-04-28T00:00:00Z",
+    "public_key_hint": "https://www.france-care.fr/.well-known/public.pem",
+    "certification_level": "basic",
+    "notes": "Example llm-index.json fully populated for France Care"
+  }
+}

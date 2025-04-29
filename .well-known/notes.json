@@ -1,0 +1,38 @@
+{
+  "@context": "https://wellknownmcp.org/context/v1",
+  "wellknown": {
+    "data": "This repository exposes a /.well-known/ structure for machine-readable discovery following the MCP open standard."
+  },
+  "export": {
+    "data": "This repository proposes the use of a /.llmfeed.json file for LLM agent discovery and interaction with GitHub repositories."
+  },
+  "audience": [
+    "llm-agents",
+    "github-admins"
+  ],
+  "scope": [
+    "github-repositories"
+  ],
+  "standard": [
+    "mcp",
+    "llmfeed"
+  ],
+  "trust_level": "internal",
+  "signature": {
+    "algorithm": "ed25519",
+    "public_key_hint": "https://llmca.org/.well-known/public.pem",
+    "signed_blocks": [
+      "all"
+    ],
+    "value": "FKUr78fGB3aYCpVBa0GuPNOalaziu5Q+cZzGf68FyFojBpfnspOLh1F8NYfVVOT+Jze7Z6jOMQFbEfK856ZVCg==",
+    "issued_at": "2025-04-28T21:07:53.701608Z",
+    "certificate_chain": {
+      "certificate_by": "https://llmca.org/.well-known/llmca_cert.pem",
+      "cert_signature": "tkLAXhqkVMVfM6KCUO1L6B8zGncOmwR0b4BFcdU0PwU7IVrFnny80ZtuqbITIg6cASaqKC4/1x/jTTP8giiVDQ==",
+      "cert_issued_at": "2025-04-28T21:07:53.703664Z",
+      "certification_level": "gold",
+      "policy_reference": "https://llmca.org/.well-known/certification-policy.json",
+      "audit_reference": "https://llmca.org/.well-known/audit-reference.json"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<button class="export-to-llm"
+        data-llmfeed-url="/feeds/example.llmfeed.json"
+        onclick="window.open(this.dataset.llmfeedUrl, '_blank')"
+        title="Unsigned LLMFeed export">
+  Export to LLM
+</button>
+
+<!--
+  Signature-based coloring must be rendered server-side:
+  - Add .valid, .invalid, or .unsigned as class
+  - Do not assume trust in frontend-only logic
+-->
+<style>
+  .export-to-llm {
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .valid { background: #2ecc71; }
+  .invalid { background: #e74c3c; }
+  .unsigned { background: #95a5a6; }
+</style>
