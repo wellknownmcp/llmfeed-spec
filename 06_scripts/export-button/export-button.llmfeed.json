@@ -1,0 +1,26 @@
+{
+  "feed_type": "export",
+  "metadata": {
+    "title": "Export Button Module",
+    "description": "Demonstration of a simple Export to LLMFeed button implementation, with support for static, dynamic, and DOM-based modes.",
+    "origin": "https://wellknownmcp.org/spec/06_scripts/export-button",
+    "tags": [
+      "export",
+      "llmfeed",
+      "button",
+      "agent-tools",
+      "ux"
+    ],
+    "content_type": "tooling",
+    "llm_intent": "enable-export-to-llm"
+  },
+  "trust": {
+    "signed_blocks": [
+      "feed_type",
+      "metadata"
+    ],
+    "scope": "partial",
+    "certifier": "",
+    "warning": "This feed is not signed. Intended for demonstration purposes only."
+  }
+}

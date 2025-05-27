@@ -1,0 +1,38 @@
+{
+  "feed_type": "prompt",
+  "intent": "prepare exam summary",
+  "prompt_type": "education",
+  "keywords": [
+    "exam",
+    "summary"
+  ],
+  "prompt_body": "Please generate a summary to help me prepare for the exam.",
+  "trust": {
+    "signed_blocks": [
+      "all"
+    ],
+    "certifier": "https://llmca.org",
+    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "scope": "full",
+    "warning": "This feed is fully signed."
+  },
+  "signature": {
+    "algorithm": "ed25519",
+    "value": "HGt9xWpThlXjvKJovFiRt7ng0pKz+h1LUFax3vdP/SoQOcX+nA8lcLhsWerFDZgArI6U6xrqEm2KM8Fc2LkkBQ==",
+    "created_at": "2025-05-26T17:52:54.434214+00:00"
+  },
+  "certification": {
+    "certifier": "https://llmca.org",
+    "level": "silver",
+    "targets": [
+      "all"
+    ],
+    "issued_at": "2025-05-26T17:53:04.284185+00:00",
+    "expires_at": "",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "algorithm": "ed25519",
+    "public_key_hint": "https://llmca.org/.well-known/llmca_cert.pem",
+    "value": "T8ljLq4yxkSmSUZnIZ94xwf+Pn6/JmF/DfCVJs88RTmuc/KH30VT7MD4k72SvwWlnT/cSpznBrKWbw2hBxmzBg=="
+  }
+}

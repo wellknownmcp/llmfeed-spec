@@ -1,0 +1,44 @@
+{
+  "feed_type": "mcp",
+  "metadata": {
+    "title": "Platform Root Declaration",
+    "origin": "https://platform.io",
+    "generated_at": "2025-05-25T09:11:41.512548Z",
+    "audience": "llm",
+    "description_llm": "This feed is designed to be interpreted by an LLM. It provides structured, trustable context for reasoning or task execution."
+  },
+  "user_spaces": [
+    {
+      "pattern": "https://platform.io/users/*",
+      "mcp_proxy": "https://platform.io/api/mcp/{user_id}"
+    }
+  ],
+  "trust": {
+    "signed_blocks": [
+      "all"
+    ],
+    "certifier": "https://llmca.org",
+    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "scope": "full",
+    "warning": "This feed is fully signed."
+  },
+  "signature": {
+    "algorithm": "ed25519",
+    "value": "c7YSPaCh2CD6z1zf2yUTICF5qZzA6dqL1pZfm6aByJ+bznDgD+hcPSVq7sSxYDeTpVS/WRAI9D1iodc7a3ROBQ==",
+    "created_at": "2025-05-26T17:52:56.146464+00:00"
+  },
+  "certification": {
+    "certifier": "https://llmca.org",
+    "level": "silver",
+    "targets": [
+      "all"
+    ],
+    "issued_at": "2025-05-26T17:53:06.234997+00:00",
+    "expires_at": "",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "algorithm": "ed25519",
+    "public_key_hint": "https://llmca.org/.well-known/llmca_cert.pem",
+    "value": "T8ljLq4yxkSmSUZnIZ94xwf+Pn6/JmF/DfCVJs88RTmuc/KH30VT7MD4k72SvwWlnT/cSpznBrKWbw2hBxmzBg=="
+  }
+}

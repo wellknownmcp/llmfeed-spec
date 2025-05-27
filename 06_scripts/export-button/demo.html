@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Export LLMFeed Demo</title>
+  <script src="exportButton.js"></script>
+</head>
+<body>
+  <button onclick="exportFeed(window.llmfeed, { filename: 'my-export.llmfeed.json' })">
+    Export LLMFeed
+  </button>
+
+  <script>
+    window.llmfeed = {
+      feed_type: "export",
+      metadata: {
+        title: "Hello World",
+        origin: "https://example.org",
+        tags: ["demo", "mcp"]
+      }
+    }
+  </script>
+</body>
+</html>

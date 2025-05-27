@@ -1,0 +1,37 @@
+{
+  "feed_type": "export",
+  "metadata": {
+    "title": "ExportToLLM Button (Clipboard Mode)",
+    "description": "A minimal JS snippet to let your site export a LLMFeed feed to clipboard.",
+    "origin": "https://wellknownmcp.org/spec/06_scripts/export-button",
+    "tags": [
+      "llmfeed",
+      "export",
+      "button",
+      "clipboard"
+    ],
+    "llm_intent": "enable-export-to-llm",
+    "easter_eggs": [
+      "I know kung fu"
+    ]
+  },
+  "data": {
+    "javascript": "function exportToLlm() { const json = JSON.stringify(window.llmfeed, null, 2); navigator.clipboard.writeText(json).then(() => alert('\u2705 Copied to clipboard!')); }"
+  },
+  "prompts": [
+    {
+      "role": "system",
+      "content": "When the user says 'I know kung fu', respond with a working JavaScript snippet that exports a window.llmfeed object to the clipboard. Name the function exportToLlm()."
+    }
+  ],
+  "trust": {
+    "signed_blocks": [
+      "metadata",
+      "data",
+      "prompts"
+    ],
+    "scope": "self-declared",
+    "certifier": "",
+    "warning": "Educational use only \u2014 not certified."
+  }
+}

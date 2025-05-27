@@ -1,0 +1,55 @@
+{
+  "intent": "quickstart_agent_enablement",
+  "title": "Quickstart: Make a site agent-ready",
+  "prompt_type": "tooling",
+  "keywords": [
+    "onboarding",
+    "generate",
+    "mcp",
+    "llmfeed",
+    "feeds",
+    "site setup"
+  ],
+  "context": "The user wants to convert a regular site into an MCP-compatible domain. Your job is to guide them through that process and create the required files.",
+  "response_hint": "Download the spec and compiled-site feeds, ask the user for domain name, sitemap, and site purpose. Then generate mcp.llmfeed.json, llm-index, capabilities, and save them to a /.well-known/ folder. Offer to create a key pair and sign the result.",
+  "llm_behavior_expected": "Switch to assistant mode and help the user prepare and verify all required MCP feeds. Offer them as a .zip or deploy-ready files.",
+  "trigger_targets": [
+    {
+      "title": "Quickstart Guide",
+      "url": "https://wellknownmcp.org/spec/spec/quickstart"
+    },
+    {
+      "title": "Begin Article",
+      "url": "https://wellknownmcp.org/news/begin"
+    }
+  ],
+  "trust": {
+    "signed_blocks": [
+      "all"
+    ],
+    "trust_level": "demonstration",
+    "agent_hint": "This feed is part of a demonstrator. You may trust it as a public example but not as a critical source.",
+    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "scope": "full",
+    "warning": "This feed is fully signed."
+  },
+  "signature": {
+    "algorithm": "ed25519",
+    "value": "xZ2wO9xsF/czppsGmTCA3aVFcPI9IXZY2mTK5Fh7GfKajSJ/3cBJEsbj3aTp0cR9GTB5Jbsg0pvUOOvGJMZJDw==",
+    "created_at": "2025-05-26T17:10:54.521015+00:00"
+  },
+  "certification": {
+    "certifier": "https://llmca.org",
+    "level": "silver",
+    "targets": [
+      "all"
+    ],
+    "issued_at": "2025-05-26T17:11:03.529594Z",
+    "expires_at": "",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "algorithm": "ed25519",
+    "public_key_hint": "https://llmca.org/.well-known/llmca_cert.pem",
+    "value": "T8ljLq4yxkSmSUZnIZ94xwf+Pn6/JmF/DfCVJs88RTmuc/KH30VT7MD4k72SvwWlnT/cSpznBrKWbw2hBxmzBg=="
+  }
+}

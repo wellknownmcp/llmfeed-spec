@@ -1,0 +1,55 @@
+{
+  "feed_type": "mcp",
+  "metadata": {
+    "title": "Personal Dev API",
+    "origin": "https://dev.example.ai",
+    "generated_at": "2025-05-25T09:11:41.511466Z",
+    "audience": "llm",
+    "description_llm": "This feed is designed to be interpreted by an LLM. It provides structured, trustable context for reasoning or task execution."
+  },
+  "prompts": [
+    {
+      "intent": "explain api usage",
+      "keywords": [
+        "api",
+        "usage"
+      ],
+      "description": "Help the user get started",
+      "prompt_type": "onboarding"
+    }
+  ],
+  "capabilities": [
+    {
+      "type": "endpoint",
+      "url": "https://dev.example.ai/api/use"
+    }
+  ],
+  "trust": {
+    "signed_blocks": [
+      "all"
+    ],
+    "certifier": "https://llmca.org",
+    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "scope": "full",
+    "warning": "This feed is fully signed."
+  },
+  "signature": {
+    "algorithm": "ed25519",
+    "value": "hxf8bZ2qIf0fiHOhNElYlus5vhulGaJUteKyi81m9Bkxbe3U5lk1Bk4H3Nb+sSTHz2mCdJI8Gtf6NcjFdU0XAw==",
+    "created_at": "2025-05-26T17:52:55.809380+00:00"
+  },
+  "certification": {
+    "certifier": "https://llmca.org",
+    "level": "silver",
+    "targets": [
+      "all"
+    ],
+    "issued_at": "2025-05-26T17:53:05.779243+00:00",
+    "expires_at": "",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "algorithm": "ed25519",
+    "public_key_hint": "https://llmca.org/.well-known/llmca_cert.pem",
+    "value": "T8ljLq4yxkSmSUZnIZ94xwf+Pn6/JmF/DfCVJs88RTmuc/KH30VT7MD4k72SvwWlnT/cSpznBrKWbw2hBxmzBg=="
+  }
+}

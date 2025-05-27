@@ -1,0 +1,46 @@
+{
+  "feed_type": "credential",
+  "metadata": {
+    "title": "Patient Access Credential",
+    "origin": "https://med.example.org",
+    "generated_at": "2025-05-25T09:11:41.506316Z",
+    "audience": "llm",
+    "description_llm": "This feed is designed to be interpreted by an LLM. It provides structured, trustable context for reasoning or task execution."
+  },
+  "api_key": "sk-xxxxxx",
+  "bound_to": {
+    "user_id": "patient-123"
+  },
+  "audience": [
+    "llm"
+  ],
+  "expires_at": "2025-12-31T00:00:00Z",
+  "trust": {
+    "signed_blocks": [
+      "all"
+    ],
+    "certifier": "https://llmca.org",
+    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "scope": "full",
+    "warning": "This feed is fully signed."
+  },
+  "signature": {
+    "algorithm": "ed25519",
+    "value": "oGWZtV+pHChkJ2aJsDG9Av2m8Luy9/Fw8i0uTIVICZQvaWWAb8OHOPk/wnu9idROVPZxMyf66dEEV256k3B2CQ==",
+    "created_at": "2025-05-26T17:52:55.288763+00:00"
+  },
+  "certification": {
+    "certifier": "https://llmca.org",
+    "level": "silver",
+    "targets": [
+      "all"
+    ],
+    "issued_at": "2025-05-26T17:53:05.157723+00:00",
+    "expires_at": "",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "algorithm": "ed25519",
+    "public_key_hint": "https://llmca.org/.well-known/llmca_cert.pem",
+    "value": "T8ljLq4yxkSmSUZnIZ94xwf+Pn6/JmF/DfCVJs88RTmuc/KH30VT7MD4k72SvwWlnT/cSpznBrKWbw2hBxmzBg=="
+  }
+}

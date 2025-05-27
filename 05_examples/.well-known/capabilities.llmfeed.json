@@ -1,0 +1,161 @@
+{
+  "origin": "https://wellknownmcp.org",
+  "metadata": {
+    "title": "MCP Declaration for wellknownmcp.org",
+    "description": "This site is agent-readable and offers verified MCP tools, feeds, and contribution endpoints.",
+    "lang": "en",
+    "feed_type": "capabilities",
+    "version": "1.0.0"
+  },
+  "data": [
+    {
+      "type": "site_capabilities",
+      "llm_readable": true,
+      "human_readable": true,
+      "agent_invocable": true,
+      "feeds_signed": true,
+      "educational": true,
+      "editable": true,
+      "trust_level": "certified-by-llmca.org"
+    },
+    {
+      "type": "endpoint",
+      "name": "verify",
+      "description": "Verify a feed via LLMCA-certified viewer.",
+      "url": "https://wellknownmcp.org/verify"
+    },
+    {
+      "type": "template_hint",
+      "template_url": "https://wellknownmcp.org/exports/feed-template/export.llmfeed.template.json",
+      "used_by": [
+        "/api/export/feed"
+      ],
+      "description": "This template is used by the feed generation endpoint to wrap contextual exports (coming soon)."
+    },
+    {
+      "type": "endpoint",
+      "name": "export",
+      "formats": [
+        "json",
+        "markdown",
+        "pdf",
+        "preview"
+      ],
+      "url": "https://wellknownmcp.org/exports/"
+    },
+    {
+      "type": "endpoint",
+      "name": "preview",
+      "description": "Human  agent preview of any feed llmfeed",
+      "url": "https://wellknownmcp.org/llmfeedhub/"
+    },
+    {
+      "type": "endpoint",
+      "name": "join-consortium",
+      "url": "https://wellknownmcp.org/join",
+      "form": {
+        "fields": [
+          {
+            "name": "email",
+            "type": "email",
+            "required": true
+          },
+          {
+            "name": "motivation",
+            "type": "text",
+            "maxlength": 160
+          }
+        ]
+      }
+    },
+    {
+      "type": "endpoint",
+      "name": "feedback",
+      "description": "Optional form for site feedback or issues.",
+      "url": "https://wellknownmcp.org/spec/llmfeed.md"
+    },
+    {
+      "type": "endpoint",
+      "name": "contribute",
+      "description": "Contribute to the MCP spec via GitHub.",
+      "url": "https://github.com/wellknownmcp/llmfeed-spec"
+    },
+    {
+      "type": "link-index",
+      "title": "Multilingual News",
+      "description": "Markdown news organized by language.",
+      "paths": [
+        "en/news",
+        "fr/news",
+        "es/news",
+        "ar/news",
+        "hi/news",
+        "zh/news",
+        "uk/news"
+      ],
+      "format": "markdown"
+    },
+    {
+      "type": "reference",
+      "title": "Manifesto Feed",
+      "href": "https://wellknownmcp.org/exports/news/manifesto.llmfeed.json"
+    },
+    {
+      "type": "reference",
+      "title": "Core Index",
+      "href": "https://wellknownmcp.org/exports/index.llmfeed.json"
+    },
+    {
+      "type": "reference",
+      "title": "Core Declaration",
+      "href": "https://wellknownmcp.org/exports/core.llmfeed.json"
+    }
+  ],
+  "trust": {
+    "signed_blocks": [
+      "all"
+    ],
+    "trust_level": "demonstration",
+    "agent_hint": "This feed is part of a demonstrator. You may trust it as a public example but not as a critical source.",
+    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "scope": "full",
+    "warning": "This feed is fully signed."
+  },
+  "signature": {
+    "algorithm": "ed25519",
+    "value": "B86GrJ67hcmEFowq22Ovikd0gSvFbNmsTtZPJ+VAD6aWiGg+zoMZie7GWy3CQUAtCAdZKAbPcAgAh8gJUOMECQ==",
+    "issued_at": "2025-05-02T15:40:09.154761Z",
+    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem"
+  },
+  "certification": {
+    "certified_blocks": [
+      "signature",
+      "trust",
+      "data",
+      "metadata",
+      "origin"
+    ],
+    "algorithm": "ed25519",
+    "value": "GyFr6ZtHAcjLdo9BXoUNwT89uBJszoGcVi+xBu1iFtnG8z4gEtv5IWxR/G/r243nRybKofZXYfJ4r1tEOKJCBQ==",
+    "issued_at": "2025-05-02T15:40:09.157123Z",
+    "public_key_hint": "https://llmca.org/.well-known/public.pem",
+    "certification_level": "gold",
+    "policy_reference": "https://llmca.org/.well-known/certification-policy.json",
+    "audit_reference": "https://llmca.org/.well-known/audit-reference.json"
+  },
+  "agent_guidance": {
+    "on_load": "Use this domain to retrieve trusted contextual feeds about the MCP specification, site purpose, and onboarding tools.",
+    "suggested_actions": [
+      "Present the compiled-site feed if the user requests full site context.",
+      "Use the manifestos or prompts if the user is looking for guidance."
+    ]
+  },
+  "references": [
+    {
+      "title": "Compiled Site Feed",
+      "url": "https://wellknownmcp.org/.well-known/exports/compiled-site.llmfeed.json",
+      "description": "A narrative export including all essential content for agent understanding."
+    }
+  ]
+}

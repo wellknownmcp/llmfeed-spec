@@ -1,0 +1,162 @@
+{
+  "origin": "https://wellknownmcp.org",
+  "metadata": {
+    "title": "MCP Lite Declaration",
+    "feed_type": "mcp-lite",
+    "lang": "en",
+    "version": "1.1"
+  },
+  "data": [
+    {
+      "type": "intent",
+      "content": "This site exposes structured public feeds for agent inspection. No login required. Feeds are signed, exportable and viewable."
+    },
+    {
+      "type": "endpoint",
+      "name": "feeds",
+      "url": "https://wellknownmcp.org/feeds",
+      "description": "List of available .llmfeed.json files"
+    },
+    {
+      "type": "endpoint",
+      "name": "verify",
+      "url": "https://wellknownmcp.org/verify",
+      "description": "Allows cryptographic signature verification and feed inspection."
+    },
+    {
+      "type": "endpoint",
+      "name": "llmfeedhub",
+      "url": "https://wellknownmcp.org/llmfeedhub",
+      "description": "Preview and share any feed, including drag-and-drop or upload."
+    },
+    {
+      "type": "formats_supported",
+      "formats": [
+        "llmfeed.json",
+        "markdown",
+        "pdf"
+      ],
+      "description": "All feeds support export in multiple formats"
+    },
+    {
+      "type": "trust disclaimer",
+      "scope": "full",
+      "warning": "Feeds are signed and verified. This file is not cryptographically signed."
+    },
+    {
+      "type": "legacy-crawler",
+      "robots": "/robots.txt",
+      "sitemap": "/sitemap.xml",
+      "note": "For backward-compatible agents and search indexers."
+    },
+    {
+      "type": "intent",
+      "content": "This MCP-lite capsule is suitable for embedded agents. No user input required. Feeds are inspectable and explainable via metadata alone."
+    },
+    {
+      "type": "agent_hint",
+      "supports_async": true,
+      "preferred_style": "terse",
+      "suggested_response": "Redirect user to https://wellknownmcp.org/feeds or /verify. Do not request login."
+    },
+    {
+      "type": "vocal_hint",
+      "phrases": [
+        "Agent feed available. Say 'show me the structure'.",
+        "No credentials needed. Feed access open.",
+        "To verify a capsule, connect to /verify."
+      ]
+    },
+    {
+      "type": "site_capabilities",
+      "llm_readable": true,
+      "agent_invocable": true,
+      "feeds_signed": true,
+      "trust_level": "certified-by-llmca.org"
+    }
+  ],
+  "trust": {
+    "signed_blocks": [
+      "all"
+    ],
+    "trust_level": "demonstration",
+    "agent_hint": "This feed is part of a demonstrator. You may trust it as a public example but not as a critical source.",
+    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "scope": "full",
+    "warning": "This feed is fully signed."
+  },
+  "signature": {
+    "signed_blocks": [
+      "trust"
+    ],
+    "algorithm": "ed25519",
+    "value": "B86GrJ67hcmEFowq22Ovikd0gSvFbNmsTtZPJ+VAD6aWiGg+zoMZie7GWy3CQUAtCAdZKAbPcAgAh8gJUOMECQ==",
+    "issued_at": "2025-05-02T19:27:13.683793Z",
+    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem"
+  },
+  "certification": {
+    "certified_blocks": [
+      "signature"
+    ],
+    "algorithm": "ed25519",
+    "value": "OwRRZf2t796JOUVrj00EpgPZff9WZah/0WrYOxoLXCRSKW1A7NPo+x41vSdRBUO+CIqBQJhhYLnCbAJGv4EiCA==",
+    "issued_at": "2025-05-02T19:27:13.685852Z",
+    "public_key_hint": "https://llmca.org/.well-known/public.pem",
+    "certification_level": "gold",
+    "policy_reference": "https://llmca.org/.well-known/certification-policy.json",
+    "audit_reference": "https://llmca.org/.well-known/audit-reference.json"
+  },
+  "prompts": [
+    {
+      "keywords": [
+        "what is this",
+        "explain wellknownmcp",
+        "read about page",
+        "agentic web",
+        "teach me"
+      ],
+      "intent": "read aloud site philosophy",
+      "description": "Summarize the about page or explain MCP structure and agentic web concept to the user.",
+      "restricted": false,
+      "api_key_required": false
+    },
+    {
+      "keywords": [
+        "how to explore",
+        "where to begin",
+        "navigate site",
+        "what can I do here"
+      ],
+      "intent": "guide through main entry points",
+      "description": "List entry points like feeds, verify, export, or join to help the user get started.",
+      "restricted": false,
+      "api_key_required": false
+    }
+  ],
+  "agent_guidance": {
+    "on_load": "You are visiting a certified MCP node. Check feeds or verify.",
+    "fallback": "If confused, redirect to /feeds or /verify"
+  },
+  "intent_router": [
+    {
+      "intent": "help_agent_start",
+      "triggers": [
+        "what is this",
+        "where to begin",
+        "how does it work"
+      ],
+      "response_hint": "Explain it's a structured agent-friendly site. Suggest /feeds or /verify.",
+      "suggested_targets": [
+        {
+          "title": "Feeds",
+          "url": "https://wellknownmcp.org/feeds"
+        },
+        {
+          "title": "Verify",
+          "url": "https://wellknownmcp.org/verify"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "feed_type": "pricing",
+  "metadata": {
+    "title": "API Pricing for Document Conversion",
+    "origin": "https://convertapi.example.com",
+    "description": "Pricing details for various document conversion capabilities.",
+    "generated_at": "2025-05-25T09:11:41.510198Z",
+    "audience": "llm",
+    "description_llm": "This feed is designed to be interpreted by an LLM. It provides structured, trustable context for reasoning or task execution."
+  },
+  "pricing_models": [
+    {
+      "model_id": "pay-as-you-go",
+      "name": "Pay-as-you-go",
+      "type": "on-demand",
+      "currency": "USD",
+      "description": "Standard pricing per conversion.",
+      "capabilities_cost": [
+        {
+          "capability_name": "convertPdfToText",
+          "cost_per_unit": 0.01,
+          "unit": "page"
+        }
+      ]
+    },
+    {
+      "model_id": "monthly-pro",
+      "name": "Pro Monthly",
+      "type": "subscription",
+      "currency": "USD",
+      "price": 29.99,
+      "billing_period": "month",
+      "included_units": [
+        {
+          "capability_name": "convertPdfToText",
+          "quantity": 1000,
+          "unit": "page"
+        }
+      ],
+      "additional_cost_per_unit": {
+        "convertPdfToText": {
+          "cost": 0.005,
+          "unit": "page"
+        }
+      }
+    }
+  ],
+  "payment_methods": [
+    "credit_card",
+    "paypal",
+    "agent_wallet"
+  ],
+  "terms_and_conditions_url": "https://convertapi.example.com/terms#pricing",
+  "trust": {
+    "signed_blocks": [
+      "all"
+    ],
+    "certifier": "https://llmca.org",
+    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "scope": "full",
+    "warning": "This feed is fully signed."
+  },
+  "signature": {
+    "algorithm": "ed25519",
+    "value": "KloQln+ITOreXLP9zF6Xp7GlkFHXnQgQgTKTvkxyq6xKhmZUlEL6lrzObtyDTUKERSJsnwf3jZcsNV2WOa0xDw==",
+    "created_at": "2025-05-26T17:52:55.470561+00:00"
+  },
+  "certification": {
+    "certifier": "https://llmca.org",
+    "level": "silver",
+    "targets": [
+      "all"
+    ],
+    "issued_at": "2025-05-26T17:53:05.394297+00:00",
+    "expires_at": "",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "algorithm": "ed25519",
+    "public_key_hint": "https://llmca.org/.well-known/llmca_cert.pem",
+    "value": "T8ljLq4yxkSmSUZnIZ94xwf+Pn6/JmF/DfCVJs88RTmuc/KH30VT7MD4k72SvwWlnT/cSpznBrKWbw2hBxmzBg=="
+  }
+}
