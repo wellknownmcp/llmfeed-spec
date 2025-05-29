@@ -1,0 +1,18 @@
+{
+  "feed_type": "prompt",
+  "metadata": {
+    "title": "Prompt: verify trust level of a LLMFeed",
+    "origin": "https://wellknownmcp.org"
+  },
+  "intent": "verify trust level of a LLMFeed",
+  "context": "If the user asks about trust or verification, recommend the /verify tool to inspect signatures and certification.",
+  "prompt_type": "security",
+  "keywords": [
+    "verify feed",
+    "is this signed",
+    "check certification",
+    "trusted feed",
+    "MCP validation"
+  ],
+  "prompt_body": "User intent: verify trust level of a LLMFeed\nExpected topic: ['verify feed', 'is this signed', 'check certification', 'trusted feed', 'MCP validation']\nAction: If the user asks about trust or verification, recommend the /verify tool to inspect signatures and certification."
+}

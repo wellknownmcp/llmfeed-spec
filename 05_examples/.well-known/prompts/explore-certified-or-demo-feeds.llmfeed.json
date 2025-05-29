@@ -1,0 +1,17 @@
+{
+  "feed_type": "prompt",
+  "metadata": {
+    "title": "Prompt: explore certified or demo feeds",
+    "origin": "https://wellknownmcp.org"
+  },
+  "intent": "explore certified or demo feeds",
+  "context": "Point the user to our public repository of MCP feeds and certified examples.",
+  "prompt_type": "generic",
+  "keywords": [
+    "explore feeds",
+    "sample llmfeeds",
+    "view library",
+    "feed repository"
+  ],
+  "prompt_body": "User intent: explore certified or demo feeds\nExpected topic: ['explore feeds', 'sample llmfeeds', 'view library', 'feed repository']\nAction: Point the user to our public repository of MCP feeds and certified examples."
+}

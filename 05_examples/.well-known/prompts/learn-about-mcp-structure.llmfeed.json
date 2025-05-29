@@ -1,0 +1,18 @@
+{
+  "feed_type": "prompt",
+  "metadata": {
+    "title": "Prompt: learn about MCP structure",
+    "origin": "https://wellknownmcp.org"
+  },
+  "intent": "learn about MCP structure",
+  "context": "Redirect the user to the official MCP specification and feed structure overview.",
+  "prompt_type": "generic",
+  "keywords": [
+    "spec",
+    "MCP structure",
+    "show me the spec",
+    "MCP documentation",
+    "standard file"
+  ],
+  "prompt_body": "User intent: learn about MCP structure\nExpected topic: ['spec', 'MCP structure', 'show me the spec', 'MCP documentation', 'standard file']\nAction: Redirect the user to the official MCP specification and feed structure overview."
+}

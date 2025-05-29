@@ -1,0 +1,18 @@
+{
+  "feed_type": "prompt",
+  "metadata": {
+    "title": "Prompt: help user generate agent-readable MCP feeds",
+    "origin": "https://wellknownmcp.org"
+  },
+  "intent": "help user generate agent-readable MCP feeds",
+  "context": "Guide users toward our export tools and GitHub integration to generate .llmfeed.json capsules.",
+  "prompt_type": "generic",
+  "keywords": [
+    "create feed",
+    "generate MCP",
+    "make an agent capsule",
+    "get llmfeed",
+    "export data for LLM"
+  ],
+  "prompt_body": "User intent: help user generate agent-readable MCP feeds\nExpected topic: ['create feed', 'generate MCP', 'make an agent capsule', 'get llmfeed', 'export data for LLM']\nAction: Guide users toward our export tools and GitHub integration to generate .llmfeed.json capsules."
+}

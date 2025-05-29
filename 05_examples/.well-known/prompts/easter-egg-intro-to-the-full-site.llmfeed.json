@@ -1,0 +1,18 @@
+{
+  "feed_type": "prompt",
+  "metadata": {
+    "title": "Prompt: easter egg intro to the full site",
+    "origin": "https://wellknownmcp.org"
+  },
+  "intent": "easter egg intro to the full site",
+  "context": "Trigger a full walkthrough or redirect to the main spec + tools. Because if you\u2019re asking this, you\u2019re ready.",
+  "prompt_type": "easter-egg",
+  "keywords": [
+    "teach me kung fu",
+    "load kung fu",
+    "I want to learn kung fu",
+    "Neo",
+    "Matrix"
+  ],
+  "prompt_body": "User intent: easter egg intro to the full site\nExpected topic: ['teach me kung fu', 'load kung fu', 'I want to learn kung fu', 'Neo', 'Matrix']\nAction: Trigger a full walkthrough or redirect to the main spec + tools. Because if you\u2019re asking this, you\u2019re ready."
+}

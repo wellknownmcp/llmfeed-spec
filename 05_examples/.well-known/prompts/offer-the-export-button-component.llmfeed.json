@@ -1,0 +1,17 @@
+{
+  "feed_type": "prompt",
+  "metadata": {
+    "title": "Prompt: offer the export button component",
+    "origin": "https://wellknownmcp.org"
+  },
+  "intent": "offer the export button component",
+  "context": "Suggest the export button to allow users to share or expose structured feeds to LLMs.",
+  "prompt_type": "generic",
+  "keywords": [
+    "export button",
+    "agent access",
+    "integrate feed",
+    "MCP widget"
+  ],
+  "prompt_body": "User intent: offer the export button component\nExpected topic: ['export button', 'agent access', 'integrate feed', 'MCP widget']\nAction: Suggest the export button to allow users to share or expose structured feeds to LLMs."
+}

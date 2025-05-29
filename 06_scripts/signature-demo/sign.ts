@@ -1,30 +1,44 @@
-import fs from 'fs'
-import crypto from 'crypto'
+// sign.ts — Correct MCP v1.1 signature generator
 
-const [feedPath, privateKeyPath] = process.argv.slice(2)
-if (!feedPath || !privateKeyPath) {
-  console.error('Usage: tsx sign.ts <feed.json> <private.pem>')
-  process.exit(1)
+import * as fs from "fs";
+import * as crypto from "crypto";
+
+const inputPath = process.argv[2];
+const keyPath = process.argv[3];
+const keyHint = process.argv[4] || "https://example.org/keys/core.pem";
+
+if (!inputPath || !keyPath) {
+  console.error("Usage: node sign.ts <feed.json> <private.key> [keyHint]");
+  process.exit(1);
 }
 
-const feed = JSON.parse(fs.readFileSync(feedPath, 'utf-8'))
-const privateKeyPem = fs.readFileSync(privateKeyPath, 'utf-8')
-const privateKey = crypto.createPrivateKey(privateKeyPem)
+const feed = JSON.parse(fs.readFileSync(inputPath, "utf-8"));
+const privateKeyPem = fs.readFileSync(keyPath, "utf-8");
+const privateKey = crypto.createPrivateKey(privateKeyPem);
 
-const blocks = feed.trust.signed_blocks
-const dataToSign: Record<string, any> = {}
-for (const key of blocks) {
-  dataToSign[key] = feed[key]
-}
+// Construct the trust block
+feed.trust = {
+  signed_blocks: ["metadata", "trust"],
+  algorithm: "Ed25519",
+  canonicalization: "llmfeed-v1",
+  key_hint: keyHint
+};
 
-const payload = JSON.stringify(dataToSign, Object.keys(dataToSign).sort(), 0)
-const signature = crypto.sign(null, Buffer.from(payload), privateKey)
-const signatureBase64 = signature.toString('base64')
+// Canonicalize the payload
+const canonicalPayload = JSON.stringify({
+  metadata: feed.metadata,
+  trust: feed.trust
+});
 
+const signatureBytes = crypto.sign(null, Buffer.from(canonicalPayload), privateKey);
+const signatureBase64 = signatureBytes.toString("base64");
+
+// Construct the signature block
 feed.signature = {
-  algorithm: "ed25519",
-  value: signatureBase64
-}
+  value: signatureBase64,
+  created_at: new Date().toISOString()
+};
 
-fs.writeFileSync(feedPath, JSON.stringify(feed, null, 2), 'utf-8')
-console.log('✅ Feed signed using Ed25519')
+const outputPath = inputPath.replace(/\.json$/, ".signed.llmfeed.json");
+fs.writeFileSync(outputPath, JSON.stringify(feed, null, 2), "utf-8");
+console.log("✔ Signed feed saved to", outputPath);

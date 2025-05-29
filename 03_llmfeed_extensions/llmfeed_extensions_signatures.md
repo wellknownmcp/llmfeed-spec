@@ -37,8 +37,8 @@ This document defines how `.llmfeed.json` feeds are signed, verified, and certif
 
 ```json
 "signature": {
-  "algorithm": "ed25519",
-  "canonicalization": "llmfeed-v1",
+  
+  
   "created_at": "2025-05-19T12:00:00Z",
   "public_key_hint": "...",
   "value": "..."
@@ -60,7 +60,7 @@ A third party can sign the feed — either the same `signed_blocks`, or the `sig
 "certification": {
   "certifier": "https://llmca.org",
   "targets": ["trust", "signature"],
-  "algorithm": "ed25519",
+  
   "value": "...",
   "issued_at": "2025-05-19T12:00:00Z",
   "expires_at": "2026-05-19T12:00:00Z"
@@ -142,3 +142,32 @@ https://yoursite.org/.well-known/public.pem
 - [`agent-behaviour`](/tools/agent-behaviour)
 - [`verify`](/verify)
 - [`feedtype_mcp.md`](./feedtype_mcp.md)
+
+---
+
+## ✅ Correction (MCP v1.1+ alignment)
+
+The correct placement of signature-related metadata is in the `trust` block, not `signature`.
+
+### ✅ Correct Structure:
+
+```json
+"trust": {
+  "signed_blocks": ["metadata", "trust"],
+  "algorithm": "Ed25519",
+  "canonicalization": "llmfeed-v1",
+  "key_hint": "https://llmca.org/keys/core-cert.pem"
+},
+"signature": {
+  "value": "base64-encoded-signature",
+  "created_at": "2025-05-28T12:00:00Z"
+}
+```
+
+- `algorithm`, `key_hint`, `canonicalization`, `signed_blocks` are part of the signed payload.
+- `signature` only contains the cryptographic result.
+- Future versions may support URLs for `canonicalization`.
+
+**Note:** Any feed using the previous structure must be migrated to remain verifiable.
+
+---
