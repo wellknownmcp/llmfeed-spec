@@ -43,20 +43,18 @@ echo "=== 🚀 Push de llmfeed-spec terminé ==="
 # Cible : public/exports/spec/
 TARGET_EXPORT="../wellknownmcp.org/public/exports/spec"
 
-echo "=== 🗑️ Nettoyage de $TARGET_EXPORT ==="
-rm -rf "$TARGET_EXPORT"/*
-
 echo "=== 📂 Synchronisation vers $TARGET_EXPORT ==="
-# Exclure local-only et autres dossiers de build
+mkdir -p "$TARGET_EXPORT"
 rsync -av \
+    --delete \
     --exclude '.git/' \
     --exclude 'local-only/' \
     --exclude 'update-and-push.sh' \
     --exclude '.gitignore' \
     --exclude '__pycache__/' \
     --exclude '*.pyc' \
+    --exclude '*.sh' \
     ./ "$TARGET_EXPORT/"
-
 echo "=== ✅ Synchronisation vers $TARGET_EXPORT terminée ==="
 
 # Cible : .well-known/exports/
