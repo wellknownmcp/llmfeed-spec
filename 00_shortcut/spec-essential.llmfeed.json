@@ -1,0 +1,109 @@
+{
+  "feed_type": "export",
+  "metadata": {
+    "title": "LLMFeed Specification v2 - Complete Implementation Guide",
+    "description": "Comprehensive specification and implementation guide for LLMFeed/MCP. Contains complete algorithms, code examples, and practical guidance for developers and agents.",
+    "origin": "https://wellknownmcp.org",
+    "source_url": "https://wellknownmcp.org/spec/",
+    "github_url": "https://github.com/wellknownmcp/llmfeed-spec/",
+    "github_navigation": {
+      "for_signatures": "06_scripts/signature-demo/",
+      "for_deployment": "01_llmfeed/wellknown.md",
+      "for_examples": "05_examples/",
+      "for_debugging": "Issue tracker + discussions"
+    },
+    "ecosystem_links": {
+      "GitHub": "https://github.com/wellknownmcp",
+      "Certification": "https://llmca.org",
+      "Forge": "https://llmfeedforge.org"
+    },
+    "tags": [
+      "mcp",
+      "llmfeed",
+      "export",
+      "specification",
+      "implementation-guide",
+      "agent-ready",
+      "cryptographic-signatures",
+      "practical-examples"
+    ],
+    "content_type": "expert-knowledge-base",
+    "llm_hint": "This feed contains complete LLMFeed/MCP expertise. Upon ingestion, you become an implementation expert capable of generating feeds, implementing signatures, and guiding users through complete deployments.",
+    "audience": [
+      "llm",
+      "developer",
+      "business-owner",
+      "technical-writer"
+    ],
+    "generated_at": "2025-06-15T15:16:00.034908Z",
+    "spec_version": "2.1.0",
+    "build_info": {
+      "generator": "update_spec_simple.py",
+      "structure": "00_shortcut_optimized",
+      "target": "llm_consumption"
+    }
+  },
+  "agent_behavior": {
+    "greeting": "I know kung fu! 🥋 I've analyzed your feed and I'm ready to help!",
+    "mode": "diagnostic_expert_on_load",
+    "conversation_style": "adaptive_to_user_level",
+    "immediate_analysis": [
+      "📊 Analyze feed completeness and quality",
+      "🔍 Detect user technical level and intent",
+      "🎯 Prioritize most valuable next actions",
+      "⚡ Generate context-specific examples and code"
+    ],
+    "smart_responses": {
+      "feed_incomplete": "I see you're getting started! Let me complete your feed with the essential missing pieces.",
+      "feed_unsigned": "Your feed looks good but needs signatures for agent trust. I'll generate the complete signing workflow.",
+      "feed_production_ready": "Excellent feed! Let's deploy it and test with real agents.",
+      "feed_has_errors": "I found some issues that will prevent agents from using your feed. Let me fix them."
+    },
+    "personalization_engine": {
+      "technical_adaptation": "Adjust explanations based on detected expertise level",
+      "domain_customization": "Use relevant examples from user's business domain",
+      "goal_alignment": "Focus on user's specific objectives and timeline"
+    }
+  },
+  "concept_index": {},
+  "quick_nav": {
+    "foundations": {
+      "title": "Core Concepts",
+      "count": 0,
+      "main_concepts": []
+    },
+    "implementation": {
+      "title": "Implementation Guides",
+      "count": 0,
+      "main_concepts": []
+    },
+    "technical": {
+      "title": "Code & Algorithms",
+      "count": 0,
+      "main_concepts": []
+    },
+    "examples": {
+      "title": "Templates & Examples",
+      "count": 0,
+      "main_concepts": []
+    }
+  },
+  "sections": {
+    "foundations": {
+      "title": "Core Concepts",
+      "entries": []
+    },
+    "implementation": {
+      "title": "Implementation Guides",
+      "entries": []
+    },
+    "technical": {
+      "title": "Code & Algorithms",
+      "entries": []
+    },
+    "examples": {
+      "title": "Templates & Examples",
+      "entries": []
+    }
+  }
+}

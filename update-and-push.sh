@@ -3,29 +3,44 @@
 # Sécurité : stop en cas d'erreur
 set -e
 
-# Aller à la racine de llmfeed-spec
-cd "$(dirname "$0")"
+# Aller à la racine de llmfeed-spec et s'assurer qu'on y reste
+PROJECT_ROOT="$(cd "$(dirname "$0")" && pwd)"
+cd "$PROJECT_ROOT"
 
 echo "=== 🚀 Génération de spec.llmfeed.json dans 00_shortcut/ ==="
+echo "📁 Répertoire de travail: $(pwd)"
 
-# Exécuter le script depuis local-only/scripts/
+# Exécuter le script Python depuis la racine du projet
+# Ainsi, tous les chemins relatifs dans le script seront corrects
 py local-only/scripts/update-spec.llmfeed.json/update_spec_simple.py
+
+# Solution de secours : déplacer les fichiers si créés au mauvais endroit
+if [ -f "local-only/scripts/00_shortcut/spec.llmfeed.json" ]; then
+    echo "⚠️  Fichiers trouvés dans local-only/scripts/00_shortcut/, déplacement..."
+    mkdir -p 00_shortcut/
+    mv local-only/scripts/00_shortcut/* 00_shortcut/ 2>/dev/null || true
+    rmdir local-only/scripts/00_shortcut/ 2>/dev/null || true
+    echo "✅ Fichiers déplacés vers 00_shortcut/"
+fi
 
 echo "=== ✅ spec.llmfeed.json généré dans 00_shortcut/ ==="
 
-# Vérifier que les fichiers ont bien été créés
-if [ -f "00_shortcut/spec.llmfeed.json" ]; then
-    echo "✅ spec.llmfeed.json créé"
-    SPEC_SIZE=$(du -h "00_shortcut/spec.llmfeed.json" | cut -f1)
+# Vérifier que les fichiers ont bien été créés À LA RACINE
+if [ -f "$PROJECT_ROOT/00_shortcut/spec.llmfeed.json" ]; then
+    echo "✅ spec.llmfeed.json créé dans $(pwd)/00_shortcut/"
+    SPEC_SIZE=$(du -h "$PROJECT_ROOT/00_shortcut/spec.llmfeed.json" | cut -f1)
     echo "📊 Taille: $SPEC_SIZE"
 else
-    echo "❌ ERREUR: spec.llmfeed.json non trouvé dans 00_shortcut/"
+    echo "❌ ERREUR: spec.llmfeed.json non trouvé dans $PROJECT_ROOT/00_shortcut/"
+    # Vérifier où il a été créé
+    echo "🔍 Recherche des fichiers créés..."
+    find "$PROJECT_ROOT" -name "spec.llmfeed.json" -type f 2>/dev/null || echo "Aucun spec.llmfeed.json trouvé"
     exit 1
 fi
 
-if [ -f "00_shortcut/spec-essential.llmfeed.json" ]; then
+if [ -f "$PROJECT_ROOT/00_shortcut/spec-essential.llmfeed.json" ]; then
     echo "✅ spec-essential.llmfeed.json créé"
-    LITE_SIZE=$(du -h "00_shortcut/spec-essential.llmfeed.json" | cut -f1)
+    LITE_SIZE=$(du -h "$PROJECT_ROOT/00_shortcut/spec-essential.llmfeed.json" | cut -f1)
     echo "📊 Taille: $LITE_SIZE"
 else
     echo "⚠️  spec-essential.llmfeed.json non trouvé (possiblement désactivé)"
@@ -43,8 +58,13 @@ echo "=== 🚀 Push de llmfeed-spec terminé ==="
 # Cible : public/exports/spec/
 TARGET_EXPORT="../wellknownmcp.org/public/exports/spec"
 
+echo "=== 🗑️ Nettoyage de $TARGET_EXPORT ==="
+rm -rf "$TARGET_EXPORT"/*
+
 echo "=== 📂 Synchronisation vers $TARGET_EXPORT ==="
 mkdir -p "$TARGET_EXPORT"
+
+# Utiliser rsync avec --delete pour une synchronisation propre
 rsync -av \
     --delete \
     --exclude '.git/' \
@@ -53,8 +73,8 @@ rsync -av \
     --exclude '.gitignore' \
     --exclude '__pycache__/' \
     --exclude '*.pyc' \
-    --exclude '*.sh' \
     ./ "$TARGET_EXPORT/"
+
 echo "=== ✅ Synchronisation vers $TARGET_EXPORT terminée ==="
 
 # Cible : .well-known/exports/
