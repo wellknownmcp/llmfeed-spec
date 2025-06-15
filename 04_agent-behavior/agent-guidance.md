@@ -1,58 +1,90 @@
-# 🧭 Agent Behaviour: Optional `agent_guidance` Block
+---
+id: agent-guidance
+title: Agent Guidance Block
+description: Provides optional, non-enforceable guidance for agents processing `.llmfeed.json` feeds.
+tags: [llmfeed, agent, guidance, soft-policy, trust]
+lang: en
+---
 
-This document defines the optional `agent_guidance` block, which authors may include in a feed to express how they **expect agents to behave** — beyond what is mechanically enforced.
+# 🧭 Agent Guidance Block
 
-It is complementary to `agent_behavior`, and offers suggestions, fallback modes, or reasoning hints.
+The `agent_guidance` block provides **optional, non-enforceable hints** to agents consuming a `.llmfeed.json` feed.
+
+Unlike `agent-behavior` specifications (which may define normative requirements), this block is intended to help agents:
+
+✅ interpret author intent  
+✅ adapt interaction style  
+✅ adjust reasoning depth or behaviour  
+✅ surface explanations to the user  
 
 ---
 
 ## 🎯 Purpose
 
-The `agent_guidance` block allows the feed author to provide:
+Feeds may include **agent guidance** to:
 
-- UX or voice interface preferences
-- Suggestions for fallback if capabilities fail
-- Explanation hints for better summarization
-- Reinforcement of intent
+- Suggest interaction constraints.
+- Provide **ethically or contextually important** signals.
+- Offer hints for **UX / presentation**.
+- Recommend caution in handling sensitive content.
 
 ---
 
-## 🧱 Example
+## 🛠️ Example
 
 ```json
 "agent_guidance": {
-  "preferred_mode": "informational",
-  "explanation_hint": "Always summarize before suggesting action",
-  "fallback_strategy": "defer-to-user",
-  "audience": "technical non-expert",
-  "max_inference_depth": 2
+  "max_inference_depth": 3,
+  "interaction_tone": "formal",
+  "consent_hint": "Ask the user before accessing sensitive information",
+  "risk_tolerance": "low",
+  "preferred_explanation_style": "bullet-points",
+  "custom_notes": "This feed relates to user financial data. Be cautious and transparent."
 }
 ```
 
 ---
 
-## 🧩 Fields
+## 📚 Fields
 
-| Field               | Description |
-|---------------------|-------------|
-| `preferred_mode`    | e.g. `informational`, `transactional`, `supportive`, `dry`, `humorous` |
-| `explanation_hint`  | A sentence to help the LLM summarize intent or purpose |
-| `fallback_strategy` | e.g. `ask-user`, `skip`, `defer`, `log-only` |
-| `audience`          | Targeted reader context (e.g. `developer`, `layperson`, `voice-interface`) |
-| `max_inference_depth` | Optional limit on reasoning steps |
-
----
-
-## 🧠 Usage
-
-- Optional — ignored by minimal agents
-- May be displayed to users as meta-hint
-- May help LLM agents adjust tone, scope, and UX
+| Field                         | Purpose                                                |
+| ----------------------------- | ------------------------------------------------------ |
+| `max_inference_depth`         | Suggests limiting depth of reasoning/inference         |
+| `interaction_tone`            | Preferred tone (e.g. `formal`, `friendly`)             |
+| `consent_hint`                | Suggests when to seek human consent                    |
+| `risk_tolerance`              | Recommended risk posture (`low`, `medium`, `high`)     |
+| `preferred_explanation_style` | UX hint (e.g. `bullet-points`, `summary`, `narrative`) |
+| `custom_notes`                | Free-text notes for agent developers                   |
 
 ---
 
-## 📎 Related
+## 🚦 Usage
 
-- [`agent-behaviour.md`](./agent-behaviour.md)
-- [`llmfeed.md`](./llmfeed.md)
-- [`feedtype_mcp.md`](./feedtype_mcp.md)
+Agents SHOULD treat `agent_guidance` as **non-binding**.
+
+However, if the feed is **properly signed and certified** by a trusted authority, agents MAY:
+
+✅ **Increase the confidence level** given to the guidance.  
+✅ **Prioritize alignment** with the suggested behaviours.  
+✅ **Surface to the user** that these are **trusted recommendations**.
+
+If present, `agent_guidance` MAY influence:
+
+- Prompt framing  
+- UX presentation  
+- Decision thresholds  
+- Interaction flow  
+
+It SHOULD be surfaced (if applicable) to the user or agent operator.
+
+---
+
+## 📡 Summary
+
+The `agent_guidance` block complements more enforceable blocks (`trust`, `agent-behavior`) by offering **soft, contextual hints**.
+
+When the feed is **signed and certified**, these hints gain additional **trust weight** and can help shape more **intent-aligned agent behaviour**.
+
+Its adoption helps create a more **intent-aware, human-aligned Agentic Web**.
+
+---

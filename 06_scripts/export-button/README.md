@@ -1,3 +1,51 @@
+---
+# 📄 Basic metadata
+title: "ExportToLLMButton – Advanced Export Strategies for LLMFeeds"
+description: "MCP documentation on ExportToLLMButton – Advanced Export Strategies for LLMFeeds"
+date: "2025-06-11T09:26:56.425Z"
+lang: "en"
+
+# 🏷️ Tags and classification
+tags:
+  - "mcp"
+  - "ai-agents"
+format: "documentation"
+category: "technical"
+contentType: "documentation"
+
+# 🧠 Intent and audience  
+intent: "inform"
+llmIntent: "browse-spec"
+llmTopic: "specification"
+audience:
+  - "llm"
+  - "developer"
+
+# 📊 Page properties
+pageType: "documentation"
+interactionComplexity: "simple"
+priority: "normal"
+riskLevel: "low"
+updateFrequency: "static"
+
+# 🔗 URLs
+slug: "readme"
+canonical_url: "https://wellknownmcp.org/spec/06_scripts/export-button/README"
+githubUrl: "https://github.com/wellknownmcp/llmfeed-spec/blob/main/06_scripts/export-button/README.md"
+mcpFeedUrl: "/.well-known/mcp.llmfeed.json"
+
+# 🤖 Agent optimization
+autoDiscoverFeeds: true
+agentReadiness: true
+llmBehaviorHints: "suggest-only"
+
+# 📋 Capabilities
+capabilities:
+  - "signature"
+  - "export"
+  - "feed-generation"
+---
+
 # ExportToLLMButton – Advanced Export Strategies for LLMFeeds
 
 This document explains how to implement and adapt an **Export to LLM button** on any website or agent-friendly surface. This mechanism lets your users extract structured `.llmfeed.json` representations of a page, app, or interaction context.

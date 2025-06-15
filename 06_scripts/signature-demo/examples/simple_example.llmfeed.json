@@ -1,0 +1,7 @@
+{
+  "feed_type": "mcp",
+  "metadata": {
+    "title": "Minimal Example",
+    "description": "Absolute minimum required for a valid LLMFeed"
+  }
+}

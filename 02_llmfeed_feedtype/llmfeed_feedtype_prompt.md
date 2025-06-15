@@ -1,3 +1,104 @@
+---
+# 📄 Basic metadata
+
+title: "Feed Type: prompt.llmfeed.json — Structured Prompts for the Agentic Web"
+description: "Complete specification for prompt feeds enabling portable, signed, and certifiable prompts with professional ownership and marketplace integration"
+date: "2025-06-10T00:00:00.000Z"
+lang: "en"
+
+# 🏷️ Tags
+
+tags:
+
+- "mcp"
+- "llmfeed"
+- "prompt"
+- "prompt-engineering"
+- "trust"
+- "signature"
+- "certification"
+- "ai-agents"
+- "developers"
+- "marketplace"
+
+# 🎯 Content classification
+
+format: "specification"
+category: "technical"
+contentType: "api-reference"
+
+# 🧠 Intent and audience
+
+intent: "technical-guide"
+llmIntent: "understand-prompt-feed-specification"
+llmTopic: "prompt-feeds-and-structured-prompts"
+audience:
+
+- "llm"
+- "developer"
+- "prompt-engineer"
+
+# 📊 Advanced metadata
+
+priority: "high"
+riskLevel: "low"
+updateFrequency: "static"
+pageType: "api-reference"
+interactionComplexity: "moderate"
+
+# 🔗 Urls
+
+slug: "llmfeed-feedtype-prompt"
+canonical_url: "https://wellknownmcp.org/spec/02_llmfeed_feedtype/llmfeed_feedtype_prompt"
+mcpFeedUrl: "/.well-known/mcp.llmfeed.json"
+
+# 🎨 Media
+
+image: "/images/spec/prompt-feeds.png"
+subtitle: "Portable, signed, and certifiable prompts for professional use"
+
+# 🤖 Agent configuration
+
+autoDiscoverFeeds: true
+agentReadiness: true
+llmBehaviorHints: "full-autonomous"
+
+# 📋 Specialized metadata
+
+feedTypes:
+
+- "prompt"
+- "trust"
+- "certification"
+
+capabilities:
+
+- "prompt-certification"
+- "signature-verification"
+- "marketplace-integration"
+
+trustLevel: "signed"
+
+# 🏗️ Technical metadata
+
+technicalLevel: "intermediate"
+estimatedReadTime: "15 min"
+
+# 📚 Relations
+
+relatedArticles:
+
+- "llmfeed-extensions-signatures"
+- "agent-behavior"
+- "llmfeed-marketplace"
+
+prerequisites:
+
+- "basic-llmfeed-concepts"
+- "understanding-of-prompt-engineering"
+
+---
+
 # Feed Type: `prompt.llmfeed.json`
 
 ## Purpose
@@ -14,6 +115,7 @@ It is a better alternative to copy-pasted text: portable, inspectable, and conte
 - Invocation of external services or agent actions
 - Instructing LLMs to generate other `.llmfeed.json` types
 - Sharing reproducible queries across agents or tools
+- Professional prompt libraries and marketplaces
 
 ---
 
@@ -24,7 +126,9 @@ It is a better alternative to copy-pasted text: portable, inspectable, and conte
   "feed_type": "prompt",
   "metadata": {
     "title": "Generate a session feed",
-    "origin": "https://tool.llmfeed.org"
+    "origin": "https://tool.llmfeed.org",
+    "author": "Alex Chen",
+    "created_at": "2025-06-10T14:30:00Z"
   },
   "intent": "export current session as JSON",
   "context": "User is finishing a chat and wants to save the reasoning path.",
@@ -32,11 +136,117 @@ It is a better alternative to copy-pasted text: portable, inspectable, and conte
   "result_expected": "session",
   "process_mode": "prepare-for-another",
   "prompt_body": "You are an LLM that supports LLMFeed. Please generate a session feed with context, output and decisions.",
+  "trust": {
+    "signed_blocks": ["metadata", "prompt_body", "trust"],
+    "scope": "public",
+    "certifier": "https://llmca.org"
+  },
+  "signature": {
+    "value": "abc123...",
+    "created_at": "2025-06-10T14:30:00Z"
+  }
+}
+```
+
+---
+
+## Core Fields
+
+| Field             | Required | Description                                                 |
+| ----------------- | -------- | ----------------------------------------------------------- |
+| `prompt_body`     | ✅        | The actual instruction to the LLM                           |
+| `intent`          | ✅        | What the user or system expects                             |
+| `context`         | ⚠️       | Extra info the LLM should consider                          |
+| `precision_level` | ⚠️       | `"raw"`, `"strict"`, `"ultra-strict"`                       |
+| `process_mode`    | ⚠️       | `"instruct"`, `"fill-and-execute"`, `"prepare-for-another"` |
+| `result_expected` | ⚠️       | `"text"`, `"feed"`, `"code"`, `"session"`                   |
+| `attachments[]`   | ⚠️       | Optional examples, templates, context                       |
+| `audience`        | ⚠️       | If only for LLM, wrapper, user etc.                         |
+
+---
+
+## Trust & Ownership
+
+### Basic Signing
+
+```json
+"trust": {
+  "signed_blocks": ["metadata", "prompt_body", "trust"],
+  "scope": "public"
+},
+"signature": {
+  "value": "signature_hash_here",
+  "created_at": "2025-06-10T14:30:00Z"
+}
+```
+
+### Certification (Optional)
+
+```json
+"certification": {
+  "issuer": "https://llmca.org",
+  "cert_id": "llmca-prompt-2025-001",
+  "certified_blocks": ["prompt_body", "performance_metrics"],
+  "issued_at": "2025-06-10T10:00:00Z",
+  "expires_at": "2026-06-10T10:00:00Z"
+}
+```
+
+**Why sign prompts?**
+
+- ✅ **Prove authorship** and prevent tampering
+- ✅ **Build reputation** as a prompt engineer
+- ✅ **Enable marketplaces** for certified prompts
+- ✅ **Establish trust** for sensitive use cases
+
+---
+
+## Agent Behavior
+
+An agent that receives this feed should:
+
+1. **Parse the `prompt_body`** and execute it
+2. **Respect `precision_level`** and `process_mode`
+3. **Attach any referenced templates** or context
+4. **Return a structured response** as declared in `result_expected`
+5. **Verify signatures** if trust is required
+
+---
+
+## Simple Examples
+
+### Educational Prompt
+
+```json
+{
+  "feed_type": "prompt",
+  "metadata": {
+    "title": "Python Code Explainer",
+    "author": "CS101 Team"
+  },
+  "intent": "explain Python code for beginners",
+  "prompt_body": "Explain this Python code step-by-step for a beginner: [CODE]",
+  "audience": ["student", "llm"],
+  "result_expected": "text"
+}
+```
+
+### API Documentation Generator
+
+```json
+{
+  "feed_type": "prompt",
+  "metadata": {
+    "title": "API Doc Generator",
+    "origin": "https://devtools.example.com"
+  },
+  "intent": "generate API documentation",
+  "prompt_body": "Generate clear API documentation for this endpoint: [ENDPOINT_DATA]",
+  "result_expected": "markdown",
   "attachments": [
     {
-      "name": "template.md",
-      "type": "text/markdown",
-      "description": "Reusable frame for structured reply"
+      "name": "doc_template.md",
+      "description": "Standard documentation template"
     }
   ]
 }
@@ -44,169 +254,197 @@ It is a better alternative to copy-pasted text: portable, inspectable, and conte
 
 ---
 
-## Canonical Fields
+## 📚 Advanced Features
 
-| Field              | Description |
-|--------------------|-------------|
-| `prompt_body`      | The actual instruction to the LLM |
-| `intent`           | What the user or system expects |
-| `context`          | Extra info the LLM should consider |
-| `precision_level`  | `"raw"`, `"strict"`, `"ultra-strict"` |
-| `process_mode`     | `"instruct"`, `"fill-and-execute"`, `"prepare-for-another"` |
-| `result_expected`  | `"text"`, `"feed"`, `"code"`, `"session"` |
-| `attachments[]`    | Optional examples, templates, context |
-| `audience`         | If only for LLM, wrapper, user etc. |
-| `compatible_llms`  | Array of engine names (optional) |
+<details>
+<summary><strong>Professional Use Cases</strong></summary>
 
----
+### Medical Consultation Assistant
 
-## MIME
-
+```json
+{
+  "feed_type": "prompt",
+  "metadata": {
+    "title": "Emergency Triage Assistant",
+    "author": "Dr. Sarah Chen, MD",
+    "institution": "Regional Medical Center"
+  },
+  "professional_validation": {
+    "medical_board_approved": true,
+    "peer_reviewed": true,
+    "liability_coverage": "institutional_malpractice_policy"
+  },
+  "prompt_body": "Assess patient symptoms and provide triage recommendations following emergency medicine protocols...",
+  "usage_restrictions": {
+    "requires_medical_license": true,
+    "human_oversight_required": true,
+    "emergency_use_only": false
+  }
+}
 ```
-application/prompt+llmfeed
+
+### Legal Document Analysis
+
+```json
+{
+  "feed_type": "prompt",
+  "metadata": {
+    "title": "Contract Risk Analyzer",
+    "author": "LegalTech Solutions Inc."
+  },
+  "commercial_licensing": {
+    "license_type": "professional",
+    "pricing": "$0.10_per_analysis",
+    "client_restrictions": "law_firms_only"
+  },
+  "prompt_body": "Analyze this contract for potential risks and compliance issues..."
+}
 ```
 
----
+</details>
+<details>
+<summary><strong>Intellectual Property & Licensing</strong></summary>
 
-## Agent Behaviour
+### Copyright Protection
 
-An agent that sees this feed should:
+```json
+"intellectual_property": {
+  "copyright": "© 2025 Prompt Engineer Name",
+  "license": "Creative Commons Attribution 4.0",
+  "attribution_required": true,
+  "commercial_use": "permitted_with_license"
+}
+```
 
-- Parse the `prompt_body` and run it
-- Respect `precision_level` and `process_mode`
-- Attach any inline templates or input context
-- Return a structured response as declared in `result_expected`
+### Commercial Licensing
 
----
+```json
+"commercial_licensing": {
+  "available": true,
+  "pricing_model": "per_use",
+  "base_rate": "$0.01_per_invocation",
+  "volume_discounts": [
+    {"min_uses": 1000, "discount": "10%"},
+    {"min_uses": 10000, "discount": "25%"}
+  ],
+  "contact": "licensing@promptcompany.com"
+}
+```
 
+</details>
+<details>
+<summary><strong>Performance & Analytics</strong></summary>
 
----
+### Performance Metrics
 
-## Trust, Ownership & Certification
+```json
+"performance_metrics": {
+  "accuracy_benchmark": "94.7%",
+  "average_response_time": "2.3s",
+  "user_satisfaction": "4.6/5.0",
+  "total_uses": 15847,
+  "success_rate": "91.2%"
+}
+```
 
-Structured prompts are **first-class digital objects** — and can be protected accordingly.
+### LLM Compatibility
 
-### 🔐 Signature
+```json
+"llm_compatibility": {
+  "gpt_4": {"score": 0.95, "optimal_temp": 0.3},
+  "claude_3": {"score": 0.92, "optimal_temp": 0.2},
+  "gemini": {"score": 0.89, "requires_adaptation": true}
+}
+```
 
-- Add a `signature` block to prove authorship and integrity
-- Signed prompts become **portable identities**: agents can verify and execute them with confidence
+</details>
+<details>
+<summary><strong>Behavioral Controls</strong></summary>
 
-### 🪪 Certification
+### Agent Guidance
 
-- Trusted authorities (e.g. LLMCA) can **certify prompts** for safety, ethics, performance
-- Certified prompts gain visibility and credibility in shared environments
+```json
+"agent_guidance": {
+  "interaction_tone": "professional",
+  "consent_hint": "Ask user before accessing sensitive data",
+  "risk_tolerance": "low",
+  "fallback_behavior": "escalate_to_human"
+}
+```
 
-### 🧾 Ownership
-
-- The `signature` block can serve as a **proof of authorship**
-- Ideal for prompt engineers, educators, or marketplaces
-
-### 🧠 Bonus: Prompt signing is compatible with
-
-- [`llmfeed-extensions_signatures.md`](./llmfeed-extensions_signatures.md)
-- [`agent-behaviour.md`](./agent-behaviour.md)
-- Public key or centralized trust models
-
-
-
-
----
-
-## 🎯 Trigger Targets
-
-Structured prompts can optionally include `trigger_targets[]` — instructions that guide an agent or UI **toward follow-up actions or resources**.
-
-This allows a prompt to explicitly point to:
-
-- a related `.llmfeed.json` (e.g. export, credential, mcp)
-- a static or dynamic resource
-- a web action or agent-capable tool
-
-### Example:
+### Trigger Targets
 
 ```json
 "trigger_targets": [
   {
     "type": "llmfeed",
-    "feed_type": "export",
-    "url": "https://example.org/exports/session-index.llmfeed.json"
+    "feed_type": "export", 
+    "url": "https://example.org/exports/results.llmfeed.json"
   },
   {
     "type": "action",
-    "label": "Open Export Tool",
-    "href": "/tools/session-export"
+    "label": "Generate Report",
+    "href": "/tools/report-generator"
   }
 ]
 ```
 
-### Valid `type` values:
-
-| Type        | Description |
-|-------------|-------------|
-| `llmfeed`   | A known structured feed |
-| `action`    | An agent-compatible web path |
-| `url`       | Generic link or API |
-
-Agents may prefetch, display or propose the action, depending on the context.
-
-
+</details>
 
 ---
 
-## 📚 Reference Links
+## Best Practices
 
-A `prompt.llmfeed.json` can include an optional `references[]` array — links to external resources, pages, documentation, or feeds related to the intent.
+### For Basic Users
 
-This is especially helpful for:
+1. **Start simple** - just `prompt_body` and `intent`
+2. **Add `trust` block** for any shared prompts
+3. **Use clear `metadata`** for discovery
+4. **Test with target LLMs** before publishing
 
-- agents generating educational content
-- users who want deeper context
-- transparent provenance of the prompt
+### For Professional Use
 
-### Example:
+1. **Always sign** commercially-used prompts
+2. **Seek certification** for high-risk domains
+3. **Include performance metrics** for transparency
+4. **Follow licensing requirements** in your jurisdiction
+5. **Test cross-platform compatibility**
 
-```json
-"references": [
-  {
-    "label": "Learn about prompt feeds",
-    "url": "https://wellknownmcp.org/tools/prompt"
-  },
-  {
-    "label": "Full prompt specification",
-    "url": "https://wellknownmcp.org/spec/feedtype_prompt"
-  }
-]
+### For Marketplaces
+
+1. **Implement proper attribution** systems
+2. **Verify signatures** before listing
+3. **Respect usage restrictions** and licensing terms
+4. **Provide performance analytics** to buyers
+
+---
+
+## MIME Type
+
+```
+Content-Type: application/llmfeed+json
 ```
 
-Each item should include:
+Or specifically:
 
-| Field | Description |
-|-------|-------------|
-| `label` | Short description of the resource |
-| `url`   | Fully qualified link to follow |
-
-
-## Related
-
-- [`feedtype_session.md`](./feedtype_session.md)
-- [`agent-behaviour.md`](./agent-behaviour.md)
-- [`tools/session-export`](/tools/session-export)
+```
+Content-Type: application/prompt+llmfeed
+```
 
 ---
 
-## ✳️ Behavior Capsules
+## Related Feed Types
 
-Some `prompt.llmfeed.json` are designed not just to guide a single interaction, but to **program the agent's behavior** persistently. These are known as **behavioral prompts** or **agent override capsules**.
+- **`session.llmfeed.json`**: Captures prompt usage in workflows
+- **`credential.llmfeed.json`**: Authentication for premium prompts
+- **`capabilities.llmfeed.json`**: Services that use certified prompts
+- **`mcp.llmfeed.json`**: Overall service context including prompt libraries
 
-### Characteristics
+---
 
-- 📌 `prompt_type`: use types like `agent-override`, `session-capsule-generator`, or `behavior-injection`
-- 🧠 `llm_behavior_expected`: clearly describe how the LLM should change its behavior
-- 🛡 `trust`: must include a `signed_by` and optionally `consent_required` when the change is structural or persistent
+## References
 
-### Examples
-
-- `mcp-mode-activation.llmfeed.json`: tells an agent to check `.well-known/mcp.llmfeed.json` before interpreting any site
-- `generate-session-feed.llmfeed.json`: instructs the LLM to always generate structured `.llmfeed.json` sessions when asked to summarize or export
-
-These prompts must be interpreted with care and may require explicit user consent.
+- [LLMFeed Specification](../01_llmfeed/llmfeed.md)
+- [Signature Extensions](../03_llmfeed_extensions/llmfeed_extensions_signatures.md)
+- [Agent Behavior Guidelines](../04_agent-behavior/agent-behavior.md)
+- [LLMCA Certification](https://llmca.org/certification)

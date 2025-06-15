@@ -1,3 +1,51 @@
+---
+# 📄 Basic metadata
+title: "� LLMFeed Scripts — Sign, Verify, Canonicalize"
+description: "MCP documentation on � LLMFeed Scripts — Sign, Verify, Canonicalize"
+date: "2025-06-11T09:26:56.439Z"
+lang: "en"
+
+# 🏷️ Tags and classification
+tags:
+  - "mcp"
+  - "ai-agents"
+format: "documentation"
+category: "technical"
+contentType: "documentation"
+
+# 🧠 Intent and audience  
+intent: "inform"
+llmIntent: "browse-spec"
+llmTopic: "specification"
+audience:
+  - "llm"
+  - "developer"
+
+# 📊 Page properties
+pageType: "documentation"
+interactionComplexity: "simple"
+priority: "normal"
+riskLevel: "low"
+updateFrequency: "static"
+
+# 🔗 URLs
+slug: "readme"
+canonical_url: "https://wellknownmcp.org/spec/06_scripts/README"
+githubUrl: "https://github.com/wellknownmcp/llmfeed-spec/blob/main/06_scripts/README.md"
+mcpFeedUrl: "/.well-known/mcp.llmfeed.json"
+
+# 🤖 Agent optimization
+autoDiscoverFeeds: true
+agentReadiness: true
+llmBehaviorHints: "suggest-only"
+
+# 📋 Capabilities
+capabilities:
+  - "signature"
+  - "verification"
+  - "export"
+  - "feed-generation"
+---
 # 🛠 LLMFeed Scripts — Sign, Verify, Canonicalize
 
 This folder contains **reference utilities** for working with `.llmfeed.json` files.
@@ -6,92 +54,112 @@ These tools implement the **official signing and verification logic** used by `l
 
 ---
 
-## 📄 Files
+## 🚀 Quick Start
 
-| Script                | Description |
-|-----------------------|-------------|
-| `sign_feed.py`        | Signs a `.llmfeed.json` using Ed25519 + canonicalized blocks |
-| `verify_signature.py` | Verifies the signature of a signed LLMFeed using public key hint or PEM |
-| `ExportToLLMButton.tsx` | Full-featured site component for exporting LLMFeed (React + icons) |
-| `canonicalize()` (in both scripts) | Implements canonical ordering and JSON encoding logic — **MUST match** certifier logic |
+**New to LLMFeed?** Start here:
+- 📖 [**Quickstart Guide**](./quickstart.md) — Create your first `.llmfeed.json` in 5 minutes
 
-| `signature-demo/`         | Self-contained example with key pair, test feed, sign/verify scripts |
-| `export-button/`         | Clipboard + download button in plain JavaScript with demo.html |
+**Ready to implement?** Choose your path:
+- 🔐 [**Signature Demo**](./signature-demo/) — Complete cryptographic signing workflow
+- 📤 [**Export Button**](./export-button/) — Add LLMFeed export to your website
 
 ---
 
-## 🔐 Signature Policy
+## 📁 Modules Overview
 
-The `sign_feed.py` script:
-- Adds a default `trust` block if missing
-- Inserts a `public_key_hint` and `canonicalization` reference
-- Computes and signs the specified `signed_blocks`
-- Adds a `signature` block with algorithm and timestamp
-
-It ensures that your feed is **trust-compliant and auditable**.
-
-LLMCA-certified feeds are expected to use the canonicalization profile:
-```
-https://llmca.org/mcp-canonical-json/v1
-```
+| Module | Description | Best For |
+|--------|-------------|----------|
+| [**quickstart.md**](./quickstart.md) | 5-minute guide to first feed | Beginners, quick prototyping |
+| [**signature-demo/**](./signature-demo/) | Ed25519 signing & verification | Security, production feeds |  
+| [**export-button/**](./export-button/) | Website integration module | Web developers, UX teams |
 
 ---
 
-## ✅ Example Usage
+## 🎯 What You'll Find Here
 
+### 🔐 Cryptographic Security
+- **Ed25519 signature generation** with MCP canonical JSON
+- **Multi-language implementations** (Python + JavaScript)
+- **Test vectors** and working examples
+- **Cross-verification** between implementations
+
+### 📤 Website Integration  
+- **Export button** for any website
+- **Clipboard + download** UX patterns
+- **Static, dynamic, and DOM-based** export modes
+- **Working demo** you can test immediately
+
+### ⚡ Getting Started
+- **No-code quickstart** for your first feed
+- **Step-by-step examples** with real JSON
+- **LLM testing instructions** 
+- **Production deployment** guidance
+
+---
+
+## 🔧 Implementation Patterns
+
+### For Developers
 ```bash
-python sign_feed.py your_feed.json signed_feed.json \
-  --private_key my_key.pem \
-  --hint https://example.org/.well-known/public.pem
+cd signature-demo/
+python sign_reference.py input.json output.llmfeed.json private.pem https://example.com/public.pem
+python verify_reference.py output.llmfeed.json
 ```
 
-```bash
-python verify_signature.py signed_feed.json \
-  --pubkey https://example.org/.well-known/public.pem
+### For Site Owners
+```html
+<script src="export-button/exportButton.js"></script>
+<button onclick="exportFeed(window.llmfeed)">Export to LLM</button>
 ```
 
----
-
-## 🧠 Frontend Usage (optional)
-
-The file `ExportToLLMButton.tsx` can be reused to offer export/download actions in your site or dashboard.
-
-It supports:
-- Static `.llmfeed.json`
-- Dynamic generation from HTML context
-- ZIP export
-- Signature status indicator
-
-> It does **not** hardcode internal routes or logic — use your own API backend.
+### For Content Creators
+```json
+{
+  "feed_type": "mcp",
+  "metadata": {
+    "title": "Your content here..."
+  }
+}
+```
 
 ---
 
 ## 🛡 About Canonicalization
 
-Canonicalization is **the core of signature compatibility**.
+**Canonicalization is the core of signature compatibility.**
 
-If you're writing your own signer/verifier in another language:
-- Follow the block-ordering and whitespace rules from `sign_feed.py`
-- Always encode objects with `sort_keys=True`, separators `(',', ':')`, no indentation
-- Use UTF-8 encoding and `SHA-256` digest over the block concatenation
-
-**LLMCA** is the primary guardian of canonicalization formats and will maintain compatibility declarations at:
+All tools in this folder use the official MCP canonicalization:
 ```
 https://llmca.org/mcp-canonical-json/v1
 ```
 
+Key principles:
+- **Preserves key order** for LLM semantic processing
+- **No `sort_keys=True`** — order matters for agents
+- **UTF-8 encoding** with specific JSON formatting
+- **Cross-language compatibility** guaranteed
+
 ---
 
-## 🤝 Contributions
+## 🚀 Production Ready
+
+These reference implementations are used by:
+- ✅ **llmca.org certification** procedures
+- ✅ **wellknownmcp.org** live examples  
+- ✅ **Community projects** and integrations
+
+**Battle-tested** and **specification-compliant**.
+
+---
+
+## 🤝 Contributions Welcome
 
 We encourage implementations in:
-- JavaScript/TypeScript
-- Rust
-- Go
-- Swift
+- JavaScript/TypeScript ✅ (available)
+- Python ✅ (available)  
+- Rust, Go, Swift (needed)
 
-See [llmfeed-spec](https://github.com/wellknownmcp/llmfeed-spec) for the latest canonical examples.
-
+See [llmfeed-spec](https://github.com/wellknownmcp/llmfeed-spec) for contribution guidelines.
 
 ---
 
@@ -99,9 +167,11 @@ See [llmfeed-spec](https://github.com/wellknownmcp/llmfeed-spec) for the latest 
 
 Some example feeds contain easter egg triggers for agent prompts.
 
-For instance, the `export-button.llmfeed.json` includes:
-- `llm_intent: "enable-export-to-llm"`
-- `"easter_eggs": ["I know kung fu"]`
+Try saying **"I know kung fu"** to a capable agent after feeding it our export-button examples — you might get a working clipboard-export function! 🥋
 
-A capable agent may respond with a working clipboard-export button.
+---
 
+**Choose your path:**
+- 👋 **New here?** → [quickstart.md](./quickstart.md)
+- 🔐 **Need security?** → [signature-demo/](./signature-demo/)  
+- 📤 **Building websites?** → [export-button/](./export-button/)

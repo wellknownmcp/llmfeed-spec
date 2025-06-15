@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "LLMFeed Lite Schema",
+  "title": "LLMFeed Lite Schema (Corrected v1.1)",
   "type": "object",
   "properties": {
     "feed_type": {
       "type": "string",
-      "__comment": "Mandatory. Should be one of: export, mcp, prompt, credential, etc."
+      "description": "Mandatory. Should be one of: export, mcp, prompt, credential, etc."
     },
     "metadata": {
       "type": "object",
@@ -16,7 +16,7 @@
         "origin": {
           "type": "string",
           "format": "uri",
-          "__comment": "URL origin of the feed, required for inter-agent referencing."
+          "description": "URL origin of the feed, required for inter-agent referencing."
         },
         "description": {
           "type": "string"
@@ -27,8 +27,18 @@
         },
         "lang": {
           "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
-      }
+      },
+      "required": [
+        "title",
+        "origin"
+      ]
     },
     "prompts": {
       "type": "array",
@@ -37,7 +47,7 @@
         "properties": {
           "intent": {
             "type": "string",
-            "__comment": "Intent must be declared in each prompt for agent-routing clarity."
+            "description": "Intent should be declared for agent-routing clarity."
           },
           "keywords": {
             "type": "array",
@@ -47,9 +57,14 @@
           },
           "description": {
             "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
           }
-        },
-        "required": []
+        }
       }
     },
     "capabilities": {
@@ -68,6 +83,18 @@
           },
           "description": {
             "type": "string"
+          },
+          "input_schema": {
+            "type": "object"
+          },
+          "requires_user_consent": {
+            "type": "boolean"
+          },
+          "audience": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       }
@@ -82,7 +109,11 @@
     "summary": {
       "type": "string"
     },
-    "tags": {
+    "intent": {
+      "type": "object",
+      "description": "Purpose and expected interactions"
+    },
+    "audience": {
       "type": "array",
       "items": {
         "type": "string"
@@ -96,16 +127,26 @@
           "items": {
             "type": "string"
           },
-          "__comment": "List of top-level blocks that are signed. ['all'] is recommended for most feeds."
+          "description": "List of top-level blocks that are signed. ['all'] is recommended for most feeds."
+        },
+        "algorithm": {
+          "type": "string",
+          "description": "Cryptographic algorithm (e.g., ed25519)"
+        },
+        "canonicalization": {
+          "type": "string",
+          "format": "uri",
+          "description": "Canonicalization method URL"
+        },
+        "public_key_hint": {
+          "type": "string",
+          "format": "uri",
+          "description": "Where to find the public key"
         },
         "scope": {
           "type": "string"
         },
         "certifier": {
-          "type": "string",
-          "format": "uri"
-        },
-        "public_key_hint": {
           "type": "string",
           "format": "uri"
         }
@@ -114,18 +155,9 @@
     "signature": {
       "type": "object",
       "properties": {
-        "algorithm": {
-          "type": "string"
-        },
         "value": {
-          "type": "string"
-        },
-        "canonicalization": {
-          "type": "string"
-        },
-        "public_key_hint": {
           "type": "string",
-          "format": "uri"
+          "description": "Base64-encoded signature"
         },
         "created_at": {
           "type": "string",
@@ -137,6 +169,9 @@
       "type": "object",
       "properties": {
         "certifier": {
+          "type": "string"
+        },
+        "level": {
           "type": "string"
         },
         "targets": {
@@ -161,54 +196,25 @@
         }
       }
     },
-    "flags": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string"
-          },
-          "submitted_by": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "source": {
-            "type": "string",
-            "format": "uri"
-          },
-          "date": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      }
-    },
     "agent_behavior": {
       "type": "object"
     },
     "agent_guidance": {
-      "type": "object"
-    },
-    "audience": {
-      "type": "array",
-      "items": {
-        "type": "string"
+      "type": "object",
+      "properties": {
+        "interaction_tone": {
+          "type": "string"
+        },
+        "consent_hint": {
+          "type": "string"
+        },
+        "risk_tolerance": {
+          "type": "string"
+        },
+        "fallback_behavior": {
+          "type": "string"
+        }
       }
-    },
-    "session_behavior": {
-      "type": "string"
-    },
-    "risk_score": {
-      "type": "number"
-    },
-    "safety_tier": {
-      "type": "string"
     },
     "attachments": {
       "type": "array"
@@ -221,5 +227,5 @@
     "feed_type",
     "metadata"
   ],
-  "description": "More tolerant schema for drafts, prompts, partial exports."
+  "description": "More tolerant schema for drafts and prototypes - v1.1 structure with corrected trust/signature blocks"
 }

@@ -1,0 +1,21 @@
+
+{
+  "feed_type": "mcp",
+  "metadata": {
+    "title": "Test Feed for Signature Demo",
+    "description": "Basic example feed to demonstrate signing workflow",
+    "version": "1.0",
+    "author": "Signature Demo"
+  },
+  "data": {
+    "message": "Hello, world!",
+    "timestamp": "2025-06-13T10:00:00Z",
+    "test_data": {
+      "numbers": [1, 2, 3],
+      "boolean": true,
+      "nested": {
+        "key": "value"
+      }
+    }
+  }
+}

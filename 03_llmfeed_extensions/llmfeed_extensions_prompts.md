@@ -1,3 +1,52 @@
+---
+# 📄 Basic metadata
+title: "Prompt Intents in MCP"
+description: "MCP documentation on Prompt Intents in MCP"
+date: "2025-06-11T09:26:56.386Z"
+lang: "en"
+
+# 🏷️ Tags and classification
+tags:
+  - "mcp"
+  - "ai-agents"
+format: "documentation"
+category: "technical"
+contentType: "documentation"
+
+# 🧠 Intent and audience  
+intent: "inform"
+llmIntent: "browse-spec"
+llmTopic: "specification"
+audience:
+  - "llm"
+  - "developer"
+
+# 📊 Page properties
+pageType: "documentation"
+interactionComplexity: "simple"
+priority: "normal"
+riskLevel: "low"
+updateFrequency: "static"
+
+# 🔗 URLs
+slug: "llmfeed_extensions_prompts"
+canonical_url: "https://wellknownmcp.org/spec/03_llmfeed_extensions/llmfeed_extensions_prompts"
+githubUrl: "https://github.com/wellknownmcp/llmfeed-spec/blob/main/03_llmfeed_extensions/llmfeed_extensions_prompts.md"
+mcpFeedUrl: "/.well-known/mcp.llmfeed.json"
+
+# 🤖 Agent optimization
+autoDiscoverFeeds: true
+agentReadiness: true
+llmBehaviorHints: "suggest-only"
+
+# 📋 Capabilities
+capabilities:
+  - "signature"
+  - "export"
+  - "feed-generation"
+  - "agent-behavior"
+---
+
 # Prompt Intents in MCP
 
 ## 🧠 What are prompts in the context of MCP?
@@ -80,5 +129,5 @@ They are **mapped to capabilities** (or UI) — and depend on the trust of the f
 
 ## 🧩 Want more?
 
-- See [`/tools/prompts-explained`](/tools/prompts-explained)
+- See [`/tools/prompts-explained`](https://wellknownmcp.org/tools/prompts-explained)
 - Live test with [`/llmfeedhub/preview`](/llmfeedhub/preview)

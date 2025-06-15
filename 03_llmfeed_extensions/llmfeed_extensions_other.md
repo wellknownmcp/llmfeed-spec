@@ -1,3 +1,51 @@
+---
+# 📄 Basic metadata
+title: "� LLMFeed Extensions"
+description: "MCP documentation on � LLMFeed Extensions"
+date: "2025-06-11T09:26:56.377Z"
+lang: "en"
+
+# 🏷️ Tags and classification
+tags:
+  - "mcp"
+  - "ai-agents"
+format: "documentation"
+category: "technical"
+contentType: "documentation"
+
+# 🧠 Intent and audience  
+intent: "inform"
+llmIntent: "browse-spec"
+llmTopic: "specification"
+audience:
+  - "llm"
+  - "developer"
+
+# 📊 Page properties
+pageType: "documentation"
+interactionComplexity: "simple"
+priority: "normal"
+riskLevel: "low"
+updateFrequency: "static"
+
+# 🔗 URLs
+slug: "llmfeed_extensions_other"
+canonical_url: "https://wellknownmcp.org/spec/03_llmfeed_extensions/llmfeed_extensions_other"
+githubUrl: "https://github.com/wellknownmcp/llmfeed-spec/blob/main/03_llmfeed_extensions/llmfeed_extensions_other.md"
+mcpFeedUrl: "/.well-known/mcp.llmfeed.json"
+
+# 🤖 Agent optimization
+autoDiscoverFeeds: true
+agentReadiness: true
+llmBehaviorHints: "suggest-only"
+
+# 📋 Capabilities
+capabilities:
+  - "verification"
+  - "feed-generation"
+  - "agent-behavior"
+---
+
 # 🧩 LLMFeed Extensions
 
 This document lists optional fields, experimental structures, and advanced practices that extend the core LLMFeed protocol.
@@ -89,8 +137,8 @@ Or create a separate `sandbox-policy.llmfeed.json`.
 
 ## 📚 Related
 
-- [`llmfeed.md`](./llmfeed.md)
-- [`agent-behaviour`](/tools/agent-behaviour)
+- [`llmfeed.md`](../01_llmfeed/llmfeed.md)
+- [`agent-behaviour`](../04_agent-behavior/agent-behavior.md)
 - [`feedtype_manifesto.md`](./feedtype_manifesto.md)
 - [`feedtype_capabilities.md`](./feedtype_capabilities.md)
 - [`feedtype_llm-index.md`](./feedtype_llm-index.md)

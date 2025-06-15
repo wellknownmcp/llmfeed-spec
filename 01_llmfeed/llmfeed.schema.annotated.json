@@ -1,56 +1,108 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "LLMFeed V2",
+  "title": "LLMFeed V1.1 Annotated Schema",
   "type": "object",
+  "description": "Complete LLMFeed schema with v1.1 trust/signature structure - includes detailed annotations for implementation guidance",
   "properties": {
     "feed_type": {
       "type": "string",
-      "__comment": "Mandatory. Should be one of: export, mcp, prompt, credential, etc."
+      "__comment": "MANDATORY. Defines the purpose and structure of this feed. Common values: 'mcp' (site description), 'export' (page/content sharing), 'prompt' (reusable prompts), 'capabilities' (API functions), 'session' (conversation context), 'credential' (auth tokens), 'pricing' (cost information)."
     },
     "metadata": {
       "type": "object",
+      "__comment": "MANDATORY. Core descriptive information - this block is almost always included in signed_blocks for verification.",
       "properties": {
         "title": {
-          "type": "string"
+          "type": "string",
+          "__comment": "Human-readable name for this feed. Used by agents for context and humans for recognition."
         },
         "origin": {
           "type": "string",
           "format": "uri",
-          "__comment": "URL origin of the feed, required for inter-agent referencing."
+          "__comment": "CRITICAL: The authoritative source URL. Required for inter-agent referencing, trust verification, and preventing impersonation. Must be https:// for production feeds."
         },
         "description": {
-          "type": "string"
+          "type": "string",
+          "__comment": "Detailed explanation of what this feed contains and how it should be used by agents."
         },
         "generated_at": {
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "__comment": "REQUIRED since v1.1. When this feed was created/last updated. Critical for cache invalidation and freshness assessment. Format: ISO 8601 (2025-06-13T10:30:00Z)."
         },
         "lang": {
-          "type": "string"
+          "type": "string",
+          "__comment": "Primary language code (ISO 639-1). Helps agents choose appropriate processing methods."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "__comment": "Classification keywords for discovery and filtering. Examples: ['healthcare', 'booking', 'certified', 'beta']."
+        },
+        "version": {
+          "type": "string",
+          "__comment": "Feed version for tracking updates. Useful for caching and change detection."
         }
       },
       "required": [
         "title",
-        "origin"
-      ]
+        "origin",
+        "generated_at"
+      ],
+      "__comment": "generated_at is now required (v1.1+ change from v1.0 where it was optional)"
+    },
+    "intent": {
+      "type": "object",
+      "__comment": "NEW in v1.1. Declares the purpose and expected agent interactions. Helps agents understand what they should do with this feed.",
+      "properties": {
+        "primary": {
+          "type": "string",
+          "__comment": "Main purpose: 'inform', 'enable_action', 'provide_context', 'authenticate', etc."
+        },
+        "secondary": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "__comment": "Additional use cases this feed supports."
+        },
+        "context": {
+          "type": "string",
+          "__comment": "When/where this feed is most relevant."
+        }
+      }
     },
     "prompts": {
       "type": "array",
+      "__comment": "Reusable prompt templates for specific interactions. Each prompt should have a clear intent for agent routing.",
       "items": {
         "type": "object",
         "properties": {
           "intent": {
             "type": "string",
-            "__comment": "Intent must be declared in each prompt for agent-routing clarity."
+            "__comment": "CRITICAL: What this prompt is designed to accomplish. Used by agents for routing and selection. Examples: 'greeting', 'error_handling', 'data_analysis'."
           },
           "keywords": {
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "__comment": "Trigger words or phrases that indicate when this prompt is relevant."
           },
           "description": {
-            "type": "string"
+            "type": "string",
+            "__comment": "Human-readable explanation of when and how to use this prompt."
+          },
+          "content": {
+            "type": "string",
+            "__comment": "The actual prompt text. Can include placeholders like {{user_name}} or {{context}}."
+          },
+          "role": {
+            "type": "string",
+            "enum": ["system", "user", "assistant"],
+            "__comment": "OpenAI-compatible role designation for chat-based interactions."
           }
         },
         "required": [
@@ -60,22 +112,74 @@
     },
     "capabilities": {
       "type": "array",
+      "__comment": "ENHANCED in v1.1. Callable functions/APIs that agents can invoke. Each capability must provide enough information for safe autonomous use.",
       "items": {
         "type": "object",
         "properties": {
           "name": {
-            "type": "string"
+            "type": "string",
+            "__comment": "Function name - should be camelCase and descriptive. Examples: 'bookAppointment', 'checkStatus', 'sendNotification'."
           },
           "method": {
-            "type": "string"
+            "type": "string",
+            "enum": ["GET", "POST", "PUT", "DELETE", "PATCH"],
+            "__comment": "HTTP method. POST for actions with side effects, GET for queries."
           },
           "path": {
-            "type": "string"
+            "type": "string",
+            "__comment": "API endpoint path. Can include URL parameters like '/api/users/{userId}/appointments'."
           },
           "description": {
-            "type": "string"
+            "type": "string",
+            "__comment": "Clear explanation of what this capability does and when agents should use it."
+          },
+          "input_schema": {
+            "type": "object",
+            "__comment": "NEW: Defines required and optional parameters for input validation.",
+            "properties": {
+              "required": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "__comment": "Field names that must be provided. Example: ['patient_id', 'appointment_date']."
+              },
+              "optional": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "__comment": "Field names that can be provided. Example: ['notes', 'preferred_time', 'reminder_enabled']."
+              }
+            }
+          },
+          "requires_user_consent": {
+            "type": "boolean",
+            "__comment": "NEW: Whether agents must ask user permission before calling this capability. True for actions with significant consequences."
+          },
+          "audience": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "__comment": "NEW: Who can use this capability. Examples: ['llm', 'certified_medical_agent', 'developer']. Enables access control."
+          },
+          "rate_limit": {
+            "type": "string",
+            "__comment": "NEW: Usage restrictions. Examples: '5/min', '100/hour', '1000/day'. Helps agents avoid hitting limits."
+          },
+          "llm_trust_level_required": {
+            "type": "string",
+            "enum": ["any-agent", "certified-only", "high-trust"],
+            "__comment": "NEW: Minimum trust level required to use this capability. Enables graduated access based on agent reputation."
           }
-        }
+        },
+        "required": [
+          "name",
+          "method", 
+          "path",
+          "description"
+        ]
       }
     },
     "data": {
@@ -83,149 +187,191 @@
         "object",
         "array",
         "string"
-      ]
+      ],
+      "__comment": "The actual content/payload of this feed. Can be structured data, HTML content, file references, or any JSON-serializable data."
     },
     "summary": {
-      "type": "string"
+      "type": "string",
+      "__comment": "Brief overview of the feed contents. Useful for quick agent assessment without processing the full data block."
     },
-    "tags": {
+    "audience": {
       "type": "array",
       "items": {
-        "type": "string"
-      }
+        "type": "string",
+        "enum": ["llm", "developer", "human", "agent", "certified_medical_agent", "business_user"]
+      },
+      "__comment": "Target consumers of this feed. Enables filtering and appropriate presentation. Multiple audiences are common."
     },
     "trust": {
       "type": "object",
+      "__comment": "MAJOR CHANGE in v1.1: Now contains cryptographic metadata that was previously in signature block. This ensures the trust parameters themselves are signed and verified.",
       "properties": {
         "signed_blocks": {
           "type": "array",
           "items": {
             "type": "string"
           },
-          "__comment": "List of top-level blocks that are signed. ['all'] is recommended for most feeds."
+          "__comment": "CRITICAL: List of top-level JSON keys that are covered by the signature. ['all'] means everything except 'signature' itself. Example: ['feed_type', 'metadata', 'trust', 'data']. Order doesn't matter for signing but list must be accurate."
         },
-        "scope": {
-          "type": "string"
-        },
-        "certifier": {
+        "algorithm": {
           "type": "string",
-          "format": "uri"
+          "enum": ["ed25519"],
+          "__comment": "V1.1 CHANGE: Moved from signature block to trust block. Cryptographic algorithm used. ed25519 is strongly recommended for performance and security."
+        },
+        "canonicalization": {
+          "type": "string",
+          "format": "uri",
+          "__comment": "V1.1 CHANGE: Moved from signature block to trust block. URL defining the exact JSON canonicalization method. MUST be: 'https://llmca.org/mcp-canonical-json/v1' for LLMCA compatibility."
         },
         "public_key_hint": {
           "type": "string",
-          "format": "uri"
+          "format": "uri",
+          "__comment": "URL where the public key can be fetched for signature verification. Must be HTTPS. Example: 'https://yoursite.com/.well-known/public.pem'."
+        },
+        "scope": {
+          "type": "string",
+          "enum": ["partial", "full"],
+          "__comment": "'partial' means only signed_blocks are verified, 'full' means entire feed structure is attested (rare)."
+        },
+        "certifier": {
+          "type": "string",
+          "format": "uri",
+          "__comment": "Optional: URL of trusted third party that has certified this feed. Examples: 'https://llmca.org', 'https://healthcare-authority.gov'."
         }
-      }
+      },
+      "required": [
+        "signed_blocks"
+      ],
+      "__comment": "Trust block itself should almost always be included in signed_blocks to prevent tampering with signing metadata."
     },
     "signature": {
       "type": "object",
+      "__comment": "V1.1 CHANGE: Simplified to only contain the cryptographic result and timestamp. All signing metadata moved to trust block.",
       "properties": {
-        "algorithm": {
-          "type": "string"
-        },
         "value": {
-          "type": "string"
-        },
-        "canonicalization": {
-          "type": "string"
-        },
-        "public_key_hint": {
           "type": "string",
-          "format": "uri"
+          "__comment": "Base64-encoded signature of the canonicalized signed_blocks. This is the actual cryptographic proof."
         },
         "created_at": {
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "__comment": "When the signature was created. Important for key rotation and freshness validation."
         }
-      }
+      },
+      "required": [
+        "value",
+        "created_at"
+      ],
+      "__comment": "Signature block is never included in signed_blocks (would be circular). If trust block exists, signature should too."
     },
     "certification": {
       "type": "object",
+      "__comment": "Optional third-party endorsement. Certifier signs either the original blocks or the signature itself to provide additional trust layer.",
       "properties": {
         "certifier": {
-          "type": "string"
+          "type": "string",
+          "format": "uri",
+          "__comment": "URL of the certifying authority. Should match a known trusted certifier like 'https://llmca.org'."
+        },
+        "level": {
+          "type": "string",
+          "enum": ["bronze", "silver", "gold"],
+          "__comment": "Certification tier indicating thoroughness of validation. Gold typically means full audit."
         },
         "targets": {
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "__comment": "What the certifier is signing. Can be original blocks ['metadata', 'trust'] or the signature itself ['signature']."
         },
         "value": {
-          "type": "string"
+          "type": "string",
+          "__comment": "Base64-encoded certification signature from the certifier's private key."
         },
         "algorithm": {
-          "type": "string"
+          "type": "string",
+          "enum": ["ed25519"],
+          "__comment": "Algorithm used by certifier (may differ from original signer)."
+        },
+        "public_key_hint": {
+          "type": "string",
+          "format": "uri",
+          "__comment": "Where to find certifier's public key for verification."
         },
         "issued_at": {
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "__comment": "When certification was issued."
         },
         "expires_at": {
           "type": "string",
-          "format": "date-time"
-        }
-      }
-    },
-    "flags": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string"
-          },
-          "submitted_by": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "source": {
-            "type": "string",
-            "format": "uri"
-          },
-          "date": {
-            "type": "string",
-            "format": "date-time"
-          }
+          "format": "date-time",
+          "__comment": "When certification expires. Agents should re-verify after this date."
         }
       }
     },
     "agent_behavior": {
-      "type": "object"
+      "type": "object",
+      "__comment": "Broad behavioral guidance for agents processing this feed. Less structured than agent_guidance."
     },
     "agent_guidance": {
-      "type": "object"
-    },
-    "audience": {
-      "type": "array",
-      "items": {
-        "type": "string"
+      "type": "object",
+      "__comment": "ENHANCED in v1.1: Structured behavioral hints for agent interactions. Helps ensure appropriate agent behavior.",
+      "properties": {
+        "interaction_tone": {
+          "type": "string",
+          "enum": ["professional", "casual", "formal", "friendly", "clinical"],
+          "__comment": "How agents should communicate when using this feed's information."
+        },
+        "consent_hint": {
+          "type": "string",
+          "__comment": "Guidance on when/how to ask for user permission. Example: 'Ask user before accessing sensitive health data'."
+        },
+        "risk_tolerance": {
+          "type": "string",
+          "enum": ["low", "medium", "high"],
+          "__comment": "How cautious agents should be. 'low' means confirm before any significant actions."
+        },
+        "fallback_behavior": {
+          "type": "string",
+          "__comment": "What to do if agent encounters errors or uncertainty. Example: 'escalate to human support'."
+        },
+        "proactive_offer": {
+          "type": "string",
+          "__comment": "What agents should suggest when they encounter this feed."
+        },
+        "immediate_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "__comment": "List of actions agents can take immediately with this feed."
+        },
+        "conversation_starter": {
+          "type": "string",
+          "__comment": "How agents should introduce capabilities from this feed to users."
+        }
       }
     },
-    "session_behavior": {
-      "type": "string"
-    },
-    "risk_score": {
-      "type": "number"
-    },
-    "safety_tier": {
-      "type": "string"
-    },
     "attachments": {
-      "type": "array"
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "__comment": "Additional files or resources referenced by this feed. Structure depends on implementation."
     },
     "examples": {
-      "type": "array"
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "__comment": "Sample inputs/outputs or usage examples to help agents understand how to use this feed effectively."
     }
   },
   "required": [
     "feed_type",
     "metadata"
   ],
-  "__comment": "This schema validates full .llmfeed.json files according to MCP v1.0 expectations."
+  "__comment": "V1.1 MIGRATION NOTES: (1) generated_at now required in metadata, (2) trust/signature structure changed - algorithm/canonicalization moved to trust block, (3) capabilities significantly enhanced with consent/audience/rate_limit fields, (4) agent_guidance more structured. Use migration script to update v1.0 feeds."
 }

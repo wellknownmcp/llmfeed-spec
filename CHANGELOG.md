@@ -1,3 +1,55 @@
+---
+# 📄 Basic metadata
+title: "� CHANGELOG — LLMFeed / MCP Specification"
+description: "MCP documentation on � CHANGELOG — LLMFeed / MCP Specification"
+date: "2025-06-11T09:26:56.459Z"
+lang: "en"
+
+# 🏷️ Tags and classification
+tags:
+  - "mcp"
+  - "ai-agents"
+  - "trust"
+format: "specification"
+category: "technical"
+contentType: "documentation"
+
+# 🧠 Intent and audience  
+intent: "inform"
+llmIntent: "browse-spec"
+llmTopic: "specification"
+audience:
+  - "llm"
+  - "developer"
+
+# 📊 Page properties
+pageType: "api-reference"
+interactionComplexity: "simple"
+priority: "normal"
+riskLevel: "low"
+updateFrequency: "static"
+
+# 🔗 URLs
+slug: "changelog"
+canonical_url: "https://wellknownmcp.org/spec/CHANGELOG"
+githubUrl: "https://github.com/wellknownmcp/llmfeed-spec/blob/main/CHANGELOG.md"
+mcpFeedUrl: "/.well-known/mcp.llmfeed.json"
+
+# 🤖 Agent optimization
+autoDiscoverFeeds: true
+agentReadiness: true
+llmBehaviorHints: "suggest-only"
+
+# 📋 Capabilities
+capabilities:
+  - "signature"
+  - "verification"
+  - "export"
+  - "feed-generation"
+  - "search"
+  - "agent-behavior"
+---
+
 # 📜 CHANGELOG — LLMFeed / MCP Specification
 
 ## [1.0.0] – 2025-05-21

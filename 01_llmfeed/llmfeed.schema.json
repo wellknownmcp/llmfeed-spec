@@ -1,10 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "LLMFeed V2",
+  "title": "LLMFeed V1.1 (Corrected)",
   "type": "object",
   "properties": {
     "feed_type": {
-      "type": "string"
+      "type": "string",
+      "description": "Mandatory. Should be one of: export, mcp, prompt, credential, capabilities, etc."
     },
     "metadata": {
       "type": "object",
@@ -14,23 +15,50 @@
         },
         "origin": {
           "type": "string",
-          "format": "uri"
+          "format": "uri",
+          "description": "URL origin of the feed, required for inter-agent referencing."
         },
         "description": {
           "type": "string"
         },
         "generated_at": {
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "description": "When this feed was generated"
         },
         "lang": {
           "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "required": [
         "title",
-        "origin"
+        "origin",
+        "generated_at"
       ]
+    },
+    "intent": {
+      "type": "object",
+      "description": "Declares purpose and expected interactions",
+      "properties": {
+        "primary": {
+          "type": "string"
+        },
+        "secondary": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "context": {
+          "type": "string"
+        }
+      }
     },
     "prompts": {
       "type": "array",
@@ -38,7 +66,8 @@
         "type": "object",
         "properties": {
           "intent": {
-            "type": "string"
+            "type": "string",
+            "description": "Intent must be declared in each prompt for agent-routing clarity."
           },
           "keywords": {
             "type": "array",
@@ -48,6 +77,13 @@
           },
           "description": {
             "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": ["system", "user", "assistant"]
           }
         },
         "required": [
@@ -64,15 +100,55 @@
             "type": "string"
           },
           "method": {
-            "type": "string"
+            "type": "string",
+            "enum": ["GET", "POST", "PUT", "DELETE", "PATCH"]
           },
           "path": {
             "type": "string"
           },
           "description": {
             "type": "string"
+          },
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "required": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "optional": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "requires_user_consent": {
+            "type": "boolean"
+          },
+          "audience": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rate_limit": {
+            "type": "string"
+          },
+          "llm_trust_level_required": {
+            "type": "string",
+            "enum": ["any-agent", "certified-only", "high-trust"]
           }
-        }
+        },
+        "required": [
+          "name",
+          "method", 
+          "path",
+          "description"
+        ]
       }
     },
     "data": {
@@ -85,10 +161,11 @@
     "summary": {
       "type": "string"
     },
-    "tags": {
+    "audience": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "string",
+        "enum": ["llm", "developer", "human", "agent", "certified_medical_agent"]
       }
     },
     "trust": {
@@ -98,48 +175,65 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "description": "List of top-level blocks that are signed. ['all'] covers all blocks except signature itself."
+        },
+        "algorithm": {
+          "type": "string",
+          "enum": ["ed25519"],
+          "description": "Cryptographic algorithm used for signing"
+        },
+        "canonicalization": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL defining the canonicalization method",
+          "default": "https://llmca.org/mcp-canonical-json/v1"
+        },
+        "public_key_hint": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL where the public key can be fetched"
         },
         "scope": {
-          "type": "string"
+          "type": "string",
+          "enum": ["partial", "full"]
         },
         "certifier": {
           "type": "string",
           "format": "uri"
-        },
-        "public_key_hint": {
-          "type": "string",
-          "format": "uri"
         }
-      }
+      },
+      "required": [
+        "signed_blocks"
+      ]
     },
     "signature": {
       "type": "object",
       "properties": {
-        "algorithm": {
-          "type": "string"
-        },
         "value": {
-          "type": "string"
-        },
-        "canonicalization": {
-          "type": "string"
-        },
-        "public_key_hint": {
           "type": "string",
-          "format": "uri"
+          "description": "Base64-encoded signature"
         },
         "created_at": {
           "type": "string",
           "format": "date-time"
         }
-      }
+      },
+      "required": [
+        "value",
+        "created_at"
+      ]
     },
     "certification": {
       "type": "object",
       "properties": {
         "certifier": {
-          "type": "string"
+          "type": "string",
+          "format": "uri"
+        },
+        "level": {
+          "type": "string",
+          "enum": ["bronze", "silver", "gold"]
         },
         "targets": {
           "type": "array",
@@ -151,7 +245,12 @@
           "type": "string"
         },
         "algorithm": {
-          "type": "string"
+          "type": "string",
+          "enum": ["ed25519"]
+        },
+        "public_key_hint": {
+          "type": "string",
+          "format": "uri"
         },
         "issued_at": {
           "type": "string",
@@ -163,64 +262,57 @@
         }
       }
     },
-    "flags": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "type": {
+    "agent_behavior": {
+      "type": "object",
+      "description": "Defines how agents should behave when processing this feed"
+    },
+    "agent_guidance": {
+      "type": "object",
+      "properties": {
+        "interaction_tone": {
+          "type": "string",
+          "enum": ["professional", "casual", "formal", "friendly"]
+        },
+        "consent_hint": {
+          "type": "string"
+        },
+        "risk_tolerance": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "fallback_behavior": {
+          "type": "string"
+        },
+        "proactive_offer": {
+          "type": "string"
+        },
+        "immediate_actions": {
+          "type": "array",
+          "items": {
             "type": "string"
-          },
-          "submitted_by": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "source": {
-            "type": "string",
-            "format": "uri"
-          },
-          "date": {
-            "type": "string",
-            "format": "date-time"
           }
+        },
+        "conversation_starter": {
+          "type": "string"
         }
       }
     },
-    "agent_behavior": {
-      "type": "object"
-    },
-    "agent_guidance": {
-      "type": "object"
-    },
-    "audience": {
+    "attachments": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "object"
       }
     },
-    "session_behavior": {
-      "type": "string"
-    },
-    "risk_score": {
-      "type": "number"
-    },
-    "safety_tier": {
-      "type": "string"
-    },
-    "attachments": {
-      "type": "array"
-    },
     "examples": {
-      "type": "array"
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
     }
   },
   "required": [
     "feed_type",
     "metadata"
-  ]
+  ],
+  "description": "LLMFeed schema aligned with specification v1.1+ - corrected trust/signature structure and enhanced capabilities"
 }

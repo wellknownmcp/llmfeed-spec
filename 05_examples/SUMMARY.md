@@ -1,3 +1,49 @@
+---
+# 📄 Basic metadata
+title: "MCP Examples — Personas & Industries"
+description: "MCP documentation on MCP Examples — Personas & Industries"
+date: "2025-06-11T09:26:56.420Z"
+lang: "en"
+
+# 🏷️ Tags and classification
+tags:
+  - "mcp"
+  - "ai-agents"
+format: "documentation"
+category: "technical"
+contentType: "documentation"
+
+# 🧠 Intent and audience  
+intent: "inform"
+llmIntent: "browse-spec"
+llmTopic: "specification"
+audience:
+  - "llm"
+  - "developer"
+
+# 📊 Page properties
+pageType: "documentation"
+interactionComplexity: "simple"
+priority: "normal"
+riskLevel: "low"
+updateFrequency: "static"
+
+# 🔗 URLs
+slug: "summary"
+canonical_url: "https://wellknownmcp.org/spec/05_examples/SUMMARY"
+githubUrl: "https://github.com/wellknownmcp/llmfeed-spec/blob/main/05_examples/SUMMARY.md"
+mcpFeedUrl: "/.well-known/mcp.llmfeed.json"
+
+# 🤖 Agent optimization
+autoDiscoverFeeds: true
+agentReadiness: true
+llmBehaviorHints: "suggest-only"
+
+# 📋 Capabilities
+capabilities:
+  - "feed-generation"
+---
+
 # MCP Examples — Personas & Industries
 
 This folder provides ready-to-use `.llmfeed.json` examples designed to illustrate the adoption of MCP across multiple sectors and use cases.
