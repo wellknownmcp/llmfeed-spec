@@ -1,0 +1,33 @@
+{
+  "generated_at": "2025-06-20T07:24:54.815Z",
+  "content_hash": "fadbd506bfaa1dc7107a337a38253ce7",
+  "file_stats": [
+    {
+      "path": "enterprise-security-roadmap.md",
+      "size": 11977,
+      "mtime": 1750170273820
+    },
+    {
+      "path": "Github like and LLM-Compatible Feed Export.md",
+      "size": 14147,
+      "mtime": 1749651700249
+    },
+    {
+      "path": "llm-guidance-optimization-research.md",
+      "size": 13489,
+      "mtime": 1749715190888
+    },
+    {
+      "path": "llm-token-optimization-research.md",
+      "size": 15453,
+      "mtime": 1750091209283
+    },
+    {
+      "path": "roadmap-progressive-integration.md",
+      "size": 4628,
+      "mtime": 1750170337426
+    }
+  ],
+  "total_files": 5,
+  "generator_version": "2.0.0"
+}

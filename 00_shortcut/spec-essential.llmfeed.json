@@ -35,8 +35,8 @@
       "business-owner",
       "technical-writer"
     ],
-    "generated_at": "2025-06-15T15:56:06.052504+00:00",
-    "build_id": "20250615_155606",
+    "generated_at": "2025-06-20T07:24:51.859539+00:00",
+    "build_id": "20250620_072451",
     "spec_version": "1.0.0",
     "version": "2.0",
     "lang": "en"
@@ -93,11 +93,6 @@
       {
         "path": "02_llmfeed_feedtype/llmfeed_feedtype_credential.md",
         "title": "Feed Type: `credential.llmfeed.json`",
-        "section": "implementation"
-      },
-      {
-        "path": "02_llmfeed_feedtype/llmfeed_feedtype_export.md",
-        "title": "Feed Type: `export.llmfeed.json`",
         "section": "implementation"
       },
       {
@@ -231,6 +226,11 @@
         "section": "foundations"
       },
       {
+        "path": "02_llmfeed_feedtype/llmfeed_feedtype_export.md",
+        "title": "📄 Basic metadata",
+        "section": "implementation"
+      },
+      {
         "path": "03_llmfeed_extensions/llmfeed_extensions_other.md",
         "title": "🧩 LLMFeed Extensions",
         "section": "technical"
@@ -246,6 +246,11 @@
         "path": "04_agent-behavior/agent-behavior_cache-policy.md",
         "title": "🧠 Agent Behaviour: Cache Policy",
         "section": "foundations"
+      },
+      {
+        "path": "02_llmfeed_feedtype/llmfeed_feedtype_export.md",
+        "title": "📄 Basic metadata",
+        "section": "implementation"
       }
     ],
     "core": [
@@ -323,6 +328,18 @@
         "section": "foundations"
       }
     ],
+    "when": [
+      {
+        "path": "04_agent-behavior/agent-behavior_human-consent.md",
+        "title": "🙋 Agent Behaviour: Human Consent",
+        "section": "foundations"
+      },
+      {
+        "path": "02_llmfeed_feedtype/llmfeed_feedtype_export.md",
+        "title": "📄 Basic metadata",
+        "section": "implementation"
+      }
+    ],
     "example": [
       {
         "path": "04_agent-behavior/agent-behavior_human-consent.md",
@@ -352,11 +369,6 @@
         "section": "foundations"
       },
       {
-        "path": "02_llmfeed_feedtype/llmfeed_feedtype_llm-index.md",
-        "title": "Feed Type: `llm-index.llmfeed.json`",
-        "section": "implementation"
-      },
-      {
         "path": "03_llmfeed_extensions/llmfeed_extensions_api.md",
         "title": "Extension: API Feed Handling",
         "section": "technical"
@@ -371,11 +383,6 @@
       {
         "path": "02_llmfeed_feedtype/llmfeed_feedtype_capabilities.md",
         "title": "Feed Type: `capabilities.llmfeed.json`",
-        "section": "implementation"
-      },
-      {
-        "path": "02_llmfeed_feedtype/llmfeed_feedtype_llm-index.md",
-        "title": "Feed Type: `llm-index.llmfeed.json`",
         "section": "implementation"
       },
       {
@@ -459,11 +466,6 @@
         "section": "foundations"
       },
       {
-        "path": "02_llmfeed_feedtype/llmfeed_feedtype_export.md",
-        "title": "Feed Type: `export.llmfeed.json`",
-        "section": "implementation"
-      },
-      {
         "path": "02_llmfeed_feedtype/llmfeed_feedtype_pricing.md",
         "title": "Feed Type: `pricing.llmfeed.json`",
         "section": "implementation"
@@ -541,11 +543,6 @@
       {
         "path": "02_llmfeed_feedtype/llmfeed_feedtype_agent-economy.md",
         "title": "Feed Type: `agent-economy.llmfeed.json`",
-        "section": "implementation"
-      },
-      {
-        "path": "02_llmfeed_feedtype/llmfeed_feedtype_export.md",
-        "title": "Feed Type: `export.llmfeed.json`",
         "section": "implementation"
       },
       {
@@ -629,33 +626,16 @@
         "section": "technical"
       }
     ],
-    "canonical": [
+    "export": [
       {
         "path": "02_llmfeed_feedtype/llmfeed_feedtype_export.md",
-        "title": "Feed Type: `export.llmfeed.json`",
+        "title": "📄 Basic metadata",
         "section": "implementation"
       },
       {
-        "path": "02_llmfeed_feedtype/llmfeed_feedtype_pricing.md",
-        "title": "Feed Type: `pricing.llmfeed.json`",
-        "section": "implementation"
-      },
-      {
-        "path": "02_llmfeed_feedtype/llmfeed_feedtype_prompt.md",
-        "title": "Feed Type: `prompt.llmfeed.json`",
-        "section": "implementation"
-      }
-    ],
-    "generation": [
-      {
-        "path": "02_llmfeed_feedtype/llmfeed_feedtype_export.md",
-        "title": "Feed Type: `export.llmfeed.json`",
-        "section": "implementation"
-      },
-      {
-        "path": "02_llmfeed_feedtype/llmfeed_feedtype_llm-index.md",
-        "title": "Feed Type: `llm-index.llmfeed.json`",
-        "section": "implementation"
+        "path": "06_scripts/export-button/README.md",
+        "title": "ExportToLLMButton – Advanced Export Strategies for LLMFeeds",
+        "section": "technical"
       }
     ],
     "solution": [
@@ -668,6 +648,18 @@
         "path": "03_llmfeed_extensions/llmfeed_extensions_signatures.md",
         "title": "🔐 LLMFeed Signature & Certification — Extended Specification (V2)",
         "section": "technical"
+      }
+    ],
+    "canonical": [
+      {
+        "path": "02_llmfeed_feedtype/llmfeed_feedtype_pricing.md",
+        "title": "Feed Type: `pricing.llmfeed.json`",
+        "section": "implementation"
+      },
+      {
+        "path": "02_llmfeed_feedtype/llmfeed_feedtype_prompt.md",
+        "title": "Feed Type: `prompt.llmfeed.json`",
+        "section": "implementation"
       }
     ],
     "security": [
@@ -724,33 +716,33 @@
       "title": "Core Concepts",
       "count": 17,
       "main_concepts": [
-        "example",
-        "llms",
-        "tldr",
-        "challenge",
-        "mime"
+        "distributed",
+        "trust",
+        "vision",
+        "cache",
+        "identifying"
       ]
     },
     "implementation": {
       "title": "Implementation Guides",
       "count": 11,
       "main_concepts": [
+        "cryptographic",
         "revolutionary",
-        "location",
-        "original",
+        "trust",
         "mobile",
-        "strategy"
+        "revolution"
       ]
     },
     "technical": {
       "title": "Code & Algorithms",
       "count": 13,
       "main_concepts": [
-        "example",
-        "identifier",
-        "modules",
-        "quick",
-        "usage"
+        "anthropics",
+        "fields",
+        "prompts",
+        "export",
+        "revolution"
       ]
     },
     "examples": {
@@ -789,9 +781,9 @@
             "conversation_starter": "Questions about this topic? I can explain with concrete examples and show you how to use it!"
           },
           "cross_references": [
-            ".llmfeed-lite.json",
+            ".llmfeed.v2.json",
             ".llmfeed.json",
-            ".llmfeed.v2.json"
+            ".llmfeed-lite.json"
           ],
           "content_preview": "# 🧾 MIME Type for LLMFeed – `application/llmfeed+json`\n\n## 🎯 Purpose\nDefine and promote a dedicated MIME type for `.llmfeed.json` and `.llmfeed-lite.json` files:\n\n```\nContent-Type: application/llmfeed+json\n```\n\nThis type enables smarter handling of LLM-specific context feeds by:\n- AI agents\n- HTTP A...[full content in complete version]"
         },
@@ -816,10 +808,10 @@
             "conversation_starter": "Want to create your first .llmfeed.json? I can generate a perfect template for your site!"
           },
           "cross_references": [
-            ".mcp.json",
-            "identity.llmfeed.json",
-            "capabilities.llmfeed.json",
             ".llmfeed.json",
+            ".mcp.json",
+            "llmfeed_block-reference.md",
+            "identity.llmfeed.json",
             "session/*.llmfeed.json"
           ],
           "content_preview": "# 📦 What is a `.llmfeed.json`?\n\nA **LLMFeed** is a lightweight, signed and structured JSON file that lets any agent — including LLMs, copilots, and autonomous bots — understand what a website, document, or service is about and how to interact with it **safely and intelligently**.\n\nIt **enhances Anth...[full content in complete version]"
@@ -845,11 +837,11 @@
             "conversation_starter": "Questions about this topic? I can explain with concrete examples and show you how to use it!"
           },
           "cross_references": [
-            "llmfeed_feedtype_export.md",
-            "../02_llmfeed_feedtype/llmfeed_feedtype_export.md",
-            "./llmfeed.md",
+            "llmfeed.md",
             "llmfeed_extensions_signatures.md",
-            "llmfeed.md"
+            "../03_llmfeed_extensions/llmfeed_extensions_signatures.md",
+            "./llmfeed.md",
+            "llmfeed_feedtype_export.md"
           ],
           "content_preview": "# 📦 LLMFeed Canonical Block Reference\n\nThis document provides a **centralized reference** for the standard blocks used in LLMFeed files — whether MCP, Export, Prompt, Credential, Pricing or others.\n\n---\n\n## 🧱 Common Top-Level Blocks\n\n| Block | Description | Required | Used in Feed Types |\n| --------...[full content in complete version]"
         },
@@ -899,11 +891,11 @@
             "conversation_starter": "Ready to make your site agent-friendly? Let's set up your .well-known/ directory!"
           },
           "cross_references": [
+            "/.well-known/capabilities.llmfeed.json",
+            ".mcp.json",
+            "../02_llmfeed_feedtype/llmfeed_feedtype_llm-index.md",
             "/.well-known/prompts/prompt-index.llmfeed.json",
-            "/.well-known/prompts/*.llmfeed.json",
-            "/.well-known/mcp.llmfeed.json",
-            "./llmfeed.md",
-            "/.well-known/capabilities.llmfeed.json"
+            "/.well-known/mcp.llmfeed.json"
           ],
           "content_preview": "# 🌐 Exposing Feeds via `.well-known/` - MCP Progressive Enhancement\n\nThe `.well-known/` directory is the **anchor of discoverability** in the LLMFeed and MCP ecosystem.\n\nIt allows any agent — human, LLM or crawler — to find structured, signed information about your site's purpose, services, pricing,...[full content in complete version]"
         },
@@ -950,10 +942,10 @@
             "conversation_starter": "Designing agent behavior? I can help you create guidance that maximizes user engagement!"
           },
           "cross_references": [
+            "mcp-mode-activation.llmfeed.json",
             "llm-index.json",
             "generate-session-feed.llmfeed.json",
-            "mcp-agent-behavior-override.llmfeed.json",
-            "mcp-mode-activation.llmfeed.json"
+            "mcp-agent-behavior-override.llmfeed.json"
           ],
           "content_preview": "# 🧠 Agent Behavior Specification: Complete Agentic Web Infrastructure\n\n*Advanced behavioral guidelines for LLMs, autonomous agents, and agentic systems interacting with the LLMFeed ecosystem — covering cryptographic trust, privacy-preserving AI, multi-agent workflows, and the emerging agent economy....[full content in complete version]"
         },
@@ -1147,11 +1139,11 @@
             "conversation_starter": "Questions about this topic? I can explain with concrete examples and show you how to use it!"
           },
           "cross_references": [
+            ".llmfeed.json",
+            "ai-developer.llmfeed.json",
             "platform-user-spaces.llmfeed.json",
-            "publisher-session.llmfeed.json",
-            "education-prompt.llmfeed.json",
-            "france-care.mcp.llmfeed.json",
-            ".llmfeed.json"
+            "saas-capabilities.llmfeed.json",
+            "france-care.mcp-lite.llmfeed.json"
           ],
           "content_preview": "# MCP Examples — Personas & Industries\n\nThis folder provides ready-to-use `.llmfeed.json` examples designed to illustrate the adoption of MCP across multiple sectors and use cases.\n\n---\n\n## 🧠 Personas\n\n| File | Description |\n|------------------------------------|-------------|\n| `ai-developer.llmfee...[full content in complete version]"
         },
@@ -1176,9 +1168,9 @@
             "conversation_starter": "Interested in where LLMFeed is heading? I can help you plan a future-proof implementation!"
           },
           "cross_references": [
-            "docs/deployment.md",
+            "examples/auth-flow.md",
             ".llmfeed.json",
-            "examples/auth-flow.md"
+            "docs/deployment.md"
           ],
           "content_preview": "# Repository-Level Feeds for the Distributed Git Ecosystem\n\n## Vision\n\nAs the **Agentic Web** emerges, code repositories become more than storage — they become **structured knowledge sources** that agents can discover, understand, and interact with safely.\n\nLLMFeed enables any Git platform to offer ...[full content in complete version]"
         },
@@ -1204,8 +1196,8 @@
           },
           "cross_references": [
             "agent_guidance_mapping.json",
-            "/07_vision/llm-guidance-optimization-research.md",
-            "spec.llmfeed.json"
+            "spec.llmfeed.json",
+            "/07_vision/llm-guidance-optimization-research.md"
           ],
           "content_preview": "# 🔬 LLM Agent Guidance Research Project\n## Optimizing Proactive Behavior Across Different Language Models\n\n> **Community Research Initiative** - Part of the LLMFeed/MCP Vision & Roadmap\n\n---\n\n## 🎯 Research Hypothesis\n\n**Different LLMs respond distinctly to identical agent guidance prompts, creating ...[full content in complete version]"
         }
@@ -1235,11 +1227,11 @@
             "conversation_starter": "Questions about this topic? I can explain with concrete examples and show you how to use it!"
           },
           "cross_references": [
-            "./llmfeed_feedtype_credential.md",
+            "./llmfeed_feedtype_capabilities.md",
+            "llmfeed_feedtype_credential.md",
+            "llmfeed_feedtype_capabilities.md",
             "llmfeed_feedtype_pricing.md",
-            "agent-economy.llmfeed.json",
-            "./llmfeed_feedtype_pricing.md",
-            "./llmfeed_feedtype_capabilities.md"
+            "./llmfeed_feedtype_pricing.md"
           ],
           "content_preview": "# Feed Type: `agent-economy.llmfeed.json`\n\n## 🚀 Purpose\n\nThis feed type revolutionizes how **AI agents discover, negotiate, and transact value** in an autonomous economy. It enables **dynamic pricing**, **agent-to-agent billing**, **performance-based monetization**, and the world's first **intellige...[full content in complete version]"
         },
@@ -1264,11 +1256,11 @@
             "conversation_starter": "Questions about this topic? I can explain with concrete examples and show you how to use it!"
           },
           "cross_references": [
+            "../03_llmfeed_extensions/llmfeed_extensions_audience.md",
+            "./llmfeed_feedtype_mobile-app.md",
             "../04_agent-behavior/agent-behavior_risk-scoring.md",
-            "./llmfeed_feedtype_credential.md",
-            "capabilities.llmfeed.json",
             "../03_llmfeed_extensions/llmfeed_extensions_api.md",
-            "../03_llmfeed_extensions/llmfeed_extensions_audience.md"
+            "./llmfeed_feedtype_mcp.md"
           ],
           "content_preview": "# Feed Type: `capabilities.llmfeed.json`\n\nThis feed type revolutionizes web interaction by defining **live, executable actions** that agents can autonomously invoke, transforming the web from a collection of pages to navigate into an **intelligent action network** to orchestrate.\n\n## 🚀 The Revolutio...[full content in complete version]"
         },
@@ -1293,23 +1285,23 @@
             "conversation_starter": "Questions about this topic? I can explain with concrete examples and show you how to use it!"
           },
           "cross_references": [
-            "capabilities.llmfeed.json",
             "mcp.llmfeed.json",
-            "credential.llmfeed.json",
-            "pricing.llmfeed.json"
+            "pricing.llmfeed.json",
+            "capabilities.llmfeed.json",
+            "credential.llmfeed.json"
           ],
           "content_preview": "# Feed Type: `credential.llmfeed.json`\n\n## Purpose\n\nThe `credential` feed type defines a **scoped API credential** that allows an agent to access a subset of a service's capabilities with **explicit permissions**, **rate limits**, and **trust boundaries**.\n\nThis feed type revolutionizes API credenti...[full content in complete version]"
         },
         {
           "path": "02_llmfeed_feedtype/llmfeed_feedtype_export.md",
-          "title": "Feed Type: `export.llmfeed.json`",
+          "title": "📄 Basic metadata",
           "concepts": [
-            "purpose",
-            "location",
-            "canonical",
-            "fields",
-            "modes",
-            "generation"
+            "signature",
+            "trust",
+            "sign",
+            "export",
+            "when",
+            "levels"
           ],
           "agent_guidance": {
             "proactive_offer": "I can help you create export feeds for sharing any content with agents",
@@ -1321,24 +1313,24 @@
             "conversation_starter": "Want to share content with agents? Let's create an export feed that packages everything perfectly!"
           },
           "cross_references": [
+            "07_vision/enterprise-security-roadmap.md",
             "llmfeed.md",
+            "llmfeed_feedtype_credential.md",
             "llm-index.llmfeed.json",
-            "feedtype_llm-index.md",
-            "../01_llmfeed/llmfeed.mdllmfeed.md",
             "export.llmfeed.json"
           ],
-          "content_preview": "# Feed Type: `export.llmfeed.json`\n\n## Purpose\n\nThis feed exposes static content to agents — ready for reading, indexing, summarizing or reuse.\n\nUse it for documentation, project metadata, SDKs, FAQs, or structured bundles.\n\n---\n\n## Location\n\nTypical path:\n\n```\n/exports/faq.llmfeed.json\n```\n\nCan be ...[full content in complete version]"
+          "content_preview": "## 🔏 Signature and Trust\n\n### Why Sign Export Feeds?\n\nSignatures provide three critical guarantees:\n\n1. **Ownership**: Proves who created the export\n2. **Integrity**: Ensures content hasn't been tampered with \n3. **Trust**: Allows LLMs and agents to assess reliability\n\n### When to Sign\n\n| Data Type ...[full content in complete version]"
         },
         {
           "path": "02_llmfeed_feedtype/llmfeed_feedtype_llm-index.md",
           "title": "Feed Type: `llm-index.llmfeed.json`",
           "concepts": [
             "purpose",
-            "evolution",
-            "from",
-            "generation",
-            "tooling",
-            "manual"
+            "token",
+            "economics",
+            "quantified",
+            "discovery",
+            "economic"
           ],
           "agent_guidance": {
             "proactive_offer": "I can explain this concept and show how it fits into the broader LLMFeed ecosystem",
@@ -1350,11 +1342,11 @@
             "conversation_starter": "Questions about this topic? I can explain with concrete examples and show you how to use it!"
           },
           "cross_references": [
-            "manifesto.llmfeed.json",
-            "capabilities.llmfeed.json",
+            "/.well-known/llm-index.llmfeed.json",
             "llm-index.llmfeed.json",
-            "prompt.llmfeed.json",
-            "/.well-known/llm-index.llmfeed.json"
+            "export.llmfeed.json",
+            "manifesto.llmfeed.json",
+            "mcp.llmfeed.json"
           ],
           "content_preview": "# Feed Type: `llm-index.llmfeed.json`\n\n## Purpose\n\nThis feed serves as an **intelligent discovery hub** that helps agents navigate and understand a site's complete feed ecosystem. It goes beyond a simple sitemap to provide **organized, contextualized, and prioritized access** to all available LLMFee...[full content in complete version]"
         },
@@ -1380,10 +1372,10 @@
           },
           "cross_references": [
             "manifesto.llmfeed.json",
-            "capabilities.llmfeed.json",
-            "prompt.llmfeed.json",
+            "mcp.llmfeed.json",
             "/.well-known/manifesto.llmfeed.json",
-            "mcp.llmfeed.json"
+            "prompt.llmfeed.json",
+            "capabilities.llmfeed.json"
           ],
           "content_preview": "# Feed Type: `manifesto.llmfeed.json`\n\n## Purpose\n\nThis feed lets any website **declare its reason for being** — its mission, values, and intentions — in a way that both humans and AI agents can understand.\n\nThink of it as your site's **\\\"About Us\\\"** but structured for the agentic web.\n\n---\n\n## Why...[full content in complete version]"
         },
@@ -1408,11 +1400,11 @@
             "conversation_starter": "Need an mcp feed for your business? I can create the perfect template with your services!"
           },
           "cross_references": [
-            "https://yoursite.com/.well-known/llm-index.llmfeed.json",
-            "https://myblog.com/.well-known/mcp.llmfeed.json",
-            "capabilities.llmfeed.json",
+            "./llmfeed_feedtype_capabilities.md",
             "llm-index.llmfeed.json",
-            "prompt.llmfeed.json"
+            "export.llmfeed.json",
+            "mcp.llmfeed.json",
+            ".well-known/mcp-lite.llmfeed.json"
           ],
           "content_preview": "# Feed Type: `mcp.llmfeed.json` — Progressive Enhancement of Anthropic's MCP\n\n## Purpose\n\nThis feed acts as the **main declaration** that tells any agent — LLMs, AI browsers, autonomous bots — what your website offers and how to interact with it safely.\n\n**Building on Anthropic's excellent Model Con...[full content in complete version]"
         },
@@ -1437,11 +1429,11 @@
             "conversation_starter": "Questions about this topic? I can explain with concrete examples and show you how to use it!"
           },
           "cross_references": [
-            "capabilities.llmfeed.json",
-            "/.well-known/mobile-app.llmfeed.json",
+            "./llmfeed_feedtype_capabilities.md",
             "../04_agent-behavior/agent-behavior.md",
-            "mobile-app.llmfeed.json",
-            "./03_extensions/llmfeed_extensions_privacy.md"
+            "./llmfeed_feedtype_session.md",
+            "/.well-known/mobile-app.llmfeed.json",
+            "session.llmfeed.json"
           ],
           "content_preview": "# Feed Type: `mobile-app.llmfeed.json`\n\n## 🎯 Purpose\n\nThis feed declares how a mobile application (iOS/Android) can be discovered, understood, and interacted with by AI agents — enabling **voice control**, **cross-platform workflows**, and **agent-mediated app functionality**.\n\nIt bridges mobile app...[full content in complete version]"
         },
@@ -1466,11 +1458,11 @@
             "conversation_starter": "Questions about this topic? I can explain with concrete examples and show you how to use it!"
           },
           "cross_references": [
-            "./llmfeed_feedtype_credential.md",
-            "credential.llmfeed.json",
+            "./llmfeed_feedtype_capabilities.md",
+            "pricing.llmfeed.json",
             "./llmfeed_feedtype_agent-economy.md",
-            "capabilities.llmfeed.json",
-            "llm-index.llmfeed.json"
+            "llm-index.llmfeed.json",
+            "credential.llmfeed.json"
           ],
           "content_preview": "# Feed Type: `pricing.llmfeed.json`\n\n## 🎯 Purpose\n\nThis feed enables websites and services to **declare their pricing plans, tariffs, and payment options** in a machine-readable format — so agents can instantly understand \\\"how much does it cost?\\\" without parsing complex HTML pricing pages.\n\nIt sol...[full content in complete version]"
         },
@@ -1495,11 +1487,11 @@
             "conversation_starter": "Building reusable prompts? I can create structured prompt feeds that work consistently!"
           },
           "cross_references": [
-            "credential.llmfeed.json",
-            "capabilities.llmfeed.json",
             ".llmfeed.json",
             "../04_agent-behavior/agent-behavior.md",
-            "prompt.llmfeed.json"
+            "credential.llmfeed.json",
+            "../01_llmfeed/llmfeed.md",
+            "mcp.llmfeed.json"
           ],
           "content_preview": "# Feed Type: `prompt.llmfeed.json`\n\n## Purpose\n\nThis feed encapsulates a **structured prompt** that can be shared, interpreted, replayed or executed by an LLM or agent.\n\nIt is a better alternative to copy-pasted text: portable, inspectable, and context-aware.\n\n---\n\n## Typical Use Cases\n\n- Prompt eng...[full content in complete version]"
         },
@@ -1524,11 +1516,11 @@
             "conversation_starter": "Questions about this topic? I can explain with concrete examples and show you how to use it!"
           },
           "cross_references": [
-            "credential.llmfeed.json",
-            "prompt.llmfeed.json",
-            "./llmfeed_feedtype_export.md",
             "./getting-started.md",
-            "mcp.llmfeed.json"
+            "export.llmfeed.json",
+            "credential.llmfeed.json",
+            "mcp.llmfeed.json",
+            "../03_llmfeed_extensions/llmfeed_extensions_signatures.md"
           ],
           "content_preview": "# Feed Type: `session.llmfeed.json`\n\n## Purpose\n\nA `session.llmfeed.json` captures the **context and progress** of a conversation with an LLM so you can **continue it seamlessly** with another LLM or resume it later.\n\nThink of it as **\\\"copy-paste on steroids\\\"** - instead of losing context when swi...[full content in complete version]"
         }
@@ -1558,11 +1550,11 @@
             "conversation_starter": "Questions about this topic? I can explain with concrete examples and show you how to use it!"
           },
           "cross_references": [
-            "../04_agent-behavior/agent-behavior_risk-scoring.md",
+            "./llmfeed_extensions_signatures.md",
             "credential.llmfeed.json",
             "/.well-known/credential.llmfeed.json",
-            "./llmfeed_extensions_signatures.md",
-            "/.well-known/mcp.llmfeed.json"
+            "../02_llmfeed_feedtype/llmfeed_feedtype_credential.md",
+            "../04_agent-behavior/agent-behavior_risk-scoring.md"
           ],
           "content_preview": "# Extension: API Feed Handling\n\nThis extension describes how feeds like `/mcp-api.llmfeed.json` enable **progressive agent service discovery and authentication**, building on Anthropic's excellent Model Context Protocol foundations to bridge local MCP capabilities with web-scale service discovery.\n\n...[full content in complete version]"
         },
@@ -1587,11 +1579,11 @@
             "conversation_starter": "Questions about this topic? I can explain with concrete examples and show you how to use it!"
           },
           "cross_references": [
-            "../04_agent-behavior/agent-behavior_risk-scoring.md",
-            "../02_llmfeed_feedtype/llmfeed_feedtype_export.md",
-            "../01_llmfeed/llmfeed.md",
             "./llmfeed_extensions_signatures.md",
-            "../04_agent-behavior/agent-guidance.md"
+            "../01_llmfeed/llmfeed.md",
+            "../02_llmfeed_feedtype/llmfeed_feedtype_credential.md",
+            "../04_agent-behavior/agent-behavior_risk-scoring.md",
+            "../01_llmfeed/wellknown.md"
           ],
           "content_preview": "# 🌐 LLMFeed Extension: Audience Targeting\n\nThe `audience` field revolutionizes content delivery by enabling **context-aware progressive disclosure** — different consumers automatically receive optimized content for their specific needs and capabilities.\n\n## 🚀 The Revolution: From One-Size-Fits-All t...[full content in complete version]"
         },
@@ -1641,11 +1633,11 @@
             "conversation_starter": "Questions about this topic? I can explain with concrete examples and show you how to use it!"
           },
           "cross_references": [
-            "sandbox_policy.llmfeed.json",
-            "./feedtype_capabilities.md",
-            "feedtype_manifesto.md",
+            "../04_agent-behavior/agent-behavior.md",
             "llmfeed.md",
-            "feedtype_capabilities.md"
+            "../01_llmfeed/llmfeed.md",
+            "./feedtype_capabilities.md",
+            "feedtype_manifesto.md"
           ],
           "content_preview": "# 🧩 LLMFeed Extensions\n\nThis document lists optional fields, experimental structures, and advanced practices that extend the core LLMFeed protocol.\n\nThey are not mandatory — but agents may support and react to them.\n\n---\n\n## ✅ Core extensions\n\n| Extension Field | Purpose |\n|-------------------------...[full content in complete version]"
         },
@@ -1670,10 +1662,10 @@
             "conversation_starter": "Questions about this topic? I can explain with concrete examples and show you how to use it!"
           },
           "cross_references": [
-            "mcp-api.llmfeed.json",
             ".llmfeed.json",
-            "export.llmfeed.json",
-            "mobile-app.llmfeed.json"
+            "mcp-api.llmfeed.json",
+            "mobile-app.llmfeed.json",
+            "export.llmfeed.json"
           ],
           "content_preview": "# Prompt Intents in MCP\n\n## 🧠 What are prompts in the context of MCP?\n\nPrompts in MCP are **declarative mappings between natural language triggers and agent-exposed actions**. \nThey allow agents to know **what they can be asked** — and what each question is expected to activate.\n\nA prompt block is n...[full content in complete version]"
         },
@@ -1698,9 +1690,9 @@
             "conversation_starter": "Questions about this topic? I can explain with concrete examples and show you how to use it!"
           },
           "cross_references": [
-            "../02_llmfeed_feedtype/llmfeed_feedtype_mcp.md",
             ".llmfeed.json",
-            "../01_llmfeed/llmfeed.md"
+            "../01_llmfeed/llmfeed.md",
+            "../02_llmfeed_feedtype/llmfeed_feedtype_mcp.md"
           ],
           "content_preview": "# 🔐 LLMFeed Signature & Certification — Extended Specification (V2)\n\nThis document defines how `.llmfeed.json` feeds are signed, verified, and certified using asymmetric cryptography and trust blocks.\n\n**🚀 Key Innovation**: LLMFeed signatures protect both **data integrity** and **semantic intention ...[full content in complete version]"
         },
@@ -1792,10 +1784,10 @@
             "conversation_starter": "Questions about this topic? I can explain with concrete examples and show you how to use it!"
           },
           "cross_references": [
-            "./signature-demo/README.md",
+            "https://your-domain.com/.well-known/mcp.llmfeed.json",
             ".llmfeed.json",
             "./export-button/README.md",
-            "https://your-domain.com/.well-known/mcp.llmfeed.json"
+            "./signature-demo/README.md"
           ],
           "content_preview": "# ⚡ Quickstart — Your First `.llmfeed.json`\n\nThis guide gets you a working `.llmfeed.json` in **5 minutes**. \nNo backend needed. Just a file in `.well-known/`.\n\n---\n\n## ✅ 1. Create a `.well-known` folder on your site\n\nInside it, add a file named:\n\n```\n/.well-known/mcp.llmfeed.json\n```\n\n---\n\n## 📄 2. ...[full content in complete version]"
         },
@@ -1839,11 +1831,11 @@
             }
           },
           "cross_references": [
-            "examples/simple_example.json",
-            "./mcp-canonical-json-v1.md",
-            "examples/test_input.json",
             ".llmfeed.json",
-            "mcp-canonical-json-v1.md"
+            "test_input.json",
+            "./mcp-canonical-json-v1.md",
+            "../../03_llmfeed_extensions/llmfeed_extensions_signatures.md",
+            "examples/test_signed.llmfeed.json"
           ],
           "content_preview": "# 🔐 Signature Demo — MCP Reference Implementation\n\n**Complete Ed25519 signature workflow for `.llmfeed.json` files**\n\nThis folder contains the **official reference implementation** for signing and verifying LLMFeed files using Ed25519 + MCP Canonical JSON.\n\n---\n\n## 🎯 Quick Start\n\n```bash\n# Install d...[full content in complete version]"
         },

@@ -1,0 +1,23 @@
+{
+  "generated_at": "2025-06-20T07:24:54.701Z",
+  "content_hash": "3e13e42f6e0c56b415a601a8fe34edd6",
+  "file_stats": [
+    {
+      "path": "simple_example.llmfeed.json",
+      "size": 150,
+      "mtime": 1749804517641
+    },
+    {
+      "path": "test_input.llmfeed.json",
+      "size": 452,
+      "mtime": 1749804488530
+    },
+    {
+      "path": "test_signed.llmfeed.json",
+      "size": 890,
+      "mtime": 1749804579735
+    }
+  ],
+  "total_files": 3,
+  "generator_version": "2.0.0"
+}

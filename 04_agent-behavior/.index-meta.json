@@ -1,0 +1,53 @@
+{
+  "generated_at": "2025-06-20T07:24:54.279Z",
+  "content_hash": "044ab1103dcdd1ec9496852820f92b4e",
+  "file_stats": [
+    {
+      "path": "agent-behavior-flagging.md",
+      "size": 23126,
+      "mtime": 1749649976775
+    },
+    {
+      "path": "agent-behavior.md",
+      "size": 27719,
+      "mtime": 1749649967212
+    },
+    {
+      "path": "agent-behavior_cache-policy.md",
+      "size": 2149,
+      "mtime": 1749071632632
+    },
+    {
+      "path": "agent-behavior_certified-only.md",
+      "size": 2265,
+      "mtime": 1749071930171
+    },
+    {
+      "path": "agent-behavior_human-consent.md",
+      "size": 2116,
+      "mtime": 1749643629662
+    },
+    {
+      "path": "agent-behavior_risk-scoring.md",
+      "size": 29292,
+      "mtime": 1749648484693
+    },
+    {
+      "path": "agent-behavior_session-awareness.md",
+      "size": 2181,
+      "mtime": 1749072620439
+    },
+    {
+      "path": "agent-behavior_user-spaces.md",
+      "size": 23545,
+      "mtime": 1749717182427
+    },
+    {
+      "path": "agent-guidance.md",
+      "size": 2948,
+      "mtime": 1749589987789
+    }
+  ],
+  "total_files": 9,
+  "generator_version": "2.0.0"
+}

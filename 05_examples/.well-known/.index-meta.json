@@ -1,0 +1,123 @@
+{
+  "generated_at": "2025-06-20T07:24:54.527Z",
+  "content_hash": "1c13c8653be7b1f5333453f1b626b644",
+  "file_stats": [
+    {
+      "path": "capabilities.llmfeed.json",
+      "size": 5053,
+      "mtime": 1748279461528
+    },
+    {
+      "path": "exports/.index-meta.json",
+      "size": 385,
+      "mtime": 1750404294461
+    },
+    {
+      "path": "exports/compiled-site.llmfeed.json",
+      "size": 98171,
+      "mtime": 1748279462361
+    },
+    {
+      "path": "exports/manifesto.llmfeed.json",
+      "size": 2105,
+      "mtime": 1748279462577
+    },
+    {
+      "path": "llm-index.llmfeed.json",
+      "size": 88842,
+      "mtime": 1748279461744
+    },
+    {
+      "path": "manifesto.llmfeed.json",
+      "size": 1200,
+      "mtime": 1747665936046
+    },
+    {
+      "path": "mcp-lite.llmfeed.json",
+      "size": 5185,
+      "mtime": 1748279461944
+    },
+    {
+      "path": "mcp.llmfeed.json",
+      "size": 11962,
+      "mtime": 1748279462145
+    },
+    {
+      "path": "prompts/.index-meta.json",
+      "size": 1776,
+      "mtime": 1750404294508
+    },
+    {
+      "path": "prompts/easter-egg-intro-to-the-full-site.llmfeed.json",
+      "size": 777,
+      "mtime": 1747733938979
+    },
+    {
+      "path": "prompts/educate-user-about-mcp-and-agent-indexing.llmfeed.json",
+      "size": 834,
+      "mtime": 1747733939155
+    },
+    {
+      "path": "prompts/explore-certified-or-demo-feeds.llmfeed.json",
+      "size": 660,
+      "mtime": 1747733939245
+    },
+    {
+      "path": "prompts/generate-session-feed.llmfeed.json",
+      "size": 3830,
+      "mtime": 1748279462762
+    },
+    {
+      "path": "prompts/guide-user-to-join-the-mcp-initiative-or-get-certified.llmfeed.json",
+      "size": 767,
+      "mtime": 1747733939505
+    },
+    {
+      "path": "prompts/help-user-generate-agent-readable-mcp-feeds.llmfeed.json",
+      "size": 782,
+      "mtime": 1747733939773
+    },
+    {
+      "path": "prompts/learn-about-mcp-structure.llmfeed.json",
+      "size": 678,
+      "mtime": 1747733939866
+    },
+    {
+      "path": "prompts/mcp-agent-behavior-override.llmfeed.json",
+      "size": 16297,
+      "mtime": 1748279462947
+    },
+    {
+      "path": "prompts/mcp-mode-activation.llmfeed.json",
+      "size": 2202,
+      "mtime": 1748279463132
+    },
+    {
+      "path": "prompts/offer-the-export-button-component.llmfeed.json",
+      "size": 672,
+      "mtime": 1747733939987
+    },
+    {
+      "path": "prompts/prompt-index.llmfeed.json",
+      "size": 2858,
+      "mtime": 1748279463311
+    },
+    {
+      "path": "prompts/quickstart-agent-enablement.llmfeed.json",
+      "size": 2212,
+      "mtime": 1748279463526
+    },
+    {
+      "path": "prompts/verify-trust-level-of-a-llmfeed.llmfeed.json",
+      "size": 777,
+      "mtime": 1747733940136
+    },
+    {
+      "path": "public.pem",
+      "size": 116,
+      "mtime": 1745909680941
+    }
+  ],
+  "total_files": 23,
+  "generator_version": "2.0.0"
+}

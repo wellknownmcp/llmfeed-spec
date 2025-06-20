@@ -1,0 +1,33 @@
+{
+  "generated_at": "2025-06-20T07:24:54.697Z",
+  "content_hash": "efa7cf64d4b07ad7bea8033206832616",
+  "file_stats": [
+    {
+      "path": "demo.html",
+      "size": 501,
+      "mtime": 1748273550330
+    },
+    {
+      "path": "export-button-kungfu.llmfeed.json",
+      "size": 1101,
+      "mtime": 1748273550474
+    },
+    {
+      "path": "export-button.llmfeed.json",
+      "size": 688,
+      "mtime": 1748273550396
+    },
+    {
+      "path": "exportButton.js",
+      "size": 566,
+      "mtime": 1748273550194
+    },
+    {
+      "path": "README.md",
+      "size": 5276,
+      "mtime": 1749648452061
+    }
+  ],
+  "total_files": 5,
+  "generator_version": "2.0.0"
+}

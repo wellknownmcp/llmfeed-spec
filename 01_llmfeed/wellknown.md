@@ -1,11 +1,8 @@
 ---
-# 📄 Basic metadata
 title: "Publishing LLMFeed Feeds in `.well-known/` - MCP Progressive Enhancement"
 description: "How to expose your site or API as an agent-readable endpoint using .well-known/ directory structure, with optional LLMFeed enhancements to Anthropic's Model Context Protocol"
 date: "2025-06-15T00:00:00.000Z"
 lang: "en"
-
-# 🏷️ Tags
 tags:
   - "wellknown"
   - "mcp"
@@ -15,13 +12,9 @@ tags:
   - "progressive-enhancement"
   - "compatibility"
   - "trust"
-
-# 🎯 Content classification
 format: "specification"
 category: "implementation"
 contentType: "technical-guide"
-
-# 🧠 Intent and audience
 intent: "implementation-guide"
 llmIntent: "mcp-llmfeed-bridge-guide"
 llmTopic: "progressive-enhancement-strategy"
@@ -29,66 +22,48 @@ audience:
   - "developer"
   - "llm"
   - "architect"
-
-# 📊 Advanced metadata
 priority: "critical"
 riskLevel: "low"
 updateFrequency: "static"
 pageType: "documentation"
 interactionComplexity: "moderate"
-
-# 🔗 URLs
 slug: "wellknown"
 canonical_url: "https://wellknownmcp.org/spec/01_llmfeed/wellknown"
 githubUrl: "https://github.com/wellknownmcp/llmfeed-spec/blob/main/01_llmfeed/wellknown.md"
 mcpFeedUrl: "/.well-known/mcp.llmfeed.json"
 llmIndexUrl: "/.well-known/llm-index.llmfeed.json"
-
-# 🤖 Agent configuration
-autoDiscoverFeeds: true
-agentReadiness: true
+autoDiscoverFeeds: "true"
+agentReadiness: "true"
 llmBehaviorHints: "suggest-only"
-
-# 📋 Specialized metadata
 feedTypes:
   - "mcp"
   - "llm-index"
   - "capabilities"
   - "pricing"
-
 capabilities:
   - "discovery"
   - "progressive-enhancement"
   - "mcp-compatibility"
-
 trustLevel: "signed"
-
-# 🏗️ Technical metadata
 technicalLevel: "intermediate"
 estimatedReadTime: "8 min"
 lastModified: "2025-06-15T00:00:00.000Z"
-
-# 💼 Context business
 businessImpact: "high"
 targetMarket: "mcp-developers"
 monetizationPotential: "medium"
-
-# 📚 Relations
 relatedArticles:
-  - "llmfeed"
-  - "llmfeed_feedtype_mcp"
-  - "understanding-llmfeed"
-
+  - "01_llmfeed/llmfeed"
+  - "02_llmfeed_feedtype/llmfeed_feedtype_mcp"
+  - "01_llmfeed/understanding-llmfeed"
 prerequisites:
   - "basic-mcp-knowledge"
   - "wellknown-directory-concepts"
-
-# 🔄 MCP Integration
 mcpCompatibility: "full"
 anthropicReference: "https://modelcontextprotocol.io"
 enhancementType: "progressive"
 migrationRisk: "zero"
 ---
+
 
 # 🌐 Exposing Feeds via `.well-known/` - MCP Progressive Enhancement
 

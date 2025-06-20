@@ -1,0 +1,63 @@
+{
+  "generated_at": "2025-06-20T07:24:54.121Z",
+  "content_hash": "86c12c7d4e50788cbe80affb74df2aa5",
+  "file_stats": [
+    {
+      "path": "llmfeed_feedtype_agent-economy.md",
+      "size": 15342,
+      "mtime": 1749578492982
+    },
+    {
+      "path": "llmfeed_feedtype_capabilities.md",
+      "size": 27853,
+      "mtime": 1749648722415
+    },
+    {
+      "path": "llmfeed_feedtype_credential.md",
+      "size": 19226,
+      "mtime": 1749650513893
+    },
+    {
+      "path": "llmfeed_feedtype_export.md",
+      "size": 12594,
+      "mtime": 1750171378782
+    },
+    {
+      "path": "llmfeed_feedtype_llm-index.md",
+      "size": 31633,
+      "mtime": 1750404242311
+    },
+    {
+      "path": "llmfeed_feedtype_manifesto.md",
+      "size": 16524,
+      "mtime": 1749650454825
+    },
+    {
+      "path": "llmfeed_feedtype_mcp.md",
+      "size": 15889,
+      "mtime": 1749993957586
+    },
+    {
+      "path": "llmfeed_feedtype_mobile-app.md",
+      "size": 32152,
+      "mtime": 1750404242316
+    },
+    {
+      "path": "llmfeed_feedtype_pricing.md",
+      "size": 8970,
+      "mtime": 1749634016333
+    },
+    {
+      "path": "llmfeed_feedtype_prompt.md",
+      "size": 10266,
+      "mtime": 1750404242320
+    },
+    {
+      "path": "llmfeed_feedtype_session.md",
+      "size": 14035,
+      "mtime": 1749653186980
+    }
+  ],
+  "total_files": 11,
+  "generator_version": "2.0.0"
+}

@@ -1,103 +1,62 @@
 ---
-# 📄 Basic metadata
-
 title: "Feed Type: prompt.llmfeed.json — Structured Prompts for the Agentic Web"
 description: "Complete specification for prompt feeds enabling portable, signed, and certifiable prompts with professional ownership and marketplace integration"
 date: "2025-06-10T00:00:00.000Z"
 lang: "en"
-
-# 🏷️ Tags
-
 tags:
-
-- "mcp"
-- "llmfeed"
-- "prompt"
-- "prompt-engineering"
-- "trust"
-- "signature"
-- "certification"
-- "ai-agents"
-- "developers"
-- "marketplace"
-
-# 🎯 Content classification
-
+  - "mcp"
+  - "llmfeed"
+  - "prompt"
+  - "prompt-engineering"
+  - "trust"
+  - "signature"
+  - "certification"
+  - "ai-agents"
+  - "developers"
+  - "marketplace"
 format: "specification"
 category: "technical"
 contentType: "api-reference"
-
-# 🧠 Intent and audience
-
 intent: "technical-guide"
 llmIntent: "understand-prompt-feed-specification"
 llmTopic: "prompt-feeds-and-structured-prompts"
 audience:
-
-- "llm"
-- "developer"
-- "prompt-engineer"
-
-# 📊 Advanced metadata
-
+  - "llm"
+  - "developer"
+  - "prompt-engineer"
 priority: "high"
 riskLevel: "low"
 updateFrequency: "static"
 pageType: "api-reference"
 interactionComplexity: "moderate"
-
-# 🔗 Urls
-
 slug: "llmfeed-feedtype-prompt"
 canonical_url: "https://wellknownmcp.org/spec/02_llmfeed_feedtype/llmfeed_feedtype_prompt"
 mcpFeedUrl: "/.well-known/mcp.llmfeed.json"
-
-# 🎨 Media
-
 image: "/images/spec/prompt-feeds.png"
 subtitle: "Portable, signed, and certifiable prompts for professional use"
-
-# 🤖 Agent configuration
-
-autoDiscoverFeeds: true
-agentReadiness: true
+autoDiscoverFeeds: "true"
+agentReadiness: "true"
 llmBehaviorHints: "full-autonomous"
-
-# 📋 Specialized metadata
-
 feedTypes:
-
-- "prompt"
-- "trust"
-- "certification"
-
+  - "prompt"
+  - "trust"
+  - "certification"
 capabilities:
-
-- "prompt-certification"
-- "signature-verification"
-- "marketplace-integration"
-
+  - "prompt-certification"
+  - "signature-verification"
+  - "marketplace-integration"
 trustLevel: "signed"
-
-# 🏗️ Technical metadata
-
 technicalLevel: "intermediate"
 estimatedReadTime: "15 min"
-
-# 📚 Relations
-
 relatedArticles:
-
-- "llmfeed-extensions-signatures"
-- "agent-behavior"
-- "llmfeed-marketplace"
-
+  - "llmfeed-extensions-signatures"
+  - "04_agent-behavior/agent-behavior"
+  - "llmfeed-marketplace"
 prerequisites:
-
-- "basic-llmfeed-concepts"
-- "understanding-of-prompt-engineering"
-
+  - "basic-llmfeed-concepts"
+  - "understanding-of-prompt-engineering"
 ---
+
 
 # Feed Type: `prompt.llmfeed.json`
 

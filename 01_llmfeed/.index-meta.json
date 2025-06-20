@@ -1,0 +1,48 @@
+{
+  "generated_at": "2025-06-20T07:24:53.977Z",
+  "content_hash": "be3f157beb22ead4832dc67d1072fc93",
+  "file_stats": [
+    {
+      "path": "llmfeed-mime.md",
+      "size": 3060,
+      "mtime": 1749648954039
+    },
+    {
+      "path": "llmfeed.md",
+      "size": 18771,
+      "mtime": 1749992874581
+    },
+    {
+      "path": "llmfeed.schema.annotated.json",
+      "size": 15626,
+      "mtime": 1749807275823
+    },
+    {
+      "path": "llmfeed.schema.json",
+      "size": 7491,
+      "mtime": 1749807109707
+    },
+    {
+      "path": "llmfeed_block-reference.md",
+      "size": 4097,
+      "mtime": 1749634016274
+    },
+    {
+      "path": "llmfeed_lite.schema.json",
+      "size": 5106,
+      "mtime": 1749807036875
+    },
+    {
+      "path": "understanding-llmfeed.md",
+      "size": 18701,
+      "mtime": 1749714765574
+    },
+    {
+      "path": "wellknown.md",
+      "size": 11435,
+      "mtime": 1750404242305
+    }
+  ],
+  "total_files": 8,
+  "generator_version": "2.0.0"
+}

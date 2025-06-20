@@ -1,130 +1,81 @@
 ---
-# 📄 Basic metadata
-
 title: "Feed Type: mobile-app.llmfeed.json — The Complete Specification"
 description: "Bridge mobile applications with AI agents through voice control, seamless API integration, and cross-platform workflows. Enable the post-app era of invisible, agent-orchestrated mobile experiences."
 date: "2025-06-10T00:00:00.000Z"
 lang: "en"
-
-# 🏷️ Tags
-
 tags:
-
-- "mobile-app"
-- "mcp"
-- "ai-agents"
-- "voice-control"
-- "api-bridge"
-- "cross-platform"
-- "developers"
-- "specification"
-- "trust"
-
-# 🎯 Content classification
-
+  - "mobile-app"
+  - "mcp"
+  - "ai-agents"
+  - "voice-control"
+  - "api-bridge"
+  - "cross-platform"
+  - "developers"
+  - "specification"
+  - "trust"
 format: "specification"
 category: "technical"
 contentType: "reference"
-
-# 🧠 Intent and audience
-
 intent: "technical-guide"
 llmIntent: "mobile-app-integration-spec"
 llmTopic: "mobile-app-feedtype"
 audience:
-
-- "llm"
-- "developer"
-- "business"
-
-# 📊 Advanced metadata
-
+  - "llm"
+  - "developer"
+  - "business"
 priority: "high"
 riskLevel: "low"
 updateFrequency: "weekly"
 pageType: "api-reference"
 interactionComplexity: "moderate"
-
-# 🔗 Urls
-
 slug: "llmfeed_feedtype_mobile-app"
 canonical_url: "https://wellknownmcp.org/spec/02_llmfeed_feedtype/llmfeed_feedtype_mobile-app"
 mcpFeedUrl: "/.well-known/mcp.llmfeed.json"
 llmIndexUrl: "/.well-known/llm-index.llmfeed.json"
-
-# 🤖 Configuration pour agents
-
-autoDiscoverFeeds: true
-agentReadiness: true
+autoDiscoverFeeds: "true"
+agentReadiness: "true"
 llmBehaviorHints: "full-autonomous"
-
-# 📋 Métadonnées spécialisées
-
 feedTypes:
-
-- "mobile-app"
-- "capabilities"
-- "mcp"
-
+  - "mobile-app"
+  - "capabilities"
+  - "mcp"
 capabilities:
-
-- "voice-control"
-- "app-discovery"
-- "api-bridge"
-- "cross-platform"
-- "agent-orchestration"
-
+  - "voice-control"
+  - "app-discovery"
+  - "api-bridge"
+  - "cross-platform"
+  - "agent-orchestration"
 trustLevel: "signed"
-
-# 🏗️ Métadonnées techniques
-
 technicalLevel: "intermediate"
 estimatedReadTime: "15 min"
 lastModified: "2025-06-10T00:00:00.000Z"
-
-# 💼 Contexte business
-
 businessImpact: "high"
 targetMarket: "mobile-developers"
 monetizationPotential: "high"
-
-# 📚 Relations et références
-
 relatedArticles:
-
-- "llmfeed_feedtype_capabilities"
-- "llmfeed_feedtype_mcp"
-- "agent-behavior"
-
+  - "02_llmfeed_feedtype/llmfeed_feedtype_capabilities"
+  - "02_llmfeed_feedtype/llmfeed_feedtype_mcp"
+  - "04_agent-behavior/agent-behavior"
 prerequisites:
-
-- "mobile-app-development"
-- "api-design"
-- "basic-knowledge-of-agents"
-
-# 🎯 Spécifique mobile-app
-
+  - "mobile-app-development"
+  - "api-design"
+  - "basic-knowledge-of-agents"
 platforms:
-
-- "ios"
-- "android"
-- "web"
-- "voice-assistants"
-
+  - "ios"
+  - "android"
+  - "web"
+  - "voice-assistants"
 integrationTypes:
-
-- "voice-control"
-- "deep-linking"
-- "api-bridge"
-- "cross-app-workflows"
-
+  - "voice-control"
+  - "deep-linking"
+  - "api-bridge"
+  - "cross-app-workflows"
 revolutionaryFeatures:
-
-- "invisible-apps"
-- "agent-orchestrated-mobile"
-- "post-app-era"
-
+  - "invisible-apps"
+  - "agent-orchestrated-mobile"
+  - "post-app-era"
 ---
+
 
 # Feed Type: `mobile-app.llmfeed.json`
 
