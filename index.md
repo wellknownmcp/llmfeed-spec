@@ -42,7 +42,7 @@ Files and resources in the llmfeed-spec directory.
 
 ### [.git](.git)
 **File:** .git
-**Size:** 0.0 KB | **Modified:** 20/06/2025
+**Size:** 0.0 KB | **Modified:** 26/06/2025
 
 ### [.gitignore](.gitignore)
 **File:** .gitignore
