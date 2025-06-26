@@ -1,0 +1,134 @@
+{
+  "feed_type": "prompt",
+  "metadata": {
+    "title": "Generate Intelligent LLM Index",
+    "origin": "https://wellknownmcp.org",
+    "author": "WellKnownMCP Foundation",
+    "created_at": "2025-06-10T14:30:00Z",
+    "version": "1.0.0"
+  },
+  "trust": {
+    "signed_blocks": [
+      "feed_type",
+      "metadata",
+      "intent",
+      "context",
+      "precision_level",
+      "result_expected",
+      "process_mode",
+      "prompt_body",
+      "input_variables",
+      "examples",
+      "agent_guidance",
+      "trust"
+    ],
+    "scope": "full",
+    "certifier": "https://wellknownmcp.org",
+    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem",
+    "algorithm": "ed25519",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "warning": "This feed is fully signed."
+  },
+  "signature": {
+    "value": "GgZOC8w9AEKKHaw+f0udR+hS3P3DrMq3E/nJ/I2GABW7nkWoarwDoQ911UI8yH1RTEcTme6Sb6+3pg1C9d1YAg==",
+    "created_at": "2025-06-20T19:17:56.901322+00:00"
+  },
+  "_meta": {
+    "signed_at": "2025-06-20T19:17:56.901322+00:00"
+  },
+  "agent_guidance": {
+    "interaction_tone": "professional",
+    "output_format": "pure_json",
+    "validation_required": true,
+    "fallback_behavior": "request_clarification",
+    "custom_notes": "This prompt generates the foundation of intelligent site discovery. Accuracy is critical."
+  },
+  "context": "User provides their sitemap and feed list, wants a complete llm-index.llmfeed.json",
+  "examples": [
+    {
+      "title": "SaaS Platform Example",
+      "input": {
+        "site_url": "https://apiplatform.com",
+        "site_type": "saas_platform",
+        "target_audiences": [
+          "developers",
+          "business"
+        ],
+        "existing_feeds": [
+          "/.well-known/mcp.llmfeed.json (main platform declaration)",
+          "/.well-known/capabilities.llmfeed.json (API capabilities)",
+          "/exports/docs/api-reference.llmfeed.json (API documentation)"
+        ],
+        "site_sections": [
+          "/docs/ (comprehensive API documentation)",
+          "/tools/ (developer utilities and SDKs)",
+          "/pricing/ (subscription plans)",
+          "/dashboard/ (user interface)"
+        ]
+      },
+      "expected_categories": [
+        "core_infrastructure",
+        "api_documentation",
+        "developer_tools",
+        "business_info"
+      ],
+      "expected_entry_points": {
+        "developers": "/exports/docs/api-reference.llmfeed.json",
+        "business": "/.well-known/mcp.llmfeed.json"
+      }
+    }
+  ],
+  "input_variables": [
+    {
+      "name": "site_url",
+      "description": "The base URL of the website",
+      "required": true,
+      "example": "https://example.com"
+    },
+    {
+      "name": "sitemap_xml",
+      "description": "The complete sitemap.xml content",
+      "required": true,
+      "example": "<?xml version=\"1.0\"?><urlset>...</urlset>"
+    },
+    {
+      "name": "existing_feeds",
+      "description": "List of existing .llmfeed.json files with their purposes",
+      "required": true,
+      "example": [
+        "/.well-known/mcp.llmfeed.json (main declaration)",
+        "/exports/docs.llmfeed.json (documentation)"
+      ]
+    },
+    {
+      "name": "site_sections",
+      "description": "Main sections/directories of the website",
+      "required": true,
+      "example": [
+        "/docs/ (documentation)",
+        "/api/ (developer APIs)",
+        "/tools/ (utilities)"
+      ]
+    },
+    {
+      "name": "site_type",
+      "description": "Type of website for context",
+      "required": false,
+      "example": "saas_platform"
+    },
+    {
+      "name": "target_audiences",
+      "description": "Primary audiences for the site",
+      "required": false,
+      "example": [
+        "developers",
+        "business_users"
+      ]
+    }
+  ],
+  "intent": "generate_llm_index_from_site_structure",
+  "precision_level": "ultra-strict",
+  "process_mode": "structured_generation",
+  "prompt_body": "You are an expert in the LLMFeed specification and website architecture. I need you to generate a comprehensive `llm-index.llmfeed.json` file for my website.\n\n## Instructions:\n1. Analyze the provided sitemap and feed structure\n2. Categorize feeds by purpose (core_infrastructure, documentation, tools_and_utilities, examples_and_demos)\n3. Assign appropriate priorities (critical for .well-known/, high for main docs, medium for tools, low for examples)\n4. Create audience-based entry points (developers, business, agents)\n5. Include smart routing recommendations\n6. Estimate token counts based on content complexity\n7. Follow the complete llm-index specification structure\n\n## Site Information Template:\n**Site URL:** [USER PROVIDES]\n**Main Sections:** [USER LISTS: /docs/, /api/, /tools/, etc.]\n**Existing LLMFeed Files:** [USER LISTS: /.well-known/mcp.llmfeed.json, /exports/faq.llmfeed.json, etc.]\n**Sitemap XML:** [USER PASTES]\n**Site Type:** [e-commerce/saas/blog/corporate/etc.]\n**Target Audiences:** [developers/business/end-users/etc.]\n\n## Output Requirements:\n- Complete valid JSON following llm-index.llmfeed.json specification\n- Include all required blocks: metadata, discovery_guidance, categories, index, agent_guidance\n- Categorize all feeds logically\n- Set realistic priorities and complexity levels\n- Create audience-specific entry points\n- Include smart routing recommendations\n- Add appropriate tags for each entry\n- Estimate tokens realistically (API docs ~2000, simple feeds ~400, complex exports ~1500)\n\n## Quality Checklist:\n✅ Valid JSON structure\n✅ All feeds categorized appropriately\n✅ Priorities reflect actual importance\n✅ Entry points match audiences\n✅ Token estimates seem reasonable\n✅ Agent guidance is actionable\n✅ Categories have clear descriptions\n\nRespond with ONLY the complete JSON structure, no additional text.",
+  "result_expected": "llm-index"
+}

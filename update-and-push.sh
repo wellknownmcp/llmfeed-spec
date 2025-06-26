@@ -70,7 +70,7 @@ if [ -f "local-only/scripts/build-indexes-universal.js" ]; then
     # Utiliser Node.js si disponible, sinon ignorer cette étape
     if command -v node >/dev/null 2>&1; then
         # Génération des index avec auto-détection llmfeed-spec
-        node local-only/scripts/build-indexes-universal.js --project=llmfeed-spec --force
+        node local-only/scripts/build-indexes-universal.js --project=llmfeed-spec --format=markdown --force
         echo "✅ Index HTML générés pour toutes les sections"
         
         # Compter les index générés
@@ -90,9 +90,9 @@ echo "=== ✅ Génération d'index terminée ==="
 
 # Commit dans llmfeed-spec
 echo "=== 📦 Commit dans llmfeed-spec ==="
-git add 00_shortcut/
-git add . # Pour capturer d'éventuelles autres modifications (y compris index.html)
-git commit -m "Update compiled specs in 00_shortcut/, markdown content and generated indexes"
+
+git add . # Pour capturer d'éventuelles autres modifications (y compris index)
+git commit -m "Update before automated push"
 git push
 
 echo "=== 🚀 Push de llmfeed-spec terminé ==="

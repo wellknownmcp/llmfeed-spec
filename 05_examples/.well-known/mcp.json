@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "note": "No actual servers running - this is just for testing discovery mechanism"
+  },
+
+  "llmfeed_extension": "/.well-known/mcp.llmfeed.json",
+  
+  "_metadata": {
+    "description": "Minimal MCP file for testing automatic LLMFeed discovery",
+    "test_purpose": "Verify if LLMs follow llmfeed_extension links automatically",
+    "version": "test-1.0.0"
+  }
+}

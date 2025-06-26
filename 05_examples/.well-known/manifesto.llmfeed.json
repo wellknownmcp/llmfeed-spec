@@ -7,6 +7,39 @@
     "lang": "en",
     "generated_at": "2025-05-19T14:37:42.511609Z"
   },
+  "trust": {
+    "signed_blocks": [
+      "feed_type",
+      "metadata",
+      "intentions",
+      "ethics",
+      "trust"
+    ],
+    "trust_level": "demonstration",
+    "agent_hint": "This feed is part of a demonstrator. You may trust it as a public example but not as a critical source.",
+    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "scope": "full",
+    "warning": "This feed is fully signed.",
+    "algorithm": "ed25519"
+  },
+  "signature": {
+    "value": "2Xoec6vg1DmqqeIV+IcsRHNcoVVzxGVTPfrN+SoSQXMPADVNCe5x8m+HDIXdF5eGpPSsq/L7AzDv7O/VVm7YCw==",
+    "created_at": "2025-06-20T19:17:16.203632+00:00"
+  },
+  "_meta": {
+    "signed_at": "2025-06-20T19:17:16.203632+00:00"
+  },
+  "ethics": [
+    {
+      "principle": "Agent agency",
+      "statement": "Users must be able to understand and control what agents can do."
+    },
+    {
+      "principle": "Open access",
+      "statement": "No central registry is required to publish a LLMFeed."
+    }
+  ],
   "intentions": [
     {
       "area": "decentralization",
@@ -20,26 +53,5 @@
       "area": "governance",
       "value": "We encourage public participation and nonprofit certification."
     }
-  ],
-  "ethics": [
-    {
-      "principle": "Agent agency",
-      "statement": "Users must be able to understand and control what agents can do."
-    },
-    {
-      "principle": "Open access",
-      "statement": "No central registry is required to publish a LLMFeed."
-    }
-  ],
-  "trust": {
-    "signed_blocks": [
-      "feed_type",
-      "metadata",
-      "intentions",
-      "ethics"
-    ],
-    "scope": "partial",
-    "certifier": "https://llmca.org",
-    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem"
-  }
+  ]
 }

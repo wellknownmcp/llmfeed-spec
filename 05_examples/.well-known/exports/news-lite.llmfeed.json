@@ -1,0 +1,413 @@
+{
+  "feed_type": "export",
+  "metadata": {
+    "origin": "https://wellknownmcp.org",
+    "title": "WellKnownMCP News - Quality Curated",
+    "description": "All high-quality MCP news articles with intelligent structural extraction - optimized for prompt shortcut (quality-based Pareto selection)",
+    "version": "1.0.0-lite",
+    "generated_at": "2025-06-26T10:10:05.653Z",
+    "language": "en",
+    "content_type": "news_highlights",
+    "total_articles": 8,
+    "usage_context": "prompt_shortcut_pareto",
+    "optimization": {
+      "strategy": "pareto_80_20",
+      "content_reduction": "summarized_essentials",
+      "selection_criteria": "priority_score_and_categories"
+    }
+  },
+  "trust": {
+    "scope": "full",
+    "signed_blocks": [
+      "feed_type",
+      "metadata",
+      "trust",
+      "agent_instructions",
+      "data",
+      "intent",
+      "llm_behavior"
+    ],
+    "trust_level": "self-issued",
+    "content_authenticity": "source_verified",
+    "algorithm": "Ed25519",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem",
+    "warning": "This feed is fully signed."
+  },
+  "signature": {
+    "value": "/ooUdyXgQj7KVlGfQjmyzwvYLdX9NsM3e0JhANdu+bfTTrg7OniSGlVng0ZWAj/knEa1oANGQBnUlD5ku+nqBQ==",
+    "created_at": "2025-06-26T10:14:59.294345+00:00"
+  },
+  "_meta": {
+    "signed_at": "2025-06-26T10:14:59.294345+00:00"
+  },
+  "agent_instructions": {
+    "content_access": "Summarized articles with links to full versions",
+    "navigation_pattern": "priority_based",
+    "trust_level": "curated_highlights",
+    "update_frequency": "build_time_static",
+    "upgrade_guidance": "For complete archive, use news-export.llmfeed.json in project context"
+  },
+  "data": {
+    "articles": [
+      {
+        "slug": "invisible-to-ai-agents",
+        "title": "Invisible to AI: Why Agents Skip Your Site",
+        "description": "Every day, thousands of AI agents browse the web like lost tourists without a map. They scrape, they guess, they hallucinate. Meanwhile, the solution sits in a simple JSON file that 99% of websites refuse to create.",
+        "date": "2025-06-24",
+        "categories": [
+          "general"
+        ],
+        "tags": [
+          "agent-discovery",
+          "agentic-economy",
+          "ai-browsing"
+        ],
+        "type": "news",
+        "content": "**Invisible to AI: Why Agents Skip Your Site**: > \"Every day, thousands of AI agents browse the web like lost tourists without a map. They scrape, they guess, they hallucinate. Meanwhile, the solution sits in a simple JSON file that 99% of websites...\n\n**The Problem Nobody Talks About**: It's 3 AM, and somewhere in the world, Claude is trying to help a user research competitors for their startup. The AI opens a promising company website, starts reading the HTML, and... gets confused.\r...\n\n**When Netflix Beat Blockbuster With Better Data Structure**: Remember Blockbuster? In 2004, they had something Netflix could only dream of: 60 million customers, 15 years of viewing history, and detailed preferences from 9,000 store locations. They knew what mo...\n\n**→ Complete article:** https://wellknownmcp.org/en/news/invisible-to-ai-agents",
+        "concepts": [
+          "agent-discovery",
+          "agentic-economy",
+          "ai-browsing",
+          "ai-infrastructure",
+          "llmfeed"
+        ],
+        "priority_score": 100,
+        "metadata": {
+          "quality_score": 47,
+          "technical_level": "beginner",
+          "business_impact": "low",
+          "lite_optimization": "summarized_for_pareto_strategy"
+        },
+        "canonical_url": "https://wellknownmcp.org/en/news/invisible-to-ai-agents",
+        "author": "WellKnownMCP Team",
+        "last_modified": "2025-06-24"
+      },
+      {
+        "slug": "llm-as-a-teacher",
+        "title": "Turning LLMs into Teachers, Auditors, and Publishers",
+        "description": "How LLMs can actively teach, audit, and generate llmfeed.json files — a unique design choice of the MCP standard that changes everything about web standards.",
+        "date": "2025-06-23",
+        "categories": [
+          "ai-development"
+        ],
+        "tags": [
+          "agentic-web",
+          "ai-development",
+          "ai-native-web"
+        ],
+        "type": "deep-dive",
+        "content": "**🧠 Turning LLMs into Teachers, Auditors, and Publishers**: > **TL;DR**: Unlike other web standards, LLMFeed is designed for AI comprehension from day one. This unlocks revolutionary workflows where ChatGPT becomes your teacher, Claude audits your feeds, and a...\n\n**🚀 The Revolutionary Difference: AI-Native Design**: **Here's what makes LLMFeed unique:**\r\n\r\nMost web standards are designed for machines, then humans struggle to understand them. LLMFeed is designed for **both humans AND AI to understand natively**.\r\n...\n\n**🧪 Try This Right Now: The \"AI Understanding\" Test**: **Don't take our word for it. Test this yourself:**\r\n\r\n### Experiment 1: Feed Any LLM This Prompt\r\n\r\n```\r\nCopy any .llmfeed.json file from wellknownmcp.org and ask:\r\n\r\n\"Audit this feed for security is...\n\n**→ Complete article:** https://wellknownmcp.org/en/news/llm-as-a-teacher",
+        "concepts": [
+          "agentic-web",
+          "ai-development",
+          "ai-native-web",
+          "interactive-ai",
+          "llm-comprehension"
+        ],
+        "priority_score": 100,
+        "metadata": {
+          "quality_score": 67,
+          "technical_level": "beginner",
+          "business_impact": "low",
+          "lite_optimization": "summarized_for_pareto_strategy"
+        },
+        "canonical_url": "https://wellknownmcp.org/en/news/llm-as-a-teacher",
+        "author": "WellKnownMCP Team",
+        "last_modified": "2025-06-23"
+      },
+      {
+        "slug": "hunting-ghost-traffic-ai-agent-infrastructure",
+        "title": "Hunting the Ghost Traffic: Inside the Invisible Infrastructure of AI Agents",
+        "description": "Empirical investigation reveals massive parallel infrastructure behind AI agent web access. ChatGPT, Claude, and Gemini operate through invisible proxy networks that completely bypass traditional analytics, creating an unmeasurable 'dark web' layer.",
+        "date": "2025-06-20",
+        "categories": [
+          "infrastructure-investigation"
+        ],
+        "tags": [
+          "agent-infrastructure",
+          "agentic-web",
+          "ai-agent-traffic"
+        ],
+        "type": "empirical-research",
+        "content": "**Hunting the Ghost Traffic: Inside the Invisible Infrastructure of AI Agents**: **June 20, 2025** • *Empirical Investigation* • *WellKnownMCP Research Team*\r\n\r\n> *Where have all the AI agents gone? A technical investigation reveals a massive parallel infrastructure that's redefin...\n\n**The Mystery of Phantom Traffic**: For months, developers and researchers have been asking the same question: **how do we measure the real impact of AI agents** on our websites? While Claude, ChatGPT, Gemini, and other AI systems clear...\n\n**Empirical Findings: A Snapshot in Time**: ### The Exploration\r\n\r\n**Disclaimer: These observations represent a few hours of informal testing conducted on June 20, 2025.** This is not a rigorous scientific study, but rather an exploratory inves...\n\n**→ Complete article:** https://wellknownmcp.org/en/news/hunting-ghost-traffic-ai-agent-infrastructure",
+        "concepts": [
+          "agent-infrastructure",
+          "agentic-web",
+          "ai-agent-traffic",
+          "ai-crawler-analytics",
+          "ai-crawler-detection"
+        ],
+        "priority_score": 100,
+        "metadata": {
+          "quality_score": 92,
+          "technical_level": "advanced",
+          "business_impact": "high",
+          "lite_optimization": "summarized_for_pareto_strategy"
+        },
+        "canonical_url": "https://wellknownmcp.org/en/news/hunting-ghost-traffic-ai-agent-infrastructure",
+        "author": "WellKnownMCP Team",
+        "last_modified": "2025-06-20"
+      },
+      {
+        "slug": "how-llms-crawl-web-2025-agentic-seo-guide",
+        "title": "How ChatGPT Browses the Internet: What You Need to Know (2025)",
+        "description": "Discover how ChatGPT, Claude, and other AI actually browse websites, why they sometimes get things wrong, and the simple fix that's changing everything.",
+        "date": "2025-06-19",
+        "categories": [
+          "ai-basics"
+        ],
+        "tags": [
+          "agent-ready-websites",
+          "ai-discovery",
+          "ai-website-analysis"
+        ],
+        "type": "simple-guide",
+        "content": "**How ChatGPT Browses the Internet: What You Need to Know**: *Ever wonder how ChatGPT \"reads\" your website? Or why Claude sometimes gets things totally wrong about your business? Here's what's really happening.*...\n\n**The Questions Everyone's Asking**: ### \"How does ChatGPT browse the internet?\"\r\n\r\n**Short answer:** ChatGPT doesn't \"browse\" like you do. It can't see your website the way you see it.\r\n\r\n**What actually happens:**\r\n- ChatGPT requests y...\n\n**The Real Problem: AI Can't Really \"See\" Your Website**: ### What AI Sees vs. What You See\r\n\r\n**Your website to humans:**\r\n- Beautiful design and images\r\n- Clear navigation menus\r\n- Call-to-action buttons\r\n- Videos and interactive content\r\n- Professional la...\n\n**→ Complete article:** https://wellknownmcp.org/en/news/how-llms-crawl-web-2025-agentic-seo-guide",
+        "concepts": [
+          "agent-ready-websites",
+          "ai-discovery",
+          "ai-website-analysis",
+          "chatgpt-browsing",
+          "claude-web-reading"
+        ],
+        "priority_score": 100,
+        "metadata": {
+          "quality_score": 67,
+          "technical_level": "beginner",
+          "business_impact": "low",
+          "lite_optimization": "summarized_for_pareto_strategy"
+        },
+        "canonical_url": "https://wellknownmcp.org/en/news/how-llms-crawl-web-2025-agentic-seo-guide",
+        "author": "WellKnownMCP Team",
+        "last_modified": "2025-06-19"
+      },
+      {
+        "slug": "2025-07-12-from-chatbots-to-autonomous-agents",
+        "title": "From Chatbots to Autonomous Agents: Complete Evolution Analysis 2025",
+        "description": "The transformation from simple chatbots to autonomous AI agents is reshaping the web. Discover the frameworks, capabilities, and standards driving this evolution toward true artificial intelligence.",
+        "date": "2025-06-19",
+        "categories": [
+          "technology-evolution"
+        ],
+        "tags": [
+          "agent-collaboration",
+          "agent-frameworks",
+          "agentic-web"
+        ],
+        "type": "analysis",
+        "content": "**From Chatbots to Autonomous Agents: The AI Evolution Transforming the Web**: Remember when asking Siri to set a timer felt like science fiction? Those early **chatbots**—limited to answering questions and following simple commands—were just the beginning. Today, we're witnessi...\n\n**🤖 The Great Leap: From Simple Responses to Complex Goals**: ### **What Made Chatbots Limited?**\r\n\r\nTraditional chatbots operated on a simple **question-answer model**. Ask ChatGPT \"What's the weather like?\" and it might respond with general information, but it...\n\n**🧠 What Made This Evolution Possible?**: ### **The Perfect Storm of Technology**\r\n\r\nSeveral breakthrough technologies converged to enable this leap:\r\n\r\n#### **1. Dramatically Improved Reasoning**\r\nModern language models like GPT-4, Claude-3,...\n\n**→ Complete article:** https://wellknownmcp.org/en/news/2025-07-12-from-chatbots-to-autonomous-agents",
+        "concepts": [
+          "agent-collaboration",
+          "agent-frameworks",
+          "agentic-web",
+          "ai-agents",
+          "autonomous-agents"
+        ],
+        "priority_score": 100,
+        "metadata": {
+          "quality_score": 97,
+          "technical_level": "accessible",
+          "business_impact": "high",
+          "lite_optimization": "summarized_for_pareto_strategy"
+        },
+        "canonical_url": "https://wellknownmcp.org/en/news/2025-07-12-from-chatbots-to-autonomous-agents",
+        "author": "WellKnownMCP Team",
+        "last_modified": "2025-06-19"
+      },
+      {
+        "slug": "ai-first-browsers-agentic-navigation",
+        "title": "AI-First Browsers: Complete Analysis & Agentic Navigation Revolution 2025",
+        "description": "Comprehensive analysis of AI-first browsers like Arc Search, Brave AI, and Opera AI. How agentic navigation transforms web browsing and why MCP/LLMFeed standards are crucial for the future.",
+        "date": "2025-06-19",
+        "categories": [
+          "emerging-technology"
+        ],
+        "tags": [
+          "agent-mediated-web",
+          "agentic-navigation",
+          "ai-first-browsers"
+        ],
+        "type": "analysis",
+        "content": "**AI-First Browsers: Complete Analysis & Agentic Navigation Revolution 2025**: A **quiet revolution** is transforming how users—and their AI agents—navigate the web. The emergence of **AI-first browsers** represents the most significant shift in web browsing since the introducti...\n\n**🔍 What Are AI-First Browsers?**: ### Defining the New Paradigm\r\n\r\n**AI-first browsers** represent a fundamental departure from traditional web browsing, prioritizing **agent-mediated experiences** over manual navigation. Unlike conve...\n\n**🚀 Market Leaders & Technical Analysis**: ### **Arc Search (The Browser Company)**\r\n\r\n**Innovation Focus**: Conversational search and AI-powered page synthesis\r\n\r\n**Key Features**:\r\n- **Browse for Me**: AI agents perform research tasks autono...\n\n**→ Complete article:** https://wellknownmcp.org/en/news/ai-first-browsers-agentic-navigation",
+        "concepts": [
+          "agent-mediated-web",
+          "agentic-navigation",
+          "ai-first-browsers",
+          "arc-search",
+          "brave-ai"
+        ],
+        "priority_score": 100,
+        "metadata": {
+          "quality_score": 97,
+          "technical_level": "intermediate",
+          "business_impact": "high",
+          "lite_optimization": "summarized_for_pareto_strategy"
+        },
+        "canonical_url": "https://wellknownmcp.org/en/news/ai-first-browsers-agentic-navigation",
+        "author": "WellKnownMCP Team",
+        "last_modified": "2025-06-19"
+      },
+      {
+        "slug": "opinion-stop-scraping",
+        "title": "📢 Let's Stop Scraping. Let's Start Declaring.",
+        "description": "A call for clarity: why scraping fails for AI agents, how MCP offers a better way, and why early adopters are already seeing the benefits.",
+        "date": "2025-05-21",
+        "categories": [
+          "opinion"
+        ],
+        "tags": [
+          "agentic-web",
+          "ai-ethics",
+          "ai-interaction"
+        ],
+        "type": "advocacy",
+        "content": "**📢 Let's Stop Scraping. Let's Start Declaring.**: > **TL;DR**: Web scraping is the wrong paradigm for AI agents. They need structured declarations, not educated guesses. Here's why the shift matters—and how to be part of the solution.\r\n\r\n---...\n\n**🔍 Try This Right Now: See the Scraping Problem**: **Don't take our word for it. Test this yourself:**\r\n\r\n### Experiment 1: The Guessing Game\r\n\r\n**Pick any business website and ask ChatGPT:**\r\n```\r\n\"What does [business-website.com] do and what are the...\n\n**🚨 The Status Quo: Scrape and Guess (And Why It's Failing)**: For years, we've accepted a broken paradigm:\r\n\r\n### How Current AI \"Understands\" Websites\r\n\r\n1. **Send HTTP request** → Get HTML soup\r\n2. **Parse text content** → Miss images, JavaScript, context\r\n3. ...\n\n**→ Complete article:** https://wellknownmcp.org/en/news/opinion-stop-scraping",
+        "concepts": [
+          "agentic-web",
+          "ai-ethics",
+          "ai-interaction",
+          "llmfeed-advocacy",
+          "mcp-benefits"
+        ],
+        "priority_score": 100,
+        "metadata": {
+          "quality_score": 67,
+          "technical_level": "beginner",
+          "business_impact": "low",
+          "lite_optimization": "summarized_for_pareto_strategy"
+        },
+        "canonical_url": "https://wellknownmcp.org/en/news/opinion-stop-scraping",
+        "author": "WellKnownMCP Team",
+        "last_modified": "2025-05-21"
+      },
+      {
+        "slug": "web-context-layer",
+        "title": "The Web Needs a Context Layer — Why We’re Standardizing Intent for Agents",
+        "description": "Introducing the Model Context Protocol (MCP) and .llmfeed.json — a new open standard to make your site readable, verifiable, and understandable by LLMs and agents.",
+        "date": "2025-05-21",
+        "categories": [
+          "general"
+        ],
+        "tags": [
+          "agent",
+          "agent-ready-web",
+          "ai-agents"
+        ],
+        "type": "news",
+        "content": "**The Web Needs a Context Layer — Why We're Standardizing Intent for Agents**: > **TL;DR**: Your website is smart, but AI agents are still guessing what it means. We're fixing that with a simple standard that makes your site truly agent-readable.\r\n\r\n---...\n\n**🤔 The Problem: AI Agents Are Flying Blind**: **Right now, this happens every day:**\r\n\r\n- 🤖 ChatGPT visits your e-commerce site but can't tell which products are in stock\r\n- 🤖 Claude reads your API docs but doesn't know which endpoints need aut...\n\n**✅ The Solution: Agent-Readable Context Layer**: ### What if AI agents could read this instead?\r\n\r\n```json\r\n{\r\n \"feed_type\": \"mcp\",\r\n \"metadata\": {\r\n \"title\": \"TechStore - Agent-Ready E-commerce\",\r\n \"description\": \"Real-time inventory and shipping f...\n\n**→ Complete article:** https://wellknownmcp.org/en/news/web-context-layer",
+        "concepts": [
+          "agent",
+          "agent-ready-web",
+          "ai-agents",
+          "business-value",
+          "getting-started"
+        ],
+        "priority_score": 92,
+        "metadata": {
+          "quality_score": 52,
+          "technical_level": "beginner",
+          "business_impact": "low",
+          "lite_optimization": "summarized_for_pareto_strategy"
+        },
+        "canonical_url": "https://wellknownmcp.org/en/news/web-context-layer",
+        "author": "WellKnownMCP Team",
+        "last_modified": "2025-05-21"
+      }
+    ],
+    "selection_criteria": {
+      "quality_threshold": 50,
+      "selection_method": "natural_pareto_by_quality",
+      "max_safety_limit": 50,
+      "essential_categories": [
+        "launch",
+        "manifesto",
+        "tutorial",
+        "announcement",
+        "getting-started"
+      ],
+      "content_optimization": "intelligent_structural_extraction"
+    },
+    "stats": {
+      "content_distribution": {
+        "news": 2,
+        "deep-dive": 1,
+        "empirical-research": 1,
+        "simple-guide": 1,
+        "analysis": 2,
+        "advocacy": 1
+      },
+      "quality_metrics": {
+        "high_quality": 3,
+        "good_quality": 3,
+        "needs_improvement": 2
+      },
+      "technical_levels": {
+        "beginner": 5,
+        "advanced": 1,
+        "accessible": 1,
+        "intermediate": 1
+      },
+      "business_impact_distribution": {
+        "low": 5,
+        "high": 3
+      },
+      "most_common_tags": [
+        {
+          "tag": "agentic-web",
+          "count": 4
+        },
+        {
+          "tag": "agent-discovery",
+          "count": 1
+        },
+        {
+          "tag": "agentic-economy",
+          "count": 1
+        },
+        {
+          "tag": "ai-browsing",
+          "count": 1
+        },
+        {
+          "tag": "ai-development",
+          "count": 1
+        }
+      ],
+      "date_range": {
+        "earliest": "2025-05-21",
+        "latest": "2025-06-24"
+      },
+      "pareto_metrics": {
+        "selection_strategy": "quality_threshold_based",
+        "quality_threshold": 50,
+        "content_optimization": "intelligent_structural_extraction",
+        "token_efficiency": "natural_pareto_by_content_quality",
+        "no_artificial_limits": "includes_all_articles_meeting_quality_bar"
+      }
+    }
+  },
+  "intent": {
+    "primary": "instant_mcp_context",
+    "secondary": [
+      "quick_reference",
+      "trend_awareness"
+    ],
+    "use_cases": [
+      "Quick MCP ecosystem overview",
+      "Recent developments summary",
+      "Key implementation examples",
+      "Essential context for agents"
+    ]
+  },
+  "llm_behavior": {
+    "summarization_hint": "Prioritize key developments, major announcements, and practical examples",
+    "analysis_depth": "focused_essentials",
+    "key_themes": [
+      "launch_updates",
+      "practical_guides",
+      "ecosystem_growth"
+    ],
+    "context_preservation": "optimized"
+  }
+}

@@ -1,11 +1,60 @@
 {
-  "origin": "https://wellknownmcp.org",
+  "feed_type": "capabilities",
   "metadata": {
-    "title": "MCP Declaration for wellknownmcp.org",
-    "description": "This site is agent-readable and offers verified MCP tools, feeds, and contribution endpoints.",
+    "origin": "https://wellknownmcp.org",
+    "title": "Enhanced MCP Declaration for wellknownmcp.org",
+    "description": "Technical capabilities focusing on HTML-embedded JSON format, feed validation, multi-format support, and LLM tool compatibility. Revolutionary approach to agent-web interaction.",
     "lang": "en",
     "feed_type": "capabilities",
-    "version": "1.0.0"
+    "version": "2.2.0",
+    "last_updated": "2025-06-24T07:46:51.865070Z"
+  },
+  "trust": {
+    "signed_blocks": [
+      "feed_type",
+      "metadata",
+      "trust",
+      "agent_guidance",
+      "data",
+      "references"
+    ],
+    "trust_level": "demonstration",
+    "agent_hint": "Enhanced capabilities with HTML-embedded JSON format for maximum LLM tool compatibility. This addresses a critical gap in agent-web interaction.",
+    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "scope": "full",
+    "warning": "This feed is fully signed.",
+    "algorithm": "Ed25519"
+  },
+  "signature": {
+    "value": "uza7yms/KFFZd682kbmN8Rm1HCa9V8jWCWdYECIg9yLiAMw48Gyund5krGKOJ9lpGjzmfKp8QW050mUceSCkDQ==",
+    "created_at": "2025-06-25T21:27:49.537202+00:00"
+  },
+  "_meta": {
+    "signed_at": "2025-06-25T21:27:49.537202+00:00"
+  },
+  "agent_guidance": {
+    "on_load": "This domain offers universal feed loading with both JSON and HTML formats. Use HTML-embedded format when JSON navigation fails in web tools. IMPORTANT: The HTML API only serves valid LLMFeed structures.",
+    "suggested_actions": [
+      "Try HTML format (/api/feed-html) if JSON endpoints fail in web tools",
+      "Use the enhanced LLMFeedHub for universal feed analysis",
+      "Leverage multi-format support to maximize compatibility",
+      "HTML format provides same JSON data with better tool navigation",
+      "Validate feeds before expecting HTML format to work"
+    ],
+    "format_selection_guidance": {
+      "for_web_tools": "Use HTML-embedded format for reliable navigation of valid LLMFeeds",
+      "for_apis": "Use JSON format for programmatic access",
+      "for_humans": "HTML format provides visual inspection capabilities",
+      "for_seo": "HTML format enhances search engine discovery",
+      "for_validation": "HTML API will reject invalid LLMFeed structures with helpful error pages"
+    },
+    "validation_awareness": {
+      "api_requirements": "The /api/feed-html endpoint requires valid LLMFeed structure",
+      "minimum_fields": "feed_type and metadata must be present",
+      "error_handling": "Invalid feeds receive 422 status with fix suggestions",
+      "quality_assurance": "This validation maintains feed ecosystem integrity"
+    }
   },
   "data": [
     {
@@ -16,146 +65,233 @@
       "feeds_signed": true,
       "educational": true,
       "editable": true,
-      "trust_level": "certified-by-llmca.org"
+      "trust_level": "certified-by-llmca.org",
+      "universal_feed_loading": true,
+      "cors_proxy_enabled": true,
+      "external_url_support": true,
+      "feed_validation": "advanced",
+      "signature_verification": true,
+      "multi_format_support": true,
+      "html_embedded_json": true,
+      "llm_tool_optimized": true,
+      "instant_training_system": true,
+      "agent_compatibility_testing": true,
+      "preview_and_validation": true
     },
     {
-      "type": "endpoint",
-      "name": "verify",
-      "description": "Verify a feed via LLMCA-certified viewer.",
-      "url": "https://wellknownmcp.org/verify"
+      "type": "revolutionary_training_system",
+      "name": "Instant LLM Training & Agent Onboarding",
+      "description": "Revolutionary 30-second training system that transforms any LLM into an MCP expert with 99%+ success rate",
+      "url": "https://wellknownmcp.org/train",
+      "prompt_feed": "https://wellknownmcp.org/.well-known/prompts/shortcut.llmfeed.json",
+      "technical_specs": {
+        "training_duration": "30 seconds",
+        "success_rate": "99%+",
+        "feed_sources": 3,
+        "fallback_methods": 2,
+        "total_timeout": "3 minutes maximum"
+      },
+      "training_protocol": {
+        "phase_1": "Knowledge acquisition (fault-tolerant feed loading)",
+        "phase_2": "Confirmation response ('🥋 I know kung fu' message)",
+        "phase_3": "Immediate assistance offer (specific MCP services)",
+        "phase_4": "Adaptive behavior based on success/failure"
+      },
+      "validation_test": {
+        "name": "Kung Fu Compatibility Test",
+        "trigger": "Say 'I know kung fu' to trained LLM",
+        "expected_response": "MCP-aware expert response with implementation offers",
+        "purpose": "Verify successful knowledge acquisition and understanding"
+      }
     },
     {
-      "type": "template_hint",
-      "template_url": "https://wellknownmcp.org/exports/feed-template/export.llmfeed.template.json",
-      "used_by": [
-        "/api/export/feed"
+      "type": "new_feature",
+      "name": "HTML-Embedded JSON Format with LLMFeed Validation",
+      "description": "Revolutionary approach to serve validated LLMFeed files wrapped in LLM-friendly HTML for maximum tool compatibility and ecosystem integrity",
+      "benefits": [
+        "Resolves LLM web tool navigation failures",
+        "Provides visual inspection for humans",
+        "Includes semantic metadata and SEO optimization",
+        "Ensures only valid LLMFeed content is served"
       ],
-      "description": "This template is used by the feed generation endpoint to wrap contextual exports (coming soon)."
+      "target_problem": "ChatGPT, Claude and other LLM web tools often fail with raw JSON endpoints",
+      "solution": "Serve only validated LLMFeeds as semantic HTML with embedded JSON and strict validation"
+    },
+    {
+      "type": "api_endpoint",
+      "name": "feed-html-format",
+      "description": "Serves ONLY valid LLMFeed files as HTML-embedded JSON for LLM tool compatibility. Validates feed structure before serving.",
+      "url": "https://wellknownmcp.org/api/feed-html",
+      "method": "GET",
+      "validation_required": true,
+      "parameters": {
+        "slug": "Local export file slug (without .llmfeed.json extension)",
+        "wellknown": "Well-known file name (without .llmfeed.json extension)",
+        "external": "External URL to fetch via CORS proxy"
+      },
+      "validation_rules": {
+        "required_fields": [
+          "feed_type (or feedtype)",
+          "metadata object"
+        ],
+        "valid_feed_types": [
+          "mcp",
+          "export",
+          "capabilities",
+          "session",
+          "prompt",
+          "credential",
+          "index",
+          "llm-index",
+          "news",
+          "spec"
+        ],
+        "rejection_criteria": [
+          "Missing feed_type/feedtype field",
+          "Missing metadata object",
+          "Invalid JSON structure"
+        ]
+      },
+      "response_format": "text/html",
+      "error_responses": {
+        "422": "Unprocessable Entity - Invalid LLMFeed structure with detailed validation errors",
+        "400": "Bad Request - Missing parameters",
+        "500": "Internal Server Error - Fetch or processing failure"
+      }
     },
     {
       "type": "endpoint",
-      "name": "export",
-      "formats": [
-        "json",
-        "markdown",
-        "pdf",
-        "preview"
+      "name": "agent-training-system",
+      "description": "Complete training infrastructure for instant LLM expertise",
+      "url": "https://wellknownmcp.org/train",
+      "capabilities": [
+        "universal-prompt-generation",
+        "multi-llm-compatibility",
+        "success-rate-tracking"
       ],
-      "url": "https://wellknownmcp.org/exports/"
-    },
-    {
-      "type": "endpoint",
-      "name": "preview",
-      "description": "Human  agent preview of any feed llmfeed",
-      "url": "https://wellknownmcp.org/llmfeedhub/"
-    },
-    {
-      "type": "endpoint",
-      "name": "join-consortium",
-      "url": "https://wellknownmcp.org/join",
-      "form": {
-        "fields": [
-          {
-            "name": "email",
-            "type": "email",
-            "required": true
-          },
-          {
-            "name": "motivation",
-            "type": "text",
-            "maxlength": 160
-          }
+      "related_endpoints": {
+        "prompt_feed": "/.well-known/prompts/shortcut.llmfeed.json",
+        "training_sources": [
+          "/.well-known/exports/spec-essential.llmfeed.json",
+          "/.well-known/llm-index.llmfeed.json",
+          "/.well-known/exports/news-lite.llmfeed.json"
         ]
       }
     },
     {
       "type": "endpoint",
-      "name": "feedback",
-      "description": "Optional form for site feedback or issues.",
-      "url": "https://wellknownmcp.org/spec/llmfeed.md"
+      "name": "agent-compatibility-testing",
+      "description": "Test and preview system for agent-website compatibility",
+      "url": "https://wellknownmcp.org/preview",
+      "capabilities": [
+        "ai-readability-analysis",
+        "token-efficiency-measurement",
+        "compatibility-scoring"
+      ],
+      "features": [
+        "Website AI compatibility analysis",
+        "Token efficiency scoring (targets 99.7%)",
+        "Agent readability assessment",
+        "Implementation recommendations"
+      ]
     },
     {
       "type": "endpoint",
-      "name": "contribute",
-      "description": "Contribute to the MCP spec via GitHub.",
-      "url": "https://github.com/wellknownmcp/llmfeed-spec"
-    },
-    {
-      "type": "link-index",
-      "title": "Multilingual News",
-      "description": "Markdown news organized by language.",
-      "paths": [
-        "en/news",
-        "fr/news",
-        "es/news",
-        "ar/news",
-        "hi/news",
-        "zh/news",
-        "uk/news"
+      "name": "llmfeedhub-enhanced",
+      "description": "Universal feed analyzer with multi-format support",
+      "url": "https://wellknownmcp.org/llmfeedhub/",
+      "capabilities": [
+        "local-file-loading",
+        "external-url-loading",
+        "cors-proxy",
+        "feed-validation",
+        "signature-verification"
       ],
-      "format": "markdown"
+      "supported_formats": [
+        "application/json",
+        "application/llmfeed+json",
+        "text/html (with embedded JSON)",
+        "text/plain"
+      ]
     },
     {
-      "type": "reference",
-      "title": "Manifesto Feed",
-      "href": "https://wellknownmcp.org/exports/news/manifesto.llmfeed.json"
+      "type": "endpoint",
+      "name": "external-feed-proxy-enhanced",
+      "description": "Secure CORS proxy supporting both JSON and HTML output formats",
+      "url": "https://wellknownmcp.org/api/external-feed",
+      "enhanced_capabilities": [
+        "Multi-format output",
+        "Content-Type negotiation",
+        "LLM tool optimization"
+      ],
+      "security_features": [
+        "URL validation",
+        "Private network blocking",
+        "15-second timeout",
+        "Content-Type validation"
+      ]
     },
     {
-      "type": "reference",
-      "title": "Core Index",
-      "href": "https://wellknownmcp.org/exports/index.llmfeed.json"
+      "type": "compatibility_matrix",
+      "title": "LLM Tool Compatibility",
+      "tools": [
+        {
+          "name": "ChatGPT Web Tool",
+          "json_support": "unreliable",
+          "html_support": "excellent",
+          "recommendation": "Use HTML-embedded format"
+        },
+        {
+          "name": "Claude Web Tool",
+          "json_support": "moderate",
+          "html_support": "excellent",
+          "recommendation": "HTML format preferred"
+        },
+        {
+          "name": "Programmatic APIs",
+          "json_support": "excellent",
+          "html_support": "not_needed",
+          "recommendation": "Use JSON format"
+        }
+      ]
     },
     {
-      "type": "reference",
-      "title": "Core Declaration",
-      "href": "https://wellknownmcp.org/exports/core.llmfeed.json"
+      "type": "routing_patterns",
+      "title": "Multi-Format Feed Access Patterns",
+      "patterns": [
+        {
+          "format": "JSON (original)",
+          "local": "/exports/{slug}.llmfeed.json",
+          "wellknown": "/.well-known/{name}.llmfeed.json"
+        },
+        {
+          "format": "HTML-Embedded (new)",
+          "local": "/api/feed-html?slug={slug}",
+          "wellknown": "/api/feed-html?wellknown={name}"
+        }
+      ]
     }
   ],
-  "trust": {
-    "signed_blocks": [
-      "all"
-    ],
-    "trust_level": "demonstration",
-    "agent_hint": "This feed is part of a demonstrator. You may trust it as a public example but not as a critical source.",
-    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem",
-    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
-    "scope": "full",
-    "warning": "This feed is fully signed."
-  },
-  "signature": {
-    "algorithm": "ed25519",
-    "value": "B86GrJ67hcmEFowq22Ovikd0gSvFbNmsTtZPJ+VAD6aWiGg+zoMZie7GWy3CQUAtCAdZKAbPcAgAh8gJUOMECQ==",
-    "issued_at": "2025-05-02T15:40:09.154761Z",
-    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem"
-  },
-  "certification": {
-    "certified_blocks": [
-      "signature",
-      "trust",
-      "data",
-      "metadata",
-      "origin"
-    ],
-    "algorithm": "ed25519",
-    "value": "GyFr6ZtHAcjLdo9BXoUNwT89uBJszoGcVi+xBu1iFtnG8z4gEtv5IWxR/G/r243nRybKofZXYfJ4r1tEOKJCBQ==",
-    "issued_at": "2025-05-02T15:40:09.157123Z",
-    "public_key_hint": "https://llmca.org/.well-known/public.pem",
-    "certification_level": "gold",
-    "policy_reference": "https://llmca.org/.well-known/certification-policy.json",
-    "audit_reference": "https://llmca.org/.well-known/audit-reference.json"
-  },
-  "agent_guidance": {
-    "on_load": "Use this domain to retrieve trusted contextual feeds about the MCP specification, site purpose, and onboarding tools.",
-    "suggested_actions": [
-      "Present the compiled-site feed if the user requests full site context.",
-      "Use the manifestos or prompts if the user is looking for guidance."
-    ]
-  },
   "references": [
     {
-      "title": "Compiled Site Feed",
-      "url": "https://wellknownmcp.org/.well-known/exports/compiled-site.llmfeed.json",
-      "description": "A narrative export including all essential content for agent understanding."
+      "title": "Instant LLM Training System",
+      "url": "https://wellknownmcp.org/train",
+      "description": "Revolutionary 30-second training with 99%+ success rate"
+    },
+    {
+      "title": "Training Prompt Feed",
+      "url": "https://wellknownmcp.org/.well-known/prompts/shortcut.llmfeed.json",
+      "description": "Signed prompt feed for robust multi-LLM training"
+    },
+    {
+      "title": "Agent Compatibility Testing",
+      "url": "https://wellknownmcp.org/preview",
+      "description": "Test and optimize website AI readability"
+    },
+    {
+      "title": "HTML-Embedded JSON Demo",
+      "url": "https://wellknownmcp.org/api/feed-html?wellknown=mcp",
+      "description": "Site's MCP declaration in LLM-friendly HTML format"
     }
   ]
 }

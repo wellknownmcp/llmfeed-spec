@@ -1,0 +1,353 @@
+{
+  "feed_type": "schema",
+  "metadata": {
+    "title": "LLMFeed JSON Schema V2 (Annotated)",
+    "description": "Annotated JSON Schema with developer comments and detailed guidance for LLMFeed development",
+    "origin": "https://wellknownmcp.org/.well-known/schema.annotated.llmfeed.json",
+    "schema_version": "v2.0",
+    "schema_variant": "annotated",
+    "created_at": "2025-06-20T10:00:00Z",
+    "maintainer": "WellKnownMCP Team",
+    "developer_note": "This version includes detailed comments and best practices for LLMFeed development"
+  },
+  "trust": {
+    "signed_blocks": [
+      "feed_type",
+      "metadata",
+      "data",
+      "agent_guidance",
+      "capabilities",
+      "tags",
+      "audience",
+      "trust"
+    ],
+    "algorithm": "ed25519",
+    "canonicalization": "https://llmca.org/mcp-canonical-json/v1",
+    "public_key_hint": "https://wellknownmcp.org/.well-known/public.pem",
+    "scope": "full",
+    "warning": "This feed is fully signed."
+  },
+  "signature": {
+    "value": "VW1FcQcwRX8Z3j6F3bAQT674UGpVlva0/adWO8vA2WWtDz212M5J4eqkkBkvy2VFBrvqNUFShPUKyM2sCRKuAQ==",
+    "created_at": "2025-06-20T19:27:14.248129+00:00"
+  },
+  "_meta": {
+    "signed_at": "2025-06-20T19:27:14.248129+00:00"
+  },
+  "agent_guidance": {
+    "primary_use_cases": [
+      "development-assistance",
+      "feed-structure-learning",
+      "error-debugging",
+      "best-practice-guidance"
+    ],
+    "interaction_patterns": [
+      "explain_validation_errors",
+      "suggest_structure_improvements",
+      "provide_development_guidance",
+      "debug_feed_issues"
+    ]
+  },
+  "audience": [
+    "developer",
+    "beginner",
+    "documentation"
+  ],
+  "capabilities": [
+    {
+      "name": "validate_with_guidance",
+      "description": "Validate LLMFeed with detailed developer guidance",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "feed": {
+            "type": "object"
+          },
+          "include_suggestions": {
+            "type": "boolean",
+            "default": true
+          }
+        }
+      }
+    },
+    {
+      "name": "explain_structure",
+      "description": "Explain LLMFeed structure and requirements",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "focus_area": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "data": {
+    "schema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "LLMFeed V2",
+      "type": "object",
+      "properties": {
+        "feed_type": {
+          "type": "string",
+          "__comment": "Mandatory. Should be one of: export, mcp, prompt, credential, etc."
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "origin": {
+              "type": "string",
+              "format": "uri",
+              "__comment": "URL origin of the feed, required for inter-agent referencing."
+            },
+            "description": {
+              "type": "string"
+            },
+            "generated_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "lang": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "title",
+            "origin"
+          ]
+        },
+        "prompts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "intent": {
+                "type": "string",
+                "__comment": "Intent must be declared in each prompt for agent-routing clarity."
+              },
+              "keywords": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "intent"
+            ]
+          }
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "data": {
+          "type": [
+            "object",
+            "array",
+            "string"
+          ]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "trust": {
+          "type": "object",
+          "properties": {
+            "signed_blocks": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "__comment": "List of top-level blocks that are signed. ['all'] is recommended for most feeds."
+            },
+            "scope": {
+              "type": "string"
+            },
+            "certifier": {
+              "type": "string",
+              "format": "uri"
+            },
+            "public_key_hint": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        },
+        "signature": {
+          "type": "object",
+          "properties": {
+            "algorithm": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            },
+            "canonicalization": {
+              "type": "string"
+            },
+            "public_key_hint": {
+              "type": "string",
+              "format": "uri"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "certification": {
+          "type": "object",
+          "properties": {
+            "certifier": {
+              "type": "string"
+            },
+            "targets": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "value": {
+              "type": "string"
+            },
+            "algorithm": {
+              "type": "string"
+            },
+            "issued_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "flags": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "submitted_by": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string",
+                "format": "uri"
+              },
+              "date": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        },
+        "agent_behavior": {
+          "type": "object"
+        },
+        "agent_guidance": {
+          "type": "object"
+        },
+        "audience": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "session_behavior": {
+          "type": "string"
+        },
+        "risk_score": {
+          "type": "number"
+        },
+        "safety_tier": {
+          "type": "string"
+        },
+        "attachments": {
+          "type": "array"
+        },
+        "examples": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "feed_type",
+        "metadata"
+      ],
+      "__comment": "This schema validates full .llmfeed.json files according to MCP v1.0 expectations."
+    },
+    "developer_guidance": {
+      "common_mistakes": [
+        "Forgetting to include metadata.origin",
+        "Using wrong feed_type for content",
+        "Missing intent in prompts array",
+        "Not signing trust block in signed_blocks"
+      ],
+      "best_practices": [
+        "Always include meaningful metadata.description",
+        "Use specific feed_type values (export, mcp, prompt, etc.)",
+        "Include agent_guidance for better agent interaction",
+        "Sign feeds with trust + signature blocks for production"
+      ],
+      "validation_tips": [
+        "Use this annotated schema during development",
+        "Test with minimal feeds first, then add complexity",
+        "Validate both structure and content semantics",
+        "Check signature verification separately"
+      ]
+    },
+    "usage_instructions": {
+      "development": "Use this annotated version during development for better error messages and guidance",
+      "ide_integration": "The __comment fields provide context in IDEs that support JSON Schema",
+      "cli": "ajv validate -s schema.annotated.llmfeed.json#/data/schema -d your-feed.llmfeed.json",
+      "vscode": "Perfect for development with detailed hover information and validation"
+    }
+  },
+  "tags": [
+    "schema",
+    "validation",
+    "development",
+    "annotated",
+    "guidance",
+    "developer-tools"
+  ]
+}
