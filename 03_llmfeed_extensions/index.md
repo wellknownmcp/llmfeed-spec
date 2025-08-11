@@ -33,12 +33,16 @@ Files and resources in the 03_llmfeed_extensions directory.
 
 | Metric | Count |
 |--------|-------|
-| Total Files | 6 |
-| Markdown Files | 6 |
+| Total Files | 7 |
+| Markdown Files | 7 |
 | JSON Files | 0 |
 | Other Files | 0 |
 
 ## 📁 Files in this Directory
+
+### [llmfeed extension automation](llmfeed-extension-automation)
+**File:** llmfeed-extension-automation.md
+**Size:** 19.5 KB | **Modified:** 11/08/2025
 
 ### [llmfeed extensions api](llmfeed_extensions_api)
 **File:** llmfeed_extensions_api.md

@@ -58,11 +58,11 @@ Files and resources in the llmfeed-spec directory.
 
 ### [02 llmfeed feedtype](02_llmfeed_feedtype)
 **File:** 02_llmfeed_feedtype
-**Size:** 0.0 KB | **Modified:** 26/06/2025
+**Size:** 0.0 KB | **Modified:** 11/08/2025
 
 ### [03 llmfeed extensions](03_llmfeed_extensions)
 **File:** 03_llmfeed_extensions
-**Size:** 0.0 KB | **Modified:** 26/06/2025
+**Size:** 0.0 KB | **Modified:** 11/08/2025
 
 ### [04 agent behavior](04_agent-behavior)
 **File:** 04_agent-behavior
@@ -78,7 +78,7 @@ Files and resources in the llmfeed-spec directory.
 
 ### [07 vision](07_vision)
 **File:** 07_vision
-**Size:** 0.0 KB | **Modified:** 26/06/2025
+**Size:** 0.0 KB | **Modified:** 27/06/2025
 
 ### [ADOPTION](ADOPTION)
 **File:** ADOPTION.md

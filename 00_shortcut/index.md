@@ -46,9 +46,9 @@ Files and resources in the 00_shortcut directory.
 
 ### [spec essential.llmfeed.json](spec-essential.llmfeed.json)
 **File:** spec-essential.llmfeed.json
-**Size:** 108.5 KB | **Modified:** 26/06/2025
+**Size:** 108.3 KB | **Modified:** 11/08/2025
 
 ### [spec.llmfeed.json](spec.llmfeed.json)
 **File:** spec.llmfeed.json
-**Size:** 618.3 KB | **Modified:** 26/06/2025
+**Size:** 633.0 KB | **Modified:** 11/08/2025
 

@@ -33,12 +33,16 @@ Files and resources in the 02_llmfeed_feedtype directory.
 
 | Metric | Count |
 |--------|-------|
-| Total Files | 11 |
-| Markdown Files | 11 |
+| Total Files | 13 |
+| Markdown Files | 12 |
 | JSON Files | 0 |
-| Other Files | 0 |
+| Other Files | 1 |
 
 ## 📁 Files in this Directory
+
+### [draft](draft)
+**File:** draft
+**Size:** 0.0 KB | **Modified:** 30/07/2025
 
 ### [llmfeed feedtype agent economy](llmfeed_feedtype_agent-economy)
 **File:** llmfeed_feedtype_agent-economy.md
@@ -76,9 +80,13 @@ Files and resources in the 02_llmfeed_feedtype directory.
 **File:** llmfeed_feedtype_pricing.md
 **Size:** 8.8 KB | **Modified:** 11/06/2025
 
+### [llmfeed feedtype project dir](llmfeed_feedtype_project_dir)
+**File:** llmfeed_feedtype_project_dir.md
+**Size:** 11.3 KB | **Modified:** 27/06/2025
+
 ### [llmfeed feedtype prompt](llmfeed_feedtype_prompt)
 **File:** llmfeed_feedtype_prompt.md
-**Size:** 10.0 KB | **Modified:** 20/06/2025
+**Size:** 20.8 KB | **Modified:** 11/08/2025
 
 ### [llmfeed feedtype session](llmfeed_feedtype_session)
 **File:** llmfeed_feedtype_session.md

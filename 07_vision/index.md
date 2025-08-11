@@ -33,12 +33,16 @@ Files and resources in the 07_vision directory.
 
 | Metric | Count |
 |--------|-------|
-| Total Files | 5 |
-| Markdown Files | 5 |
+| Total Files | 8 |
+| Markdown Files | 8 |
 | JSON Files | 0 |
 | Other Files | 0 |
 
 ## 📁 Files in this Directory
+
+### [auto configuration and mcp servers evolution](auto-configuration-and-mcp-servers-evolution)
+**File:** auto-configuration-and-mcp-servers-evolution.md
+**Size:** 12.3 KB | **Modified:** 27/06/2025
 
 ### [enterprise security roadmap](enterprise-security-roadmap)
 **File:** enterprise-security-roadmap.md
@@ -56,7 +60,15 @@ Files and resources in the 07_vision directory.
 **File:** llm-token-optimization-research.md
 **Size:** 15.1 KB | **Modified:** 16/06/2025
 
+### [llm training validation ecosystem](llm-training-validation-ecosystem)
+**File:** llm-training-validation-ecosystem.md
+**Size:** 20.1 KB | **Modified:** 27/06/2025
+
 ### [roadmap progressive integration](roadmap-progressive-integration)
 **File:** roadmap-progressive-integration.md
-**Size:** 4.5 KB | **Modified:** 17/06/2025
+**Size:** 8.1 KB | **Modified:** 27/06/2025
+
+### [token economics vision](token-economics-vision)
+**File:** token-economics-vision.md
+**Size:** 18.6 KB | **Modified:** 27/06/2025
 
