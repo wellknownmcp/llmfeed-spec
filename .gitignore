@@ -7,8 +7,6 @@ local-only/
 
 # Scripts et configuration de nettoyage
 clean-mcp-files.js
-package.json
-package-lock.json
 node_modules/
 
 # Rapports de nettoyage (au cas où générés à la racine)
