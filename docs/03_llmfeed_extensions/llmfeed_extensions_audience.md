@@ -47,7 +47,7 @@ interactionComplexity: "moderate"
 # 🔗 Urls
 
 slug: "llmfeed-extensions-audience"
-canonical_url: "https://wellknownmcp.org/spec/03_llmfeed_extensions/llmfeed_extensions_audience
+canonical_url: "https://wellknownmcp.org/spec/03_llmfeed_extensions/llmfeed_extensions_audience"
 mcpFeedUrl: "/.well-known/mcp.llmfeed.json"
 
 
