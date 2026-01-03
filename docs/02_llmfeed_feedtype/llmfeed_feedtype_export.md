@@ -1,5 +1,8 @@
 ---
-
+title: Export Feed Type
+description: Package any content for LLM consumption with structured metadata
+sidebar_position: 2
+---
 ## 💊 The Information Capsule Concept
 
 ### Universal Application Sources
