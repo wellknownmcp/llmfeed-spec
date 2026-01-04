@@ -109,4 +109,5 @@ coverage/
 # ===================================
 
 # Ignore git backup files
-*.orig
+*.orig.docusaurus/
+build/

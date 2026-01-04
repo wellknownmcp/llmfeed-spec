@@ -34,11 +34,18 @@ const config: Config = {
       'classic',
       {
         docs: {
+          path: '.',
           sidebarPath: './sidebars.ts',
-          routeBasePath: '/', // Docs at root
+          routeBasePath: '/',
           editUrl: 'https://github.com/wellknownmcp/llmfeed-spec/edit/main/',
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
+          exclude: [
+            'README.md', 'README.old.md', 'CHANGELOG.md', 'CONTRIBUTING.md',
+            'SHOWCASE.md', 'LICENSE', 'node_modules/**', 'local-only/**',
+            '06_scripts/**', 'src/**', 'static/**', 'build/**',
+            '*.js', '*.ts', '*.json', '*.sh',
+          ],
         },
         blog: false, // Disable blog
         theme: {
@@ -92,15 +99,15 @@ const config: Config = {
           items: [
             {
               label: 'LLMFeed Core',
-              to: '/01_llmfeed/llmfeed',
+              to: '/llmfeed',
             },
             {
               label: 'Feed Types',
-              to: '/02_llmfeed_feedtype',
+              to: '/llmfeed_feedtype',
             },
             {
               label: 'Extensions',
-              to: '/03_llmfeed_extensions',
+              to: '/llmfeed_extensions',
             },
           ],
         },
