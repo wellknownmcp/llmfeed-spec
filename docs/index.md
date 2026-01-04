@@ -1,122 +1,87 @@
 ---
-title: "llmfeed-spec - Directory Index"
-description: "Files and resources in the llmfeed-spec directory"
-directory: "."
-format: "directory-index"
-llmIntent: "browse-directory"
-llmTopic: "directory-listing"
-llmlang: "en"
-audience:
-  - "developer"
-  - "llm"
-feedTypes:
-  - "export"
-  - "capabilities"
-capabilities:
-  - "directory-browsing"
-  - "file-discovery"
-trustLevel: "basic"
-generateToc: "true"
-autoDiscoverFeeds: "true"
-agentReadiness: "true"
-pageType: "directory-index"
-canonical_url: "https://github.com/wellknownmcp/llmfeed-spec/spec/./"
+title: LLMFeed Specification
+description: The open standard for AI agent discovery and trust
+sidebar_position: 1
+slug: /
 ---
 
-# llmfeed-spec - Directory Index
+# LLMFeed Specification
 
-Files and resources in the llmfeed-spec directory.
+**The open standard for AI agent discovery, structured communication, and trust verification.**
 
-**📍 Directory:** `.`
+## What is LLMFeed?
 
-## 📊 Directory Statistics
+LLMFeed enables websites and applications to declare their intent, capabilities, and content in a format that AI agents can directly understand and trust.
 
-| Metric | Count |
-|--------|-------|
-| Total Files | 20 |
-| Markdown Files | 5 |
-| JSON Files | 0 |
-| Other Files | 15 |
+```json
+{
+  "feed_type": "mcp",
+  "version": "1.0.0",
+  "metadata": {
+    "title": "Your Site",
+    "description": "What you do",
+    "origin": "https://yoursite.com"
+  },
+  "data": {
+    "intent": "Your business purpose",
+    "capabilities": ["what", "you", "offer"]
+  }
+}
+```
 
-## 📁 Files in this Directory
+## Specification Contents
 
-### [.git](.git)
-**File:** .git
-**Size:** 0.0 KB | **Modified:** 26/06/2025
+### Core
 
-### [.gitignore](.gitignore)
-**File:** .gitignore
-**Size:** 1.8 KB | **Modified:** 11/06/2025
+| Document | Description |
+|----------|-------------|
+| [LLMFeed Core](./01_llmfeed/llmfeed.md) | Base format, blocks, metadata structure |
+| [Block Reference](./01_llmfeed/llmfeed_block-reference.md) | All block types and their schemas |
+| [.well-known Discovery](./01_llmfeed/wellknown.md) | How agents discover feeds |
+| [MIME Type](./01_llmfeed/llmfeed-mime.md) | `application/llmfeed+json` |
 
-### [00 shortcut](00_shortcut)
-**File:** 00_shortcut
-**Size:** 0.0 KB | **Modified:** 26/06/2025
+### Feed Types
 
-### [01 llmfeed](01_llmfeed)
-**File:** 01_llmfeed
-**Size:** 0.0 KB | **Modified:** 26/06/2025
+| Feed Type | Purpose |
+|-----------|---------|
+| [mcp](./02_llmfeed_feedtype/llmfeed_feedtype_mcp.md) | Main site declaration |
+| [export](./02_llmfeed_feedtype/llmfeed_feedtype_export.md) | Content packages |
+| [capabilities](./02_llmfeed_feedtype/llmfeed_feedtype_capabilities.md) | API/action declarations |
+| [credential](./02_llmfeed_feedtype/llmfeed_feedtype_credential.md) | Authentication |
+| [llm-index](./02_llmfeed_feedtype/llmfeed_feedtype_llm-index.md) | Semantic sitemap |
+| [prompt](./02_llmfeed_feedtype/llmfeed_feedtype_prompt.md) | Certified prompts |
+| [pricing](./02_llmfeed_feedtype/llmfeed_feedtype_pricing.md) | Cost transparency |
+| [session](./02_llmfeed_feedtype/llmfeed_feedtype_session.md) | Context persistence |
+| [mobile-app](./02_llmfeed_feedtype/llmfeed_feedtype_mobile-app.md) | App integration |
 
-### [02 llmfeed feedtype](02_llmfeed_feedtype)
-**File:** 02_llmfeed_feedtype
-**Size:** 0.0 KB | **Modified:** 11/08/2025
+### Extensions
 
-### [03 llmfeed extensions](03_llmfeed_extensions)
-**File:** 03_llmfeed_extensions
-**Size:** 0.0 KB | **Modified:** 11/08/2025
+| Extension | Purpose |
+|-----------|---------|
+| [Signatures](./03_llmfeed_extensions/llmfeed_extensions_signatures.md) | Cryptographic verification |
+| [Audience](./03_llmfeed_extensions/llmfeed_extensions_audience.md) | Content targeting |
+| [API](./03_llmfeed_extensions/llmfeed_extensions_api.md) | API integration patterns |
+| [Automation](./03_llmfeed_extensions/llmfeed-extension-automation.md) | Workflow automation |
 
-### [04 agent behavior](04_agent-behavior)
-**File:** 04_agent-behavior
-**Size:** 0.0 KB | **Modified:** 26/06/2025
+### Agent Behavior
 
-### [05 examples](05_examples)
-**File:** 05_examples
-**Size:** 0.0 KB | **Modified:** 26/06/2025
+| Guide | Description |
+|-------|-------------|
+| [Agent Guidance](./04_agent-behavior/agent-guidance.md) | How to guide agent behavior |
+| [Risk Scoring](./04_agent-behavior/agent-behavior_risk-scoring.md) | Trust-based decisions |
+| [Human Consent](./04_agent-behavior/agent-behavior_human-consent.md) | When to ask permission |
+| [Session Awareness](./04_agent-behavior/agent-behavior_session-awareness.md) | Context continuity |
 
-### [06 scripts](06_scripts)
-**File:** 06_scripts
-**Size:** 0.0 KB | **Modified:** 26/06/2025
+## Quick Start
 
-### [07 vision](07_vision)
-**File:** 07_vision
-**Size:** 0.0 KB | **Modified:** 27/06/2025
+1. Create `/.well-known/mcp.llmfeed.json` with your site declaration
+2. Add feed types based on your needs
+3. Validate with [LLMFeedForge](https://llmfeedforge.org)
+4. Optional: Sign feeds and get certified via [LLMCA](https://llmca.org)
 
-### [ADOPTION](ADOPTION)
-**File:** ADOPTION.md
-**Size:** 20.0 KB | **Modified:** 11/06/2025
+## Ecosystem
 
-### [CHANGELOG](CHANGELOG)
-**File:** CHANGELOG.md
-**Size:** 3.9 KB | **Modified:** 11/06/2025
-
-### [CONTRIBUTING](CONTRIBUTING)
-**File:** CONTRIBUTING.md
-**Size:** 2.0 KB | **Modified:** 11/06/2025
-
-### [fix related articles precise.js](fix-related-articles-precise.js)
-**File:** fix-related-articles-precise.js
-**Size:** 9.6 KB | **Modified:** 20/06/2025
-
-### [LICENSE](LICENSE)
-**File:** LICENSE
-**Size:** 1.1 KB | **Modified:** 22/04/2025
-
-### [local only](local-only)
-**File:** local-only
-**Size:** 0.0 KB | **Modified:** 11/06/2025
-
-### [MANIFESTO](MANIFESTO)
-**File:** MANIFESTO.md
-**Size:** 14.2 KB | **Modified:** 15/06/2025
-
-### [README](README)
-**File:** README.md
-**Size:** 15.8 KB | **Modified:** 15/06/2025
-
-### [run cleanup.sh](run-cleanup.sh)
-**File:** run-cleanup.sh
-**Size:** 5.9 KB | **Modified:** 11/06/2025
-
-### [update and push.sh](update-and-push.sh)
-**File:** update-and-push.sh
-**Size:** 11.1 KB | **Modified:** 26/06/2025
-
+- [WellKnownMCP.org](https://wellknownmcp.org) - Main project site
+- [LLMCA.org](https://llmca.org) - Certification authority
+- [LLMFeedForge.org](https://llmfeedforge.org) - Validation tools
+- [GitHub](https://github.com/wellknownmcp/llmfeed-spec) - Source and contributions
