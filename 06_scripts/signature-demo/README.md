@@ -15,8 +15,11 @@ pip install cryptography requests
 # Install dependencies (Node.js) 
 npm install # (no external deps needed)
 
+# Generate your keypair — no private key ships with this demo
+node keygen.js
+
 # Sign a feed
-python sign_reference.py examples/test_input.json signed.llmfeed.json private.pem https://example.com/public.pem
+python sign_reference.py examples/test_input.llmfeed.json signed.llmfeed.json private.pem https://example.com/public.pem
 
 # Verify signature
 python verify_reference.py signed.llmfeed.json
@@ -58,8 +61,8 @@ node verify_reference.js SIGNED_FEED.llmfeed.json
 | `verify_reference.py` | 🐍 Python verification implementation |
 | `sign_reference.js` | 🟨 JavaScript signing implementation |
 | `verify_reference.js` | 🟨 JavaScript verification implementation |
-| `private.pem` | 🔑 **PUBLICLY KNOWN** demo private key (Ed25519) — see warning below |
-| `public.pem` | 🔓 Demo public key (Ed25519) |
+| `keygen.js` | 🔧 Generates your local Ed25519 keypair (no key is shipped) |
+| `public.pem` | 🔓 Test-vector public key — verifies `examples/test_signed.llmfeed.json` |
 | `mcp-canonical-json-v1.md` | 📄 Canonicalization specification |
 
 ---
@@ -81,7 +84,7 @@ Absolute minimal example for testing signature workflow.
 
 ```bash
 # 1. Sign the test input
-python sign_reference.py examples/test_input.json temp_signed.llmfeed.json private.pem https://example.com/public.pem
+python sign_reference.py examples/test_input.llmfeed.json temp_signed.llmfeed.json private.pem https://example.com/public.pem
 
 # 2. Verify the signature
 python verify_reference.py temp_signed.llmfeed.json
@@ -91,27 +94,31 @@ python verify_reference.py temp_signed.llmfeed.json
 
 ---
 
-## 🔐 Demo Keys
+## 🔐 Keys
 
-**⚠️ `private.pem` IS COMMITTED TO THIS PUBLIC REPOSITORY.**
+**No private key is shipped with this demo, on purpose.** A private key
+committed to a public repository is known to everyone, so anything signed
+with it is signed by nobody — and the usual accident is someone copying a
+demo folder into a real project without replacing the key.
 
-Everyone on the internet has it. It is here so the demo runs end-to-end
-straight after a clone, nothing more. Anything signed with it is signed by
-nobody: any reader can produce the same signature.
-
-- `private.pem` / `public.pem` are for **running this demo only**
-- **NEVER use these keys in production** — and never copy this folder into a
-  project without replacing them first. Shipping a demo key is the most common
-  way a signing scheme ends up proving nothing.
-- If you ever signed a real feed with this key, treat that feed as unsigned and
-  re-sign it with a key of your own.
-- Generate your own key pair for real deployments:
+Generate your own before signing:
 
 ```bash
-# Generate Ed25519 key pair
-ssh-keygen -t ed25519 -f your_key
-openssl pkey -in your_key -pubout -out your_key.pub
+node keygen.js          # writes private.pem (0600) + public.pem, both local
 ```
+
+`private.pem` is gitignored. Never commit one.
+
+### `public.pem` is a test vector
+
+The `public.pem` in this folder verifies `examples/test_signed.llmfeed.json`.
+Its private half was generated, used once, and destroyed — it was never
+committed, so that fixture cannot be forged and can be used to check that your
+implementation canonicalizes exactly like the reference does.
+
+Running `keygen.js` overwrites `public.pem` with your own, after which the
+shipped fixture no longer verifies. `git checkout public.pem` brings the test
+vector back.
 
 ---
 

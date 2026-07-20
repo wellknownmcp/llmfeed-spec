@@ -111,3 +111,8 @@ coverage/
 # Ignore git backup files
 *.orig.docusaurus/
 build/
+
+# Signature demo: never commit a private key. `keygen.js` writes this one
+# locally; a private key in a public repo is known to everyone.
+06_scripts/signature-demo/private.pem
+06_scripts/signature-demo/*-private.pem
