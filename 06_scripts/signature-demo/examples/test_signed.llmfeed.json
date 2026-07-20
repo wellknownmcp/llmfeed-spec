@@ -18,14 +18,18 @@
     "public_key_hint": "https://example.com/public.pem"
   },
   "signature": {
-    "value": "MEUCIQDexample_base64_signature_here_this_will_be_generated_by_signing_script",
-    "created_at": "2025-06-13T10:00:00.000Z"
+    "value": "ZJwhmq/n8bh26o4xWT6deO4k/8eWwsg0hMejgmP3VH3nbtB3JhAljWahg8xMqdYQpzfeNzJREBstnVzuh8kxDA==",
+    "created_at": "2026-07-20T16:28:46.766Z"
   },
   "data": {
     "message": "Hello, world!",
     "timestamp": "2025-06-13T10:00:00Z",
     "test_data": {
-      "numbers": [1, 2, 3],
+      "numbers": [
+        1,
+        2,
+        3
+      ],
       "boolean": true,
       "nested": {
         "key": "value"

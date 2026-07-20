@@ -58,8 +58,8 @@ node verify_reference.js SIGNED_FEED.llmfeed.json
 | `verify_reference.py` | 🐍 Python verification implementation |
 | `sign_reference.js` | 🟨 JavaScript signing implementation |
 | `verify_reference.js` | 🟨 JavaScript verification implementation |
-| `private.pem` | 🔑 Test private key (Ed25519) |
-| `public.pem` | 🔓 Test public key (Ed25519) |
+| `private.pem` | 🔑 **PUBLICLY KNOWN** demo private key (Ed25519) — see warning below |
+| `public.pem` | 🔓 Demo public key (Ed25519) |
 | `mcp-canonical-json-v1.md` | 📄 Canonicalization specification |
 
 ---
@@ -91,12 +91,20 @@ python verify_reference.py temp_signed.llmfeed.json
 
 ---
 
-## 🔐 Test Keys
+## 🔐 Demo Keys
 
-**⚠️ WARNING: Test keys only!**
+**⚠️ `private.pem` IS COMMITTED TO THIS PUBLIC REPOSITORY.**
 
-- `private.pem` / `public.pem` are for **testing and development only**
-- **NEVER use these keys in production**
+Everyone on the internet has it. It is here so the demo runs end-to-end
+straight after a clone, nothing more. Anything signed with it is signed by
+nobody: any reader can produce the same signature.
+
+- `private.pem` / `public.pem` are for **running this demo only**
+- **NEVER use these keys in production** — and never copy this folder into a
+  project without replacing them first. Shipping a demo key is the most common
+  way a signing scheme ends up proving nothing.
+- If you ever signed a real feed with this key, treat that feed as unsigned and
+  re-sign it with a key of your own.
 - Generate your own key pair for real deployments:
 
 ```bash
