@@ -1,4 +1,3 @@
-# ===== sign_reference.py =====
 #!/usr/bin/env python3
 """
 LLMFeed Reference Signing Script

@@ -1,4 +1,3 @@
-# ===== verify_reference.js =====
 #!/usr/bin/env node
 /**
  * LLMFeed Reference Verification Script (JavaScript)

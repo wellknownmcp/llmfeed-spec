@@ -1,4 +1,3 @@
-# ===== sign_reference.js =====
 #!/usr/bin/env node
 /**
  * LLMFeed Reference Signing Script (JavaScript)
